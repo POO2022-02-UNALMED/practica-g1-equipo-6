@@ -1,9 +1,21 @@
 package gestorAplicacion.clasesPrincipales;
 
-import java.io.Serializable;
-
-public class Servicio   implements Serializable {
+public enum Servicio {
 	
-	private static final long serialVersionUID = 6L;
+	MALETAS_EXTRA(5000),
+	ALMOHADA(2500),
+	AURICULARES(3000),
+	VIAJAR_CON_MASCOTA(10000);
+	
+	private final int precio;
+	
+	Servicio(int precio) {
+		this.precio=precio;
+	}
+
+	public int getPrecio() {
+		return precio;
+	}
+	
 	
 }
