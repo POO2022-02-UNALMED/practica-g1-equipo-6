@@ -6,7 +6,8 @@ import java.util.ArrayList;
 
 public class Tiquete implements Serializable {
 		
-		private static final long serialVersionUID = 8L;
+		private static final long serialVersionUID = 7L;
+		
 		private int codigo;
 		protected Pasajero pasajero;
 		protected Bus sillaTiquete;

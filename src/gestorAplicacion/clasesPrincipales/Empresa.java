@@ -1,7 +1,12 @@
 package gestorAplicacion.clasesPrincipales;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Empresa {
+public class Empresa  implements Serializable {
+	
+	private static final long serialVersionUID = 3L;
+	
 	/**atributo conductores contendra una lista con los conductores de la empresa cardinalidad[0..*]**/
 	private ArrayList<Conductor> conductores = new ArrayList<Conductor>();
 	/**atributo viajes contendra una lista con los viajes de la empresa cardinalidad[0..*]**/

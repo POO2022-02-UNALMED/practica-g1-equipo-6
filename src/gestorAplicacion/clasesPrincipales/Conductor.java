@@ -66,4 +66,3 @@ public class Conductor implements Serializable {
 	//Metodos
 	
 }
-
