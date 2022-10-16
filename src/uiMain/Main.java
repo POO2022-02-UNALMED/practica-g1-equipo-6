@@ -47,5 +47,22 @@ public class Main {
         Ruta Barranquilla = new Ruta(9, "BARRANQUILLA");
         Ruta Manizales = new Ruta(3, "MANIZALES");
         
+
+        //////BUS
+        Bus B1 = new Bus("AAA000", sillasv1, 150);
+        Bus B2 = new Bus("ZZZ999", sillasv2, 100);
+        Bus B3 = new Bus("ABC123", sillasv3, 80);
+
+        //VIAJES
+        Viaje viaje1 = new Viaje();
+        Viaje viaje2 = new Viaje();
+        Viaje viaje3 = new Viaje();
+        Viaje viaje4 = new Viaje();
+        
+        ////CONDUCTORES
+        Conductor con1 = new Conductor("Don Javie",1021123854 ,3004569696l, 4000);
+        Conductor con2 = new Conductor("Don Hernan",1021123855,3007569696l, 4100);
+        Conductor con3 = new Conductor("Dona Marta",1021123856,3004589696l, 4200);
+        
         
         
