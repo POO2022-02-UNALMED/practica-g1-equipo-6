@@ -11,7 +11,6 @@ public class Ruta {
 		this.destino = destino;
 		
 	}
-	// holi
 	
 	public String[] getParadas() {
 		return paradas;}
