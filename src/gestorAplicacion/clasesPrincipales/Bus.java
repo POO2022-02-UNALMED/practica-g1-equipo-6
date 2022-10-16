@@ -1,17 +1,27 @@
 package gestorAplicacion.clasesPrincipales;
-
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Bus  implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
-	
+public class Bus {
 	String modelo;
 	String placa;
 	int capacidad;
 	//atributo_interseccion
 	private ArrayList<Empresa> empresa = new ArrayList<Empresa>();
+	//Constructor
+	Bus(String modelo, String placa, int capacidad, Empresa empresa){
+		this.modelo=modelo;
+		this.placa=placa;
+		this.capacidad=capacidad;
+		this.empresa.add(empresa);
+	}
+	Bus(String modelo, String placa, int capacidad){
+		this.modelo=modelo;
+		this.placa=placa;
+		this.capacidad=capacidad;
+	}
+	Bus(){
+	
+	}
 	//get&set_Empresa
 	public ArrayList<Empresa> getEmpresa() {
 		return empresa;
@@ -21,4 +31,3 @@ public class Bus  implements Serializable {
 	}
 	/**Metodo adquirir servicio raro**/
 }
-
