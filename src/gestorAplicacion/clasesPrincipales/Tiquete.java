@@ -13,7 +13,7 @@ public class Tiquete implements Serializable {
 		protected Viaje viaje;
 		protected int valor;
 		protected LocalDate fechaCompra;
-		private boolean estado;
+		private boolean estado;		
 		private static ArrayList<Tiquete> tiquetes;
 
 		static {
