@@ -12,10 +12,12 @@ public enum Servicio {
 	Servicio(int precio) {
 		this.precio=precio;
 	}
-
+	
+	//GETs y SETs
 	public int getPrecio() {
 		return precio;
 	}
 	
+	//Metodos
 	
 }
