@@ -9,11 +9,11 @@ public class Conductor implements Serializable {
 	
 	private String nombre;
 	private int cedula;
-	private int celular;
+	private long celular;
 	private int sueldo;
 	private static ArrayList<Conductor> conductores = new ArrayList<>();
 	
-	public Conductor(String nombre, int cedula, int celular, int sueldo) {
+	public Conductor(String nombre, int cedula, long celular, int sueldo) {
 		this.nombre = nombre;
 		this.cedula = cedula;
 		this.celular = celular;
@@ -39,7 +39,7 @@ public class Conductor implements Serializable {
 	} 
 	
 	
-	public int getCelular() {
+	public long getCelular() {
 		return celular;
 	}
 

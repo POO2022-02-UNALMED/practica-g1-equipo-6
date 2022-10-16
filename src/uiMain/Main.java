@@ -7,7 +7,7 @@
 
 package uiMain;
 
-import gestorAplicacion.*;
+import gestorAplicacion.clasesPrincipales.*;
 
 import baseDatos.*;
 import uiMain.funcionalidades.*;
@@ -60,9 +60,12 @@ public class Main {
         Viaje viaje4 = new Viaje();
         
         ////CONDUCTORES
-        Conductor con1 = new Conductor("Don Javie",1021123854 ,3004569696l, 4000);
+        Conductor con1 = new Conductor("Don Javier",1021123854 ,3004569696l, 4000);
         Conductor con2 = new Conductor("Don Hernan",1021123855,3007569696l, 4100);
         Conductor con3 = new Conductor("Dona Marta",1021123856,3004589696l, 4200);
+        
+    }
+}
         
         
         
