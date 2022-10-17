@@ -99,17 +99,17 @@ public class Main {
         
         while(running) {
             showMenu();
-            while(election < 0 || election > 9) {
+            while(election < 0 || election > 6) {
                 try {
                     election = in.nextInt();
-                    if (election < 0 || election > 9) {
+                    if (election < 0 || election > 7) {
                         System.out.println("Opcion invalida..., probemos otra vez");
-                        System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5] [6] [7] [8]");
+                        System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5] [6]");
                     }
                 } catch (Exception InputMismatchException) {
                     // TODO: handle exception
                     System.out.println("No te entiendo..., probemos otra vez");
-                    System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5] [6] [7] [8]");
+                    System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5] [6]");
                 }
             }
             System.out.println("");
@@ -153,7 +153,9 @@ public class Main {
                 break;
             	
             case 6:
+            	System.out.println("Vuelva pronto");
             	Serializador.serializarTodo();
+            	System.exit(0);
                 running = false;
                 break;
         }
