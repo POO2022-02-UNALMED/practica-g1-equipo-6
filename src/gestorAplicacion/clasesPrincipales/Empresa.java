@@ -62,20 +62,13 @@ public class Empresa {
 	}
 
 	//Metodo_crearViaje
-	public void crearViaje(){
-		//Viaje.crearViaje();
-		/**en viaje*/
-		/**static Viaje crearViaje(params) {
-			return new Viaje(params)
-		}**/
-		//se puede invocar un constructor dentro de un método?
+	public static Viaje crearViaje(String hora_inicio, String hora_llegada, LocalDate fecha, int precio, Ruta ruta, Conductor conductor,
+				       Bus bus, Boolean enViaje){
+		return new Viaje(hora_inicio, hora_llegada, fecha, precio, ruta, conductor, bus, enViaje);
 		}
 	//Metodo_CancelarViaje
 	public void CancelarViaje(Viaje viaje) {
 		viaje=null;
 	}
-	/**si es un metodo que borre la instancia de viaje o cambie un valor como estadoviaje podria ser
-	 * un metodo de la clase viaje
-	 */
 	
 }
