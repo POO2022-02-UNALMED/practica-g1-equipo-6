@@ -6,16 +6,17 @@ public class Bus {
 	String modelo;
 	String placa;
 	int capacidad;
+	Conductor conductor;
 	private ArrayList<String> sillas; //Agregue este atributo valen
 	private static  ArrayList<Bus> buses = new ArrayList<>(); //Agruegue este atributo valen
 	//atributo_interseccion
 	private ArrayList<Empresa> empresa = new ArrayList<Empresa>();
 	//Constructor
-	Bus(String modelo, String placa, int capacidad, Empresa empresa,ArrayList<String> sillas){
+	Bus(String modelo, String placa, int capacidad, Conductor conductor,ArrayList<String> sillas){
 		this.modelo=modelo;
 		this.placa=placa;
 		this.capacidad=capacidad;
-		this.empresa.add(empresa);
+		this.conductor=conductor;
 		this.sillas=sillas;
 		Bus.buses.add(this);
 	}

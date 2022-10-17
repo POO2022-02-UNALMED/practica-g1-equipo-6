@@ -12,9 +12,6 @@ public class Empresa {
 	
 	private static ArrayList<Empresa> empresas = new ArrayList<Empresa>();
 	
-	/**suposicion1:encapsulamiento,privado**/
-	/**DUDA:el atributo interseccion no se crea por atributos?**/
-	/**Discusion:Que queremos con viajes? guardar todas las instancias de tipo viaje?**/
 	
 	//Constructores
 	Empresa(Conductor conductor, Viaje viaje, Bus bus){
