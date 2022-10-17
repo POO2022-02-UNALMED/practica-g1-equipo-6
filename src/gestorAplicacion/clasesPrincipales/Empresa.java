@@ -9,6 +9,8 @@ public class Empresa {
 	//atributo buses contendra una lista con los buses de la empresa cardinalidad[0..*]
 	private ArrayList<Bus> buses = new ArrayList<Bus>();
 	
+	private static ArrayList<Empresa> empresas = new ArrayList<Empresa>();
+	
 	/**suposicion1:encapsulamiento,privado**/
 	/**DUDA:el atributo interseccion no se crea por atributos?**/
 	/**Discusion:Que queremos con viajes? guardar todas las instancias de tipo viaje?**/
@@ -18,6 +20,7 @@ public class Empresa {
 		this.conductores.add(conductor);
 		this.viajes.add(viaje);
 		this.buses.add(bus);
+		Empresa.empresas.add(this);
 	}
 	
 	Empresa(){
@@ -48,6 +51,16 @@ public class Empresa {
 	public void setBuses(ArrayList<Bus> buses) {
 		this.buses = buses;
 	}
+	
+	
+	public static ArrayList<Empresa> getEmpresas() {
+		return empresas;
+	}
+
+	public static void setEmpresas(ArrayList<Empresa> empresas) {
+		Empresa.empresas = empresas;
+	}
+
 	//Metodo_crearViaje
 	public void crearViaje(){
 		//Viaje.crearViaje();

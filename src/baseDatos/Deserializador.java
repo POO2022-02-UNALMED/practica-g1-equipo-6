@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.EOFException;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -25,7 +24,7 @@ public class Deserializador {
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
             // Lee el listado de elementos
-            @SuppressWarnings("unchecked")
+            //@SuppressWarnings("unchecked")
 			ArrayList<E> listado = (ArrayList<E>) in.readObject();
 
             // Recorro el ArrayList
