@@ -136,9 +136,10 @@ public class Viaje implements Serializable{
 		return c;
 	}*/
 
-//	public Tiquete generarTiquete() {	
-//	
-//	}
+	
+	public static Tiquete generarTiquete(int codigo, Pasajero pasajero, Bus sillaTiquete, Viaje viaje, int valor, LocalDate fechaCompra) {
+		return new Tiquete(codigo, pasajero, sillaTiquete, viaje, valor, fechaCompra);
+	}
 	
 	public static ArrayList<Viaje> getViajes() {
 		return viajes;
@@ -189,10 +190,10 @@ public class Viaje implements Serializable{
 			}
 		}return lugares;
 	}
-/*
-	public Tiquete eliminarTiquete() {
 	
-	} */
+	public void eliminarTiquete(Tiquete tiquete) {
+		tiquete=null;
+	}
 
 
 }
