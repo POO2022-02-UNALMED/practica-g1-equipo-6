@@ -8,13 +8,15 @@ public class Viaje implements Serializable{
 	
 	private static final long serialVersionUID= 8L;
 	
+	private int id;//Agregue este id valen
 	private String hora_inicio;
 	private String hora_llegada;
-	//private String origen;
-	private Ruta ruta;
+	private String origen;
+	private String destino; //Agregue destino y origen valen 
+	//private Ruta ruta; //quite ruta valen
 	private LocalDate fecha;
 	private int precio;
-	private Conductor conductor;
+	//private Conductor conductor; Quite conductor valen
 	private Bus bus;
 	private boolean enViaje;
 	private static ArrayList<Viaje> viajes= new ArrayList<Viaje>();
@@ -23,24 +25,25 @@ public class Viaje implements Serializable{
 
 //contructor
 
-	public Viaje(String hora_inicio, String hora_llegada, LocalDate fecha, int precio, Ruta ruta, Conductor conductor,
-	Bus bus, Boolean enViaje ) {
+	public Viaje(int id,String hora_inicio, String hora_llegada, LocalDate fecha, int precio, 
+			String origen, String destino,Bus bus, Boolean enViaje ) {
 		this.hora_inicio= hora_inicio;
 		this.hora_llegada= hora_llegada;
 		this.fecha= fecha;
-		//this.origen= 
+		this.origen= origen; //Agregue id , origen y destino y quite conductor y ruta valen
+		this.destino=destino;
 		//this.origen= this.ruta.getOrigen();
 		//this.destino= this.ruta.getDestino();
-		this.ruta= ruta;//Ruta debe crear el destino y el origen sino debe tenerlas el viaje 
+		//this.ruta= ruta;//Ruta debe crear el destino y el origen sino debe tenerlas el viaje 
 		this.precio= precio;
-		this.conductor= conductor;
-		this.enViaje = true;
+		//this.conductor= conductor;
+		this.enViaje =enViaje;
 		this.bus= bus;
 		this.tiquetesTodos= new ArrayList<>();
 		
 		
 		for (String sillaEnVehiculo: this.bus.getSillas()) {
-			int genId = this.bus.getSillas().indexOf(sillaEnVehiculo);
+			int genId = id;
 			this.tiquetesTodos.add(new Tiquete(genId, null, sillaEnVehiculo, this,10000, fecha));//Valor tengo duda
 			
 		}
@@ -77,12 +80,12 @@ public class Viaje implements Serializable{
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
-	public Conductor getConductor() {
-		return conductor;
-	}
-	public void setConductor(Conductor conductor) {
-		this.conductor = conductor;
-	}
+//	public Conductor getConductor() {
+//		return conductor;
+//	}
+//	public void setConductor(Conductor conductor) {
+//		this.conductor = conductor;
+//	}
 	public Bus getBus() {
 		return bus;
 	}
@@ -95,21 +98,58 @@ public class Viaje implements Serializable{
 	public void setEnViaje(boolean enViaje) {
 		this.enViaje = enViaje;
 	}
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getOrigen() {
+		return origen;
+	}
+
+
+	public void setOrigen(String origen) {
+		this.origen = origen;
+	}
+
+
+	public String getDestino() {
+		return destino;
+	}
+
+
+	public void setDestino(String destino) {
+		this.destino = destino;
+	}
+	
 
 	//metodos 
 
-	public String sillasDisponibles() {
-		
-	}
+//	public String sillasDisponibles() {
+//		
+//	}
 
 	/*public int asignarsilla() {
 		return c;
 	}*/
 
-	public Tiquete generarTiquete() {	
+//	public Tiquete generarTiquete() {	
+//	
+//	}
 	
+	public static ArrayList<Viaje> getViajes() {
+		return viajes;
 	}
-	
+
+
+	public static void setViajes(ArrayList<Viaje> viajes) {
+		Viaje.viajes = viajes;
+	}
+
+
 	public ArrayList<Tiquete> tiquetesDisponibles(){
 		ArrayList<Tiquete> tiqueteFinal = new ArrayList<>();
 		for(Tiquete tiquete : tiquetesTodos){

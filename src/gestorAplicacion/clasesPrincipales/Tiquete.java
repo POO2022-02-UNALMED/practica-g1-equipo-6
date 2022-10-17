@@ -10,7 +10,7 @@ public class Tiquete implements Serializable {
 		
 		private int codigo;
 		protected Pasajero pasajero;
-		protected Bus sillaTiquete;
+		private String sillaTiquete; //cambie tipo bus por tipo string
 		protected Viaje viaje;
 		protected int valor;
 		protected LocalDate fechaCompra;
@@ -23,14 +23,14 @@ public class Tiquete implements Serializable {
 
 	public  Tiquete(){}
 
-	public Tiquete(Bus sillaTiquete, Viaje viaje, int valor) {
+	public Tiquete(String sillaTiquete, Viaje viaje, int valor) {
 		this.sillaTiquete = sillaTiquete;
 		this.viaje = viaje;
 		this.estado = false;
 		this.valor = valor;
 	}
 
-	public Tiquete(int codigo, Pasajero pasajero, Bus sillaTiquete, Viaje viaje, int valor, LocalDate fechaCompra) {
+	public Tiquete(int codigo, Pasajero pasajero, String sillaTiquete, Viaje viaje, int valor, LocalDate fechaCompra) {
 		this.codigo = codigo;
 		this.pasajero = pasajero;
 		this.sillaTiquete = sillaTiquete;
@@ -40,9 +40,18 @@ public class Tiquete implements Serializable {
 		this.fechaCompra = fechaCompra;
 		Tiquete.tiquetes.add(this);
 	}
+	
+	//Agregar este metodo porfavor, quitarlo de comentarios
+//	public static Tiquete asignarTiquete(Pasajero comprador, Tiquete tiquete){
+//	    tiquete.setComprador(comprador);
+//	    tiquete.setFechaCompra(LocalDate.now());
+//	    tiquete.setEstado(true);
+//	    tiquete.getViaje().getDestino();
+//	    return tiquete;
+//	}
 
 
-	public Bus getSillaTiquete() {
+	public String getSillaTiquete() {
 		return sillaTiquete;}
 
 	public Viaje getViaje() {

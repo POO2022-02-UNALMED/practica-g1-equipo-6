@@ -5,14 +5,18 @@ public class Bus {
 	String modelo;
 	String placa;
 	int capacidad;
+	private ArrayList<String> sillas; //Agregue este atributo valen
+	private static  ArrayList<Bus> buses = new ArrayList<>(); //Agruegue este atributo valen
 	//atributo_interseccion
 	private ArrayList<Empresa> empresa = new ArrayList<Empresa>();
 	//Constructor
-	Bus(String modelo, String placa, int capacidad, Empresa empresa){
+	Bus(String modelo, String placa, int capacidad, Empresa empresa,ArrayList<String> sillas){
 		this.modelo=modelo;
 		this.placa=placa;
 		this.capacidad=capacidad;
 		this.empresa.add(empresa);
+		this.sillas=sillas;
+		Bus.buses.add(this);
 	}
 	Bus(String modelo, String placa, int capacidad){
 		this.modelo=modelo;
@@ -28,6 +32,20 @@ public class Bus {
 	}
 	public void setEmpresa(ArrayList<Empresa> empresa) {
 		this.empresa = empresa;
+	}
+	public ArrayList<String> getSillas() { //Agregue st y get de sillas y de buses
+		return sillas;
+	}
+
+	public void setSillas(ArrayList<String> sillas) {
+		this.sillas = sillas;
+	}
+	public static ArrayList<Bus> getBuses() {
+		return buses;
+	}
+
+	public static void setBuses(ArrayList<Bus> buses) {
+		Bus.buses = buses;
 	}
 	/**Metodo adquirir servicio raro**/
 }
