@@ -41,14 +41,14 @@ public class Tiquete implements Serializable {
 		Tiquete.tiquetes.add(this);
 	}
 	
-	//Agregar este metodo porfavor, quitarlo de comentarios
-//	public static Tiquete asignarTiquete(Pasajero comprador, Tiquete tiquete){
-//	    tiquete.setComprador(comprador);
-//	    tiquete.setFechaCompra(LocalDate.now());
-//	    tiquete.setEstado(true);
-//	    tiquete.getViaje().getDestino();
-//	    return tiquete;
-//	}
+
+	public static Tiquete asignarTiquete(Pasajero comprador, Tiquete tiquete){
+	    tiquete.setComprador(comprador);
+	    tiquete.setFechaCompra(LocalDate.now());
+	    tiquete.setEstado(true);
+	    tiquete.getViaje().getDestino();
+	    return tiquete;
+	}
 
 
 	public String getSillaTiquete() {
