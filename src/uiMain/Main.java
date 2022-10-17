@@ -2,7 +2,8 @@
  * Clase main de la cual se ejecuta el programa con su respectiva interfaz
  * Estructuras: Scanner, ArrayList, LocalDate, swich
  * 
- * @author: Andres Lema
+ * @author: Andres Lema, Daniel Estrada, Nicolas Perez, Valen Ardila, Camilo Bello
+ *
  */
 
 package uiMain;
@@ -74,11 +75,6 @@ public class Main {
         sillasv3.add("C8");
         
 
-        //////BUS
-        Bus B1 = new Bus("AAA000", sillasv1, 150); //Acomodar al constructor de bus
-        Bus B2 = new Bus("ZZZ999", sillasv2, 100);
-        Bus B3 = new Bus("ABC123", sillasv3, 80);
-
         //VIAJES
         Viaje viaje2 = new Viaje(1,"8:00","12:00",intermedio, 10000, "Monteria", "Pasto", B1, true);
         Viaje viaje3 = new Viaje(2,"8:00","11:00",fin, 18000, "Medellin", "Manizales", B2, true);
@@ -95,6 +91,11 @@ public class Main {
         Conductor con1 = new Conductor("Don Javier",1021123854 ,3004569696l, 4000);
         Conductor con2 = new Conductor("Don Hernan",1021123855,3007569696l, 4100);
         Conductor con3 = new Conductor("Dona Marta",1021123856,3004589696l, 4200);
+        
+        //////BUS
+        Bus B1 = new Bus(1998,"AAA000",150,con1, sillasv3); 
+        Bus B2 = new Bus(2000,"ZZZ999",100,con2, sillasv2);
+        Bus B3 = new Bus(1999,"ABC123",80,con3, sillasv1);
         
         while(running) {
             showMenu();
