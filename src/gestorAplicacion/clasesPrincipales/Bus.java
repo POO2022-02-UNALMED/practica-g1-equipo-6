@@ -1,4 +1,5 @@
 package gestorAplicacion.clasesPrincipales;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Bus {
@@ -33,6 +34,7 @@ public class Bus {
 	public void setEmpresa(ArrayList<Empresa> empresa) {
 		this.empresa = empresa;
 	}
+
 	public ArrayList<String> getSillas() { //Agregue st y get de sillas y de buses
 		return sillas;
 	}
@@ -47,5 +49,11 @@ public class Bus {
 	public static void setBuses(ArrayList<Bus> buses) {
 		Bus.buses = buses;
 	}
-	/**Metodo adquirir servicio raro**/
+
+
+	//Metodo_adquirir
+	/**public static Servicio adquirirServicio(){
+		return new Servicio();
+		}**/
+
 }

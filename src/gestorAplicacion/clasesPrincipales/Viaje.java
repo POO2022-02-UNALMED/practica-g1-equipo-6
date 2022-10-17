@@ -136,8 +136,8 @@ public class Viaje implements Serializable{
 		return c;
 	}*/
 
-	
-	public static Tiquete generarTiquete(int codigo, Pasajero pasajero, Bus sillaTiquete, Viaje viaje, int valor, LocalDate fechaCompra) {
+
+	public static Tiquete generarTiquete(int codigo, Pasajero pasajero, String sillaTiquete, Viaje viaje, int valor, LocalDate fechaCompra) {
 		return new Tiquete(codigo, pasajero, sillaTiquete, viaje, valor, fechaCompra);
 	}
 	
@@ -164,6 +164,7 @@ public class Viaje implements Serializable{
 	public void eliminarViaje(){
 		Viaje.viajes.remove(this);
 	}
+	
 	
 	
 	
