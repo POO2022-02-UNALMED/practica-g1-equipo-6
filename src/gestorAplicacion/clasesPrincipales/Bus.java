@@ -12,7 +12,7 @@ public class Bus {
 	//atributo_interseccion
 	private ArrayList<Empresa> empresa = new ArrayList<Empresa>();
 	//Constructor
-	Bus(String modelo, String placa, int capacidad, Conductor conductor,ArrayList<String> sillas){
+	public Bus(String modelo, String placa, int capacidad, Conductor conductor,ArrayList<String> sillas){
 		this.modelo=modelo;
 		this.placa=placa;
 		this.capacidad=capacidad;
@@ -20,12 +20,12 @@ public class Bus {
 		this.sillas=sillas;
 		Bus.buses.add(this);
 	}
-	Bus(String modelo, String placa, int capacidad){
+	public Bus(String modelo, String placa, int capacidad){
 		this.modelo=modelo;
 		this.placa=placa;
 		this.capacidad=capacidad;
 	}
-	Bus(){
+	public Bus(){
 	
 	}
 	//get&set_Empresa

@@ -83,8 +83,7 @@ public class Main {
         Bus B1 = new Bus("1998","AAA000",150,con1, sillasv3); 
         Bus B2 = new Bus("2000","ZZZ999",100,con2, sillasv2);
         Bus B3 = new Bus("1999","ABC123",80,con3, sillasv1);
-        
-        
+
         //VIAJES
         Viaje viaje2 = new Viaje(1,"8:00","12:00",intermedio, 10000, "Monteria", "Pasto", B1, true);
         Viaje viaje3 = new Viaje(2,"8:00","11:00",fin, 18000, "Medellin", "Manizales", B2, true);
@@ -96,9 +95,6 @@ public class Main {
         Viaje viaje9 = new Viaje(8,"8:00","16:00", intermedio,15000, "Cali", "Medellin", B2, true);
         Viaje viaje10 = new Viaje(9,"8:00","16:00", intermedio,15000, "Cali", "Cartagena", B1, false);
         Viaje viaje8 = new Viaje(10,"8:00","17:00",intermedio,15000, "Cartagena", "Medellin", B2, true);
-        
-
-        
 
         
         while(running) {
