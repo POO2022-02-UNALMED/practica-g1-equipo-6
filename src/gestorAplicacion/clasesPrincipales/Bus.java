@@ -1,29 +1,31 @@
 package gestorAplicacion.clasesPrincipales;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Bus {
 	String modelo;
 	String placa;
 	int capacidad;
+	Conductor conductor;
 	private ArrayList<String> sillas; //Agregue este atributo valen
 	private static  ArrayList<Bus> buses = new ArrayList<>(); //Agruegue este atributo valen
 	//atributo_interseccion
 	private ArrayList<Empresa> empresa = new ArrayList<Empresa>();
 	//Constructor
-	Bus(String modelo, String placa, int capacidad, Empresa empresa,ArrayList<String> sillas){
+	public Bus(String modelo, String placa, int capacidad, Conductor conductor,ArrayList<String> sillas){
 		this.modelo=modelo;
 		this.placa=placa;
 		this.capacidad=capacidad;
-		this.empresa.add(empresa);
+		this.conductor=conductor;
 		this.sillas=sillas;
 		Bus.buses.add(this);
 	}
-	Bus(String modelo, String placa, int capacidad){
+	public Bus(String modelo, String placa, int capacidad){
 		this.modelo=modelo;
 		this.placa=placa;
 		this.capacidad=capacidad;
 	}
-	Bus(){
+	public Bus(){
 	
 	}
 	//get&set_Empresa
@@ -33,6 +35,7 @@ public class Bus {
 	public void setEmpresa(ArrayList<Empresa> empresa) {
 		this.empresa = empresa;
 	}
+
 	public ArrayList<String> getSillas() { //Agregue st y get de sillas y de buses
 		return sillas;
 	}
@@ -47,5 +50,11 @@ public class Bus {
 	public static void setBuses(ArrayList<Bus> buses) {
 		Bus.buses = buses;
 	}
-	/**Metodo adquirir servicio raro**/
+
+
+	//Metodo_adquirir
+	/**public static Servicio adquirirServicio(){
+		return new Servicio();
+		}**/
+
 }

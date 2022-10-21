@@ -2,7 +2,8 @@
  * Clase main de la cual se ejecuta el programa con su respectiva interfaz
  * Estructuras: Scanner, ArrayList, LocalDate, swich
  * 
- * @author: Andres Lema
+ * @author: Andres Lema, Daniel Estrada, Nicolas Perez, Valen Ardila, Camilo Bello
+ *
  */
 
 package uiMain;
@@ -73,11 +74,15 @@ public class Main {
         sillasv3.add("C7");
         sillasv3.add("C8");
         
-
+        ////CONDUCTORES
+        Conductor con1 = new Conductor("Don Javier",1021123854 ,3004569696l, 4000);
+        Conductor con2 = new Conductor("Don Hernan",1021123855,3007569696l, 4100);
+        Conductor con3 = new Conductor("Dona Marta",1021123856,3004589696l, 4200);
+        
         //////BUS
-        Bus B1 = new Bus("AAA000", sillasv1, 150); //Acomodar al constructor de bus
-        Bus B2 = new Bus("ZZZ999", sillasv2, 100);
-        Bus B3 = new Bus("ABC123", sillasv3, 80);
+        Bus B1 = new Bus("1998","AAA000",150,con1, sillasv3); 
+        Bus B2 = new Bus("2000","ZZZ999",100,con2, sillasv2);
+        Bus B3 = new Bus("1999","ABC123",80,con3, sillasv1);
 
         //VIAJES
         Viaje viaje2 = new Viaje(1,"8:00","12:00",intermedio, 10000, "Monteria", "Pasto", B1, true);
@@ -90,25 +95,21 @@ public class Main {
         Viaje viaje9 = new Viaje(8,"8:00","16:00", intermedio,15000, "Cali", "Medellin", B2, true);
         Viaje viaje10 = new Viaje(9,"8:00","16:00", intermedio,15000, "Cali", "Cartagena", B1, false);
         Viaje viaje8 = new Viaje(10,"8:00","17:00",intermedio,15000, "Cartagena", "Medellin", B2, true);
-        
-        ////CONDUCTORES
-        Conductor con1 = new Conductor("Don Javier",1021123854 ,3004569696l, 4000);
-        Conductor con2 = new Conductor("Don Hernan",1021123855,3007569696l, 4100);
-        Conductor con3 = new Conductor("Dona Marta",1021123856,3004589696l, 4200);
+
         
         while(running) {
             showMenu();
-            while(election < 0 || election > 9) {
+            while(election < 0 || election > 6) {
                 try {
                     election = in.nextInt();
-                    if (election < 0 || election > 9) {
+                    if (election < 0 || election > 7) {
                         System.out.println("Opcion invalida..., probemos otra vez");
-                        System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5] [6] [7] [8]");
+                        System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5] [6]");
                     }
                 } catch (Exception InputMismatchException) {
                     // TODO: handle exception
                     System.out.println("No te entiendo..., probemos otra vez");
-                    System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5] [6] [7] [8]");
+                    System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5] [6]");
                 }
             }
             System.out.println("");
@@ -152,6 +153,9 @@ public class Main {
                 break;
             	
             case 6:
+            	System.out.println("Vuelva pronto");
+            	Serializador.serializarTodo();
+            	System.exit(0);
                 running = false;
                 break;
         }
