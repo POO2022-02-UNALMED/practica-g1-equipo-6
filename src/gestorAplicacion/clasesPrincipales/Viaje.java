@@ -137,8 +137,8 @@ public class Viaje implements Serializable{
 	}*/
 
 	
-	public static Tiquete generarTiquete(int codigo, Pasajero pasajero, Bus sillaTiquete, Viaje viaje, int valor, LocalDate fechaCompra) {
-		return new Tiquete(codigo, pasajero, sillaTiquete, viaje, valor, fechaCompra);
+	public static Tiquete generarTiquete(int codigo, Pasajero pasajero, String silla, Viaje viaje, int valor, LocalDate fechaCompra) {
+		return new Tiquete(codigo, pasajero, silla, viaje, valor, fechaCompra);
 	}
 	
 	public static ArrayList<Viaje> getViajes() {
