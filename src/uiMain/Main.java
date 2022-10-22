@@ -149,7 +149,7 @@ public class Main {
                 //Gestionar.gestionarViajes(ccCG);
                 break;
             case 5:
-            	comprarTiquete.comprarTiqueteTerminal();
+            	AdminViaje.comprarTiqueteTerminal();
                 break;
             	
             case 6:
