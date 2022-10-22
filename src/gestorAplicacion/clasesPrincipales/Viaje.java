@@ -44,10 +44,19 @@ public class Viaje implements Serializable{
 		}
 		viajes.add(this);
 	}
+	public Viaje(){
+}
 	
-		public Viaje(){
-	}
+	
 	//getter y setter 
+	public static ArrayList<LocalDate> getFechasViaje() {
+		return fechasViaje;
+	}
+
+	public static void setFechasViaje(ArrayList<LocalDate> fechasViaje) {
+		Viaje.fechasViaje = fechasViaje;
+	}
+
 		
 	public String getOrigen() {
 		return origen;
