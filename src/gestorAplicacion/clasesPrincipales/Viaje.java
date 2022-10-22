@@ -8,11 +8,11 @@ public class Viaje implements Serializable{
 	
 	private static final long serialVersionUID= 8L;
 	
-	private int id;//Agregue este id valen
+	private int id;//Agregue este id camilo 
 	private String hora_inicio;
 	private String hora_llegada;
 	private String origen;
-	private String destino; //Agregue destino y origen valen 
+	private String destino; //Agregue destino y origen camilo 
 	//private Ruta ruta; //quite ruta valen
 	private LocalDate fecha;
 	private int precio;
@@ -196,6 +196,8 @@ public class Viaje implements Serializable{
 		tiquete=null;
 	}
 
+	
+	
 
 }
 
