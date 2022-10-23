@@ -39,15 +39,15 @@ public class Main {
 
         ////RUTAS
          
-        Ruta Medellin = new Ruta(1, "MEDELLIN");
-        Ruta Bello = new Ruta(12, "BELLO");
-        Ruta Popayan = new Ruta(7, "POPAYAN");
-        Ruta Cali = new Ruta(8, "CALI");
-        Ruta Monteria = new Ruta(5, "MONTERIA");
-        Ruta Cartagena = new Ruta(4, "CARTAGENA");
-        Ruta Pasto = new Ruta(6, "PASTO");
-        Ruta Barranquilla = new Ruta(9, "BARRANQUILLA");
-        Ruta Manizales = new Ruta(3, "MANIZALES");
+        Ruta Amazonas = new Ruta(1,"RUTA1","MEDELLIN", "AMAZONAS",1792);
+        Ruta Bello = new Ruta(12,"RUTA2","MEDELLIN", "BELLO",12);
+        Ruta Popayan = new Ruta(7,"RUTA3","MEDELLIN", "POPAYAN",437);
+        Ruta Cali = new Ruta(8,"RUTA4","MEDELLIN", "CALI",331);
+        Ruta Monteria = new Ruta(5,"RUTA5","MEDELLIN", "MONTERIA",404);
+        Ruta Cartagena = new Ruta(4,"RUTA6","MEDELLIN", "CARTAGENA",461);
+        Ruta Pasto = new Ruta(6,"RUTA7","MEDELLIN", "PASTO",814);
+        Ruta Barranquilla = new Ruta(9,"RUTA8","MEDELLIN", "BARRANQUILLA",701);
+        Ruta Manizales = new Ruta(3,"RUTA9","MEDELLIN", "MANIZALES",192);
         
       ///SILLAS
         ArrayList<String> sillasv1 = new ArrayList<String>();
@@ -75,14 +75,14 @@ public class Main {
         sillasv3.add("C8");
         
         ////CONDUCTORES
-        Conductor con1 = new Conductor("Don Javier",1021123854 ,3004569696l, 4000);
-        Conductor con2 = new Conductor("Don Hernan",1021123855,3007569696l, 4100);
-        Conductor con3 = new Conductor("Dona Marta",1021123856,3004589696l, 4200);
+        Conductor cond1 = new Conductor("Don Javier",1021123854 ,3004569696l, 4000);
+        Conductor cond2 = new Conductor("Don Hernan",1021123855,3007569696l, 4100);
+        Conductor cond3 = new Conductor("Dona Marta",1021123856,3004589696l, 4200);
         
         //////BUS
-        Bus B1 = new Bus("1998","AAA000",150,con1, sillasv3); 
-        Bus B2 = new Bus("2000","ZZZ999",100,con2, sillasv2);
-        Bus B3 = new Bus("1999","ABC123",80,con3, sillasv1);
+        Ejecutivo B1 = new Ejecutivo("1998","AAA000",cond1,60, sillasv3); 
+        EuroVans B2 = new EuroVans("2000","ZZZ999",cond2,90, sillasv2);
+        TecnoVans B3 = new TecnoVans("1999","ABC123",cond3,120, sillasv1);
 
         //VIAJES
         Viaje viaje2 = new Viaje(1,"8:00","12:00",intermedio, Medellin, B3, true,7,40000);
