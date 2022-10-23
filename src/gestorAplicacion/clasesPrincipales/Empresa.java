@@ -3,9 +3,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Empresa {
-	private ArrayList<Conductor> conductores = new ArrayList<Conductor>();//atributo conductores contendra una lista con los conductores de la empresa cardinalidad[0..*]
-	private ArrayList<Viaje> viajes = new ArrayList<Viaje>();//atributo viajes contendra una lista con los viajes de la empresa cardinalidad[0..*]
-	private ArrayList<Bus> buses = new ArrayList<Bus>();//atributo buses contendra una lista con los buses de la empresa cardinalidad[0..*]
+	//atributo conductores contendra una lista con los conductores de la empresa cardinalidad[0..*]
+	private ArrayList<Conductor> conductores = new ArrayList<Conductor>();
+	//atributo viajes contendra una lista con los viajes de la empresa cardinalidad[0..*]
+	private ArrayList<Viaje> viajes = new ArrayList<Viaje>();
+	//atributo buses contendra una lista con los buses de la empresa cardinalidad[0..*]
+	private ArrayList<Bus> buses = new ArrayList<Bus>();
+	
 	private static ArrayList<Empresa> empresas = new ArrayList<Empresa>();
 	
 	
@@ -46,7 +50,7 @@ public class Empresa {
 		this.buses = buses;
 	}
 	
-	//Get&Set_Empresas
+	
 	public static ArrayList<Empresa> getEmpresas() {
 		return empresas;
 	}
