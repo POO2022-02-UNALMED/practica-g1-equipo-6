@@ -9,9 +9,6 @@ public class Ruta implements Serializable{
 	
 	private int idRuta;
     private String nombre; 
-    private String origen;
-    private String destino;//Agregue origen y destino y km valen
-    private int km;
     private static  ArrayList<Ruta> rutas;
     private int numVisitantes;
 	static {
@@ -26,12 +23,6 @@ public class Ruta implements Serializable{
     	this.idRuta = idRuta;
     	this.nombre = nombre;
     	rutas.add(this); 
-    }
-    
-    public Ruta(String origen, String destino, int km) {//Agregue este constructor valen
-    	this.origen=origen;
-    	this.destino=destino;
-    	this.km=km;
     }
 
     public static void quitarRuta(String ruta) {
@@ -105,24 +96,6 @@ public class Ruta implements Serializable{
 	
 	public static ArrayList<Ruta> getRutas(){ 
 		return rutas;	
-	}
-	public String getOrigen() {
-		return origen;
-	}
-	public void setOrigen(String origen) {
-		this.origen = origen;
-	}
-	public String getDestino() {
-		return destino;
-	}
-	public void setDestino(String destino) {
-		this.destino = destino;
-	}
-	public int getKm() {
-		return km;
-	}
-	public void setKm(int km) {
-		this.km = km;
 	}
 	
 	@Override
