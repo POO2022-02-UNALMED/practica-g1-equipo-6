@@ -10,7 +10,7 @@ public class Tiquete implements Serializable {
 		
 		private int codigo;
 		protected Pasajero pasajero;
-		private String sillaTiquete; //cambie tipo bus por tipo string
+		protected String sillaTiquete; //cambie tipo bus por tipo string, se cambio la visibilidad :(
 		protected Viaje viaje;
 		protected int valor;
 		protected LocalDate fechaCompra;

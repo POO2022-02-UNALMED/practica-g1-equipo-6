@@ -21,7 +21,7 @@ public class Viaje implements Serializable{
 	private boolean enViaje;
 	private static ArrayList<Viaje> viajes= new ArrayList<Viaje>();
 	private static ArrayList<String> lugares= new ArrayList<String>();
-	private ArrayList<Tiquete> tiquetesTodos;
+	private static ArrayList<Tiquete> tiquetesTodos;
 
 //contructor
 
@@ -128,13 +128,15 @@ public class Viaje implements Serializable{
 
 	//metodos 
 
-//	public String sillasDisponibles() {
-//		
-//	}
+	public void sillasDisponibles() {
+		for(Tiquete tiquete : tiquetesTodos){
+			if(tiquete.getEstado() == false){
+				System.out.println("la silla: "+tiquete.getSillaTiquete()+"esta disponible");
+				}
+			}
+		}
+		
 
-	/*public int asignarsilla() {
-		return c;
-	}*/
 
 
 	public static Tiquete generarTiquete(int codigo, Pasajero pasajero, String sillaTiquete, Viaje viaje, int valor, LocalDate fechaCompra) {
@@ -148,6 +150,10 @@ public class Viaje implements Serializable{
 
 	public static void setViajes(ArrayList<Viaje> viajes) {
 		Viaje.viajes = viajes;
+	}
+	
+	public static ArrayList<Tiquete> gettiquetesTodos(){
+		return tiquetesTodos;
 	}
 
 

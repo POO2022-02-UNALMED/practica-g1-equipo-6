@@ -95,71 +95,12 @@ public class Main {
         Viaje viaje9 = new Viaje(8,"8:00","16:00", intermedio,15000, "Cali", "Medellin", B2, true);
         Viaje viaje10 = new Viaje(9,"8:00","16:00", intermedio,15000, "Cali", "Cartagena", B1, false);
         Viaje viaje8 = new Viaje(10,"8:00","17:00",intermedio,15000, "Cartagena", "Medellin", B2, true);
-
         
-        while(running) {
-            showMenu();
-            while(election < 0 || election > 6) {
-                try {
-                    election = in.nextInt();
-                    if (election < 0 || election > 7) {
-                        System.out.println("Opcion invalida..., probemos otra vez");
-                        System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5] [6]");
-                    }
-                } catch (Exception InputMismatchException) {
-                    // TODO: handle exception
-                    System.out.println("No te entiendo..., probemos otra vez");
-                    System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5] [6]");
-                }
-            }
-            System.out.println("");
-            executeFunctionality(election, in);
-            election = -1;
-        }
+        
+        
+    
     }
-    public static void showMenu() {
-        System.out.println(" ");
-        System.out.println("----- M E N U -----");
-
-        System.out.println("[1] Rentabilidad");
-        System.out.println("[2] Optimiazcion ruta");
-        System.out.println("[3] Gestionar Tiquete");
-        System.out.println("[4] Gestionar Viaje - (cc) ");
-        System.out.println("[5] Compra de Tiquete");
-        System.out.println("[6] Salir\n");
-
-    }
-
-    public static void executeFunctionality(int election, Scanner in) {
-        switch (election) {
-            case 1:
-                //AdminViaje.visualizarEstadisticas();
-                break;
-            case 2:
-                System.out.println("GESTIONAR CONDUCTORES");
-                //Gestionar.gestionarConductores();
-                break;
-            case 3:
-                //Gestionar.gestionarEspecialistas();
-                break;
-            case 4:
-                System.out.println("Gestionar Viaje - CC: ");
-                Scanner ccGV = new Scanner(System.in);
-                int ccCG = ccGV.nextInt();
-                //Gestionar.gestionarViajes(ccCG);
-                break;
-            case 5:
-            	comprarTiquete.comprarTiqueteTerminal();
-                break;
-            	
-            case 6:
-            	System.out.println("Vuelva pronto");
-            	Serializador.serializarTodo();
-            	System.exit(0);
-                running = false;
-                break;
-        }
-    }
+    
 }
         
         
