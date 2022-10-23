@@ -8,17 +8,17 @@ public class Viaje implements Serializable{
 	
 	private static final long serialVersionUID= 8L;
 	
-	private int id;//Agregue este id valen
+	private int id;
 	private String hora_inicio;
 	private String hora_llegada;
 	private String origen;
-	private String destino; //Agregue destino y origen valen 
-	//private Ruta ruta; //quite ruta valen
+	private String destino;
+	private Ruta ruta; 
 	private LocalDate fecha;
 	private int precio;
-	//private Conductor conductor; Quite conductor valen
 	private Bus bus;
 	private boolean enViaje;
+	private static ArrayList<LocalDate> fechasViaje = new ArrayList<LocalDate>();
 	private static ArrayList<Viaje> viajes= new ArrayList<Viaje>();
 	private static ArrayList<String> lugares= new ArrayList<String>();
 	private static ArrayList<Tiquete> tiquetesTodos;
@@ -26,86 +26,38 @@ public class Viaje implements Serializable{
 //contructor
 
 	public Viaje(int id,String hora_inicio, String hora_llegada, LocalDate fecha, int precio, 
-			String origen, String destino,Bus bus, Boolean enViaje ) {
+			Ruta ruta, Bus bus, Boolean enViaje ) {
 		this.hora_inicio= hora_inicio;
 		this.hora_llegada= hora_llegada;
 		this.fecha= fecha;
-		this.origen= origen; //Agregue id , origen y destino y quite conductor y ruta valen
-		this.destino=destino;
-		//this.origen= this.ruta.getOrigen();
-		//this.destino= this.ruta.getDestino();
-		//this.ruta= ruta;//Ruta debe crear el destino y el origen sino debe tenerlas el viaje 
+		this.ruta= ruta;
 		this.precio= precio;
-		//this.conductor= conductor;
 		this.enViaje =enViaje;
 		this.bus= bus;
-		this.tiquetesTodos= new ArrayList<>();
+		Viaje.tiquetesTodos= new ArrayList<>();
 		
 		
 		for (String sillaEnVehiculo: this.bus.getSillas()) {
 			int genId = id;
-			this.tiquetesTodos.add(new Tiquete(genId, null, sillaEnVehiculo, this,10000, fecha));//Valor tengo duda
+			Viaje.tiquetesTodos.add(new Tiquete(genId, null, sillaEnVehiculo, this,10000, fecha));//Valor tengo duda
 			
 		}
 		viajes.add(this);
 	}
-	
-		
 	public Viaje(){
-		}
+}
+	
+	
+	//getter y setter 
+	public static ArrayList<LocalDate> getFechasViaje() {
+		return fechasViaje;
+	}
+
+	public static void setFechasViaje(ArrayList<LocalDate> fechasViaje) {
+		Viaje.fechasViaje = fechasViaje;
+	}
 
 		
-	//gett y setter  
-	public String getHora_inicio() {
-		return hora_inicio;
-	}
-	public void setHora_inicio(String hora_inicio) {
-		this.hora_inicio = hora_inicio;
-	}
-	public String getHora_llegada() {
-		return hora_llegada;
-	}
-	public void setHora_llegada(String hora_llegada) {
-		this.hora_llegada = hora_llegada;
-	}
-	public LocalDate getFecha() {
-		return fecha;
-	}
-	public void setFecha(LocalDate fecha) {
-		this.fecha = fecha;
-	}
-	public int getPrecio() {
-		return precio;
-	}
-	public void setPrecio(int precio) {
-		this.precio = precio;
-	}
-//	public Conductor getConductor() {
-//		return conductor;
-//	}
-//	public void setConductor(Conductor conductor) {
-//		this.conductor = conductor;
-//	}
-	public Bus getBus() {
-		return bus;
-	}
-	public void setBus(Bus bus) {
-		this.bus = bus;
-	}
-	public boolean getEnViaje() {
-		return enViaje;
-	}
-	public void setEnViaje(boolean enViaje) {
-		this.enViaje = enViaje;
-	}
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
 	public String getOrigen() {
 		return origen;
 	}
@@ -124,9 +76,83 @@ public class Viaje implements Serializable{
 	public void setDestino(String destino) {
 		this.destino = destino;
 	}
-	
 
-	//metodos 
+
+	public Ruta getRuta() {
+		return ruta;
+	}
+
+
+	public void setRuta(Ruta ruta) {
+		this.ruta = ruta;
+	}
+
+
+	public ArrayList<Tiquete> getTiquetesTodos() {
+		return tiquetesTodos;
+	}
+
+
+	public void setTiquetesTodos(ArrayList<Tiquete> tiquetesTodos) {
+		Viaje.tiquetesTodos = tiquetesTodos;
+	}
+
+	
+	public static void setLugares(ArrayList<String> lugares) {
+		Viaje.lugares = lugares;
+	}
+
+	public String getHora_inicio() {
+		return hora_inicio;
+	}
+	
+	public void setHora_inicio(String hora_inicio) {
+		this.hora_inicio = hora_inicio;
+	}
+	
+	public String getHora_llegada() {
+		return hora_llegada;
+	}
+	
+	public void setHora_llegada(String hora_llegada) {
+		this.hora_llegada = hora_llegada;
+	}
+	
+	public LocalDate getFecha() {
+		return fecha;
+	}
+	
+	public void setFecha(LocalDate fecha) {
+		this.fecha = fecha;
+	}
+	
+	public int getPrecio() {
+		return precio;
+	}
+	
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
+	
+	public Bus getBus() {
+		return bus;
+	}
+	
+	public void setBus(Bus bus) {
+		this.bus = bus;
+	}
+	
+	public boolean getEnViaje() {
+		return enViaje;
+	}
+	
+	public void setEnViaje(boolean enViaje) {
+		this.enViaje = enViaje;
+	}
+	
+	public int getId() {
+		return id;
+	}
 
 	public void sillasDisponibles() {
 		for(Tiquete tiquete : tiquetesTodos){
@@ -138,10 +164,15 @@ public class Viaje implements Serializable{
 		
 
 
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 
 	public static Tiquete generarTiquete(int codigo, Pasajero pasajero, String sillaTiquete, Viaje viaje, int valor, LocalDate fechaCompra) {
 		return new Tiquete(codigo, pasajero, sillaTiquete, viaje, valor, fechaCompra);
 	}
+	
 	
 	public static ArrayList<Viaje> getViajes() {
 		return viajes;
@@ -150,40 +181,30 @@ public class Viaje implements Serializable{
 
 	public static void setViajes(ArrayList<Viaje> viajes) {
 		Viaje.viajes = viajes;
+		
+		
 	}
 	
 	public static ArrayList<Tiquete> gettiquetesTodos(){
 		return tiquetesTodos;
-	}
 
-
-	public ArrayList<Tiquete> tiquetesDisponibles(){
-		ArrayList<Tiquete> tiqueteFinal = new ArrayList<>();
 		for(Tiquete tiquete : tiquetesTodos){
-			if(tiquete.getEstado() == false){
-				tiqueteFinal.add(tiquete);
 			}
-		}
-		return tiqueteFinal;
 	}
-
 	public void eliminarViaje(){
 		Viaje.viajes.remove(this);
 	}
 	
 	
 	
-	
-	//
 	@Override
 	public String toString() {
 		return "Viaje{" +
-				", origen=" + origen +//Rutas debe crear getOrigen donde saque el origen de las rutas 
+				", origen=" + origen +
 				", destino=" + destino +
 				", fechaViaje=" + fecha +
 				'}';
 	}
-	
 	
 	public static ArrayList<String> getLugares(){
 		for( Viaje viajes: Viaje.getViajes()) {
@@ -191,6 +212,7 @@ public class Viaje implements Serializable{
 				lugares.add(viajes.getOrigen());
 			}
 		}
+		
 		for (Viaje viajes: Viaje.getViajes()) {
 			if(!lugares.contains(viajes.getDestino())) {
 				lugares.add(viajes.getDestino());;
@@ -198,10 +220,13 @@ public class Viaje implements Serializable{
 		}return lugares;
 	}
 	
+	
 	public void eliminarTiquete(Tiquete tiquete) {
 		tiquete=null;
 	}
 
+	
+	
 
 }
 

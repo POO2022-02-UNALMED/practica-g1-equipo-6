@@ -60,6 +60,10 @@ public class Pasajero  implements Serializable  {
 	public static void setPasajeros(ArrayList<Pasajero> pasajeros) {
 		Pasajero.pasajeros = pasajeros;
 	} 
-	
+	@Override
+	public String toString() {
+		return "Nombre del pasajero:" +nombre.toUpperCase()+" "+apellido.toUpperCase()+ //Agregue esto
+				"\r\n"+"No Documento: "+ cedula;
+	}
 	
 }
