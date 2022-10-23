@@ -21,7 +21,7 @@ public class Viaje implements Serializable{
 	private boolean enViaje;
 	private static ArrayList<Viaje> viajes= new ArrayList<Viaje>();
 	private static ArrayList<String> lugares= new ArrayList<String>();
-	private ArrayList<Tiquete> tiquetesTodos;
+	private static ArrayList<Tiquete> tiquetesTodos;
 
 //contructor
 
@@ -159,6 +159,10 @@ public class Viaje implements Serializable{
 			}
 		}
 		return tiqueteFinal;
+	}
+	
+	public static ArrayList<Tiquete> gettiquetesTodos(){
+		return tiquetesTodos;
 	}
 
 	public void eliminarViaje(){

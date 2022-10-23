@@ -2,59 +2,105 @@ package gestorAplicacion.clasesPrincipales;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Bus {
-	String modelo;
-	String placa;
-	int capacidad;
-	Conductor conductor;
-	private ArrayList<String> sillas; //Agregue este atributo valen
-	private static  ArrayList<Bus> buses = new ArrayList<>(); //Agruegue este atributo valen
-	//atributo_interseccion
-	private ArrayList<Empresa> empresa = new ArrayList<Empresa>();
+public abstract class Bus {
+	private Ruta rutaBus;
+	protected int km;
+	protected int precio;
+	protected int capacidad;
+	private static ArrayList<String> sillaNoDisponibles=new ArrayList<String>();
+	protected String modelo;
+	protected String placa;
+	protected Conductor conductor;
+	private static  ArrayList<Bus> buses = new ArrayList<>(); //Agregue este atributo valen
+	private ArrayList<String> sillas;
 	//Constructor
-	public Bus(String modelo, String placa, int capacidad, Conductor conductor,ArrayList<String> sillas){
+	public Bus(String modelo, String placa, Conductor conductor, ArrayList<String> sillas){
 		this.modelo=modelo;
 		this.placa=placa;
-		this.capacidad=capacidad;
 		this.conductor=conductor;
 		this.sillas=sillas;
 		Bus.buses.add(this);
 	}
-	public Bus(String modelo, String placa, int capacidad){
+	public Bus(String modelo, String placa, Conductor conductor, ArrayList<String> sillas,int capacidad){
 		this.modelo=modelo;
 		this.placa=placa;
+		this.conductor=conductor;
+		this.sillas=sillas;
 		this.capacidad=capacidad;
+		Bus.buses.add(this);
 	}
-	public Bus(){
-	
-	}
-	//get&set_Empresa
-	public ArrayList<Empresa> getEmpresa() {
-		return empresa;
-	}
-	public void setEmpresa(ArrayList<Empresa> empresa) {
-		this.empresa = empresa;
-	}
-
-	public ArrayList<String> getSillas() { //Agregue st y get de sillas y de buses
-		return sillas;
-	}
-
-	public void setSillas(ArrayList<String> sillas) {
-		this.sillas = sillas;
-	}
+	//get&set buses
 	public static ArrayList<Bus> getBuses() {
 		return buses;
 	}
-
 	public static void setBuses(ArrayList<Bus> buses) {
 		Bus.buses = buses;
 	}
+	//get&set modelo
+	public String getModelo() {
+		return modelo;
+	}
+	public void setModelo(String modelo) {
+		this.modelo=modelo;
+	}
+	//get&set placa
+	public String getPlaca() {
+		return modelo;
+	}
+	public void setPlaca(String placa) {
+		this.placa=placa;
+	}
+	//get&set conductor
+	public Conductor getConductor() {
+		return conductor;
+	}
+	public void setConductor(Conductor conductor) {
+		this.conductor=conductor;
+	}
+	
+	//get&set sillas
+	public ArrayList<String> getSillas() { //Agregue st y get de sillas y de buses
+		return sillas;
+	}
+	public void setSillas(ArrayList<String> sillas) {
+		this.sillas = sillas;
+	}
+	//get&set capacidad
+	public int getCapacidad() {
+		return capacidad;
+	}
+	public void setCapacidad(int capacidad) {
+		this.capacidad=capacidad;
+	}
+	//get&set sillanodisponible
+	public static ArrayList<String> getSillaNoDisponibles() {
+		return sillaNoDisponibles;
+	}
 
+	public static void setSillaNoDisponibles(String sillaNoDisponibles) {
+		Bus.sillaNoDisponibles.add(sillaNoDisponibles);
+	}
+	//get&set km
+	public int getKm() {
+		return km;
+	}
 
-	//Metodo_adquirir
-	/**public static Servicio adquirirServicio(){
-		return new Servicio();
-		}**/
+	public void setKm(int km) {
+		this.km = km;
+	}
+	//get&set precio
+	public int getPrecio() {
+		return precio;
+	}
 
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
+	
+	
+	//metodos abstractos
+	abstract void sillasDisponibles();//params Viaje viaje
+	abstract String sillaTiquete(Tiquete tiquete);
+	
+	
 }
