@@ -8,7 +8,7 @@ public class Ruta implements Serializable{
 	private static final long serialVersionUID = 5L;
 	
 	private int idRuta;
-    private String nombre; 
+    private String nombre;
     private static  ArrayList<Ruta> rutas;
     private int numVisitantes;
 	static {

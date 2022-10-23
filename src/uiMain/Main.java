@@ -85,16 +85,16 @@ public class Main {
         Bus B3 = new Bus("1999","ABC123",80,con3, sillasv1);
 
         //VIAJES
-        Viaje viaje2 = new Viaje(1,"8:00","12:00",intermedio, 10000, "Monteria", "Pasto", B1, true);
-        Viaje viaje3 = new Viaje(2,"8:00","11:00",fin, 18000, "Medellin", "Manizales", B2, true);
-        Viaje viaje1 = new Viaje(3,"8:00","13:00",intermedio, 22000, "Bello", "Cali", B3, true);
-        Viaje viaje4 = new Viaje(4,"8:00","20:00", fin, 17000, "Medellin", "Cartagena", B1, true);
-        Viaje viaje5 = new Viaje(5,"8:00","14:00",intermedio, 15000, "Pasto", "Monteria", B2, true);
-        Viaje viaje6 = new Viaje(6,"8:00","15:00",intermedio, 15000, "Manizales", "Medellin", B3, true);
-        Viaje viaje7 = new Viaje(7,"8:00","16:00", intermedio,15000, "Cali", "Bello", B1, true);
-        Viaje viaje9 = new Viaje(8,"8:00","16:00", intermedio,15000, "Cali", "Medellin", B2, true);
-        Viaje viaje10 = new Viaje(9,"8:00","16:00", intermedio,15000, "Cali", "Cartagena", B1, false);
-        Viaje viaje8 = new Viaje(10,"8:00","17:00",intermedio,15000, "Cartagena", "Medellin", B2, true);
+        Viaje viaje2 = new Viaje(1,"8:00","12:00",intermedio, Medellin, B3, true,7,40000);
+        Viaje viaje3 = new Viaje(2,"8:00","11:00",fin,Bello, B3, true,7, 40000);
+        Viaje viaje1 = new Viaje(3,"8:00","13:00",intermedio, Popayan, B3, true,7,35000);
+        Viaje viaje4 = new Viaje(4,"8:00","20:00", fin,Cali, B3, true, 7, 37000);
+        Viaje viaje5 = new Viaje(5,"8:00","14:00",intermedio, Monteria, B3, true, 7, 40000);
+        Viaje viaje6 = new Viaje(6,"8:00","15:00",intermedio, Cartagena, B3, true,7, 30000);
+        Viaje viaje7 = new Viaje(7,"8:00","16:00", intermedio, Pasto, B3, true,7,30000);
+        Viaje viaje9 = new Viaje(8,"8:00","16:00", intermedio, Barranquilla, B3, true,7, 35000);
+        Viaje viaje10 = new Viaje(9,"8:00","16:00", intermedio, Manizales, B3, false,7,37000);
+        Viaje viaje8 = new Viaje(10,"8:00","17:00",intermedio,Popayan, B3, true,7, 35000);
 
         
         while(running) {
