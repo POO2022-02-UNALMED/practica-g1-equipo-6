@@ -8,6 +8,9 @@ public class Ruta implements Serializable{
 	private static final long serialVersionUID = 5L;
 	
 	private int idRuta;
+	private int kilometros;
+	private String origen; 
+	private String destino; 
     private String nombre; 
     private static  ArrayList<Ruta> rutas;
     private int numVisitantes;
@@ -18,10 +21,16 @@ public class Ruta implements Serializable{
      /*Desde el constructor se valida para agregar una nueva ruta que no exista previamente y cuando esto pase no
       se crea la instancia
      */
+	
+    public Ruta() { 
+    }
 
-    public Ruta(int idRuta, String nombre) { 
+    public Ruta(int idRuta, String nombre, String origen, String destino,int kilometros) { 
     	this.idRuta = idRuta;
     	this.nombre = nombre;
+    	this.origen = origen;
+    	this.destino = destino;
+    	this.kilometros = kilometros;
     	rutas.add(this); 
     }
 
@@ -83,11 +92,31 @@ public class Ruta implements Serializable{
 		return idRuta;
 	}
 	
+	public void setKilometros(int kilometros) {	
+		this.kilometros = kilometros;}
+	public int getKilometros() {
+		return kilometros;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	public String getOrigen() {
+		return origen;
+	}
+	public void setOrigen(String origen) {
+		this.origen = origen;
+	}
+	
+	public String getDestino() {
+		return destino;
+	}
+	public void setDestino(String destino) {
+		this.destino = destino;
 	}
     
 	public int getNumVisitantes() {
