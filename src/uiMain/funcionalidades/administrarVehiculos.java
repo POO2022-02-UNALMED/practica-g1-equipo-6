@@ -13,7 +13,6 @@ public class administrarVehiculos {
     	static Scanner sc = new Scanner(System.in);
   
     	public static void adminVehiculo(){
-    		Bus Buses = new Bus();
     		System.out.println("Que desea realizar: ");
 	        	System.out.println("0. Agregar Bus ");
 		        System.out.println("1. Eliminar Bus");
@@ -54,8 +53,9 @@ public class administrarVehiculos {
 					if(cond =! c){
 						cond=null;
 						System.out.println("No hay conductors disponibles");
+						System.out.println("Ingrese nuevo conductor");
 						
-						Conductor(nombre,cedula,celular,sueldo)						
+						Conductor(nomb,ced,cel,suel)						
 					}
 					
 					
