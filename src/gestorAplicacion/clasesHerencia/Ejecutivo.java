@@ -7,12 +7,14 @@ import gestorAplicacion.clasesPrincipales.*;
 public class Ejecutivo extends Bus {
 	private final int precio=500;//precio por km
 	int codigo;
+	public static ArrayList<Ejecutivo> ejecutivos = new ArrayList<Ejecutivo>();
 	
 	//constructor
 	public Ejecutivo(String modelo, String placa, Conductor conductor,int capacidad,ArrayList<String> sillas) {
 		super(modelo,placa,conductor,sillas);
 		this.capacidad=capacidad;
 		this.codigo=150;
+		Ejecutivo.ejecutivos.add(this);
 	}
 	
 	//get_precio

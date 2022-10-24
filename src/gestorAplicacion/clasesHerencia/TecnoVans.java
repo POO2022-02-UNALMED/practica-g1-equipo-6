@@ -9,12 +9,15 @@ import gestorAplicacion.clasesPrincipales.Conductor;
 public class TecnoVans extends Bus{
 	int codigo;
 	private final int precio=800;//precio por km
+	public static ArrayList<TecnoVans> tecnosV = new ArrayList<TecnoVans>();
+
 	
 	//constructor
 		public TecnoVans(String modelo, String placa, Conductor conductor, int capacidad, ArrayList<String> sillas) {
 			super(modelo,placa,conductor,sillas);
 			this.capacidad=capacidad;
 			this.codigo=200;
+			TecnoVans.tecnosV.add(this);
 		}
 	//get&set capacidad
 		public int getCapacidad() {

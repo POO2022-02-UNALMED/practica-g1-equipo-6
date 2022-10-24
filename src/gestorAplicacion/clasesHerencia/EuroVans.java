@@ -9,12 +9,15 @@ import gestorAplicacion.clasesPrincipales.Conductor;
 public class EuroVans extends Bus{
 	private final int precio=1000;
 	int codigo;//precio por km
+	public static ArrayList<EuroVans> eurosV = new ArrayList<EuroVans>();
+
 	
 	//constructor
 		public EuroVans(String modelo, String placa, Conductor conductor, int capacidad, ArrayList<String> sillas) {
 			super(modelo,placa,conductor,sillas);
 			this.capacidad=capacidad;
 			this.codigo=250;
+			EuroVans.eurosV.add(this);
 		}
 	//get&set capacidad
 		public int getCapacidad() {
