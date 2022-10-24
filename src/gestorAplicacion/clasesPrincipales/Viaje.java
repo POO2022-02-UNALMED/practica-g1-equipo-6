@@ -201,12 +201,12 @@ public class Viaje implements Serializable{
 	
 	
 	public int getCosto() {
-		return costo;
+		return costoViaje;
 	}
 
 	
 	public void setCosto(int costo) {
-		this.costo = costo;
+		this.costoViaje = costo;
 	}
 	
 	//metodos de frecuencia
