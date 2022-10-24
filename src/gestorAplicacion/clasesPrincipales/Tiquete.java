@@ -59,9 +59,6 @@ public class Tiquete{
 	public Viaje getViaje() {
 		return viaje;	}
 
-	public Pasajero getUsuario() {
-		return pasajero;}
-
 	public boolean getEstado() {
 		return estado;
 	}
