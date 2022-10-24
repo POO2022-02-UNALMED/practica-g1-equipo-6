@@ -35,7 +35,7 @@ public class Viaje implements Serializable{
 		this.fecha= fecha;
 		this.origen= ruta.getOrigen();
 		this.destino=ruta.getDestino();
-		this.frecuencia= frecuencia;
+		this.setFrecuencia(frecuencia);
 		this.costoViaje= costoViaje;
 		this.enViaje=enViaje;
 		this.bus= bus;
@@ -212,11 +212,11 @@ public class Viaje implements Serializable{
 	//metodos de frecuencia
 	
 	public void aumentarFrecuencia(int frecuencia){	
-		this.frecuencia += frecuencia;	
+		this.setFrecuencia(this.getFrecuencia() + frecuencia);	
 		}
 
 	public void disminuirFrecuencia(int frecuencia) {	
-		this.frecuencia -= frecuencia;	}
+		this.setFrecuencia(this.getFrecuencia() - frecuencia);	}
 	
 	//metodos creados
 
@@ -258,6 +258,14 @@ public class Viaje implements Serializable{
 				" Destino=" + destino +
 				" FechaViaje=" + fecha +
 				" Precio= "+precio;
+	}
+
+	public int getFrecuencia() {
+		return frecuencia;
+	}
+
+	public void setFrecuencia(int frecuencia) {
+		this.frecuencia = frecuencia;
 	}
 
 }
