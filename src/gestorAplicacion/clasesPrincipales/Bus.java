@@ -24,7 +24,7 @@ public abstract class Bus  implements Serializable {
 	}
 
 	public Bus() {
-		// TODO Auto-generated constructor stub
+		Bus.buses.add(this);
 	}
 
 	//get&set buses
@@ -99,6 +99,14 @@ public abstract class Bus  implements Serializable {
 	public static void setSillaNoDisponibles(ArrayList<String> sillaNoDisponibles) {
 		Bus.sillaNoDisponibles = sillaNoDisponibles;
 	}
+	
+	@Override
+	public String toString() {
+		return "Ruta: "+placa +
+				"Conductor: "+ conductor+
+				"Sillas"+sillas;
+	}
+	
 	//metodos abstractos
 	protected abstract void sillasDisponibles();//params Viaje viaje
 	protected abstract String sillaTiquete(Tiquete tiquete);
