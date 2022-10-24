@@ -1,6 +1,7 @@
 package gestorAplicacion.clasesHerencia;
 import java.util.ArrayList;
 
+
 import gestorAplicacion.clasesPrincipales.*;
 
 public class Ejecutivo extends Bus {
@@ -8,7 +9,7 @@ public class Ejecutivo extends Bus {
 	int codigo;
 	
 	//constructor
-	public Ejecutivo(String modelo, String placa, Conductor conductor, int capacidad, ArrayList<String> sillas) {
+	public Ejecutivo(String modelo, String placa, Conductor conductor,int capacidad,ArrayList<String> sillas) {
 		super(modelo,placa,conductor,sillas);
 		this.capacidad=capacidad;
 		this.codigo=150;
@@ -34,6 +35,7 @@ public class Ejecutivo extends Bus {
 				}
 			}
 		}
+	@Override
 	public String sillaTiquete(Tiquete tiquete) {
 		return tiquete.getSillaTiquete();
 	}

@@ -100,7 +100,7 @@ public abstract class Bus {
 	
 	//metodos abstractos
 	protected abstract void sillasDisponibles();//params Viaje viaje
-	abstract String sillaTiquete(Tiquete tiquete);
+	protected abstract String sillaTiquete(Tiquete tiquete);
 	
 	
 }

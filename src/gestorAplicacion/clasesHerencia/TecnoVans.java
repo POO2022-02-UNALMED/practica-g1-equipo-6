@@ -1,6 +1,7 @@
 package gestorAplicacion.clasesHerencia;
 
 import java.util.ArrayList;
+import gestorAplicacion.clasesPrincipales.*;
 
 import gestorAplicacion.clasesPrincipales.Bus;
 import gestorAplicacion.clasesPrincipales.Conductor;
