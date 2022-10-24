@@ -24,7 +24,7 @@ public class Deserializador {
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
             // Lee el listado de elementos
-            //@SuppressWarnings("unchecked")
+            @SuppressWarnings("unchecked")
 			ArrayList<E> listado = (ArrayList<E>) in.readObject();
 
             // Recorro el ArrayList
