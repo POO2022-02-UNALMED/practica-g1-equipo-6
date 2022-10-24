@@ -2,8 +2,6 @@ package uiMain.funcionalidades;
 import java.time.LocalDate;
 import java.util.Scanner;
 import gestorAplicacion.clasesPrincipales.*;
-import java.time.LocalDate;
-import java.util.Scanner;
 
 public class comprarTiquete {
 	static Scanner sc = new Scanner(System.in);

@@ -24,7 +24,7 @@ public class Main {
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Deserializador.deserializarTodo();
+       // Deserializador.deserializarTodo();
         
         Pasajero u1 = new Pasajero("Andres","Lema",1039458020,30, "example@email.com");
         Pasajero u2 = new Pasajero("Daniel","Estrada",1020486909,24, "example2@email.com");
@@ -87,16 +87,16 @@ public class Main {
         Bus B3 = new TecnoVans("ABC123",cond3, sillasv1);
 
         //VIAJES
-        Viaje viaje2 = new Viaje(1,"8:00","12:00",intermedio,uno, B3, true,7,40000);
-        Viaje viaje3 = new Viaje(2,"8:00","11:00",fin,dos, B3, true,7, 40000);
+        Viaje viaje2 = new Viaje(1,"8:00","12:00",intermedio,uno, B1, true,7,40000);
+        Viaje viaje3 = new Viaje(2,"8:00","11:00",fin,dos, B2, true,7, 40000);
         Viaje viaje1 = new Viaje(3,"8:00","13:00",intermedio, tres, B3, true,7,35000);
-        Viaje viaje4 = new Viaje(4,"8:00","20:00", fin,cuatro, B3, true, 7, 37000);
-        Viaje viaje5 = new Viaje(5,"8:00","14:00",intermedio, cinco, B3, true, 7, 40000);
+        Viaje viaje4 = new Viaje(4,"8:00","20:00", fin,cuatro, B1, true, 7, 37000);
+        Viaje viaje5 = new Viaje(5,"8:00","14:00",intermedio, cinco, B2, true, 7, 40000);
         Viaje viaje6 = new Viaje(6,"8:00","15:00",intermedio, seis, B3, true,7, 30000);
-        Viaje viaje7 = new Viaje(7,"8:00","16:00", intermedio, siete, B3, true,7,30000);
-        Viaje viaje9 = new Viaje(8,"8:00","16:00", intermedio, ocho, B3, true,7, 35000);
+        Viaje viaje7 = new Viaje(7,"8:00","16:00", intermedio, siete, B1, true,7,30000);
+        Viaje viaje9 = new Viaje(8,"8:00","16:00", intermedio, ocho, B2, true,7, 35000);
         Viaje viaje10 = new Viaje(9,"8:00","16:00", intermedio, nueve, B3, false,7,37000);
-        Viaje viaje8 = new Viaje(10,"8:00","17:00",intermedio,uno, B3, true,7, 35000);
+        Viaje viaje8 = new Viaje(10,"8:00","17:00",intermedio,uno, B2, true,7, 35000);
 
         
         while(running) {
@@ -151,7 +151,15 @@ public class Main {
                 //Gestionar.gestionarViajes(ccCG);
                 break;
             case 5:
-            	comprarTiquete.comprarTiqueteTerminal();
+            	comprarTiquete.showMenuTiquete();
+            	System.out.println("");
+            	System.out.println("¿Desea realiza una operación mas(Si-No)?");
+            	String opc = in.next().toUpperCase();
+            	while(opc.equals("SI")) {
+            		AdminViaje.showMenuTiquete();
+            		System.out.println("¿Desea realiza una operación mas (Si-No)?");
+	            	opc = in.next().toUpperCase();
+            	}
                 break;
             	
             case 6:

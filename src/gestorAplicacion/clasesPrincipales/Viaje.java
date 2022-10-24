@@ -6,7 +6,7 @@ import gestorAplicacion.clasesPrincipales.Ruta;
 
 public class Viaje implements Serializable{
 	
-	private static final long serialVersionUID= 8L;
+	private static final long serialVersionUID= 7L;
 	
 	private int id;
 	private int costoViaje;
@@ -35,18 +35,18 @@ public class Viaje implements Serializable{
 		this.fecha= fecha;
 		this.origen= ruta.getOrigen();
 		this.destino=ruta.getDestino();
-		this.frecuencia= frecuencia;
+		this.setFrecuencia(frecuencia);
 		this.costoViaje= costoViaje;
 		this.enViaje=enViaje;
 		this.bus= bus;
 		this.precio= (ruta.getKm()*bus.getPrecioKm());
-		this.tiquetesTodos= new ArrayList<>();
-		this.fechasViaje.add(fecha); 
+		Viaje.tiquetesTodos= new ArrayList<>();
+		Viaje.fechasViaje.add(fecha); 
 		
 		
 		for (String sillaEnVehiculo: this.bus.getSillas()) {
 			int genId = id;
-			this.tiquetesTodos.add(new Tiquete(genId, null, sillaEnVehiculo, this,precio, fecha));
+			Viaje.tiquetesTodos.add(new Tiquete(genId, null, sillaEnVehiculo, this,precio, fecha));
 		}
 		viajes.add(this);
 	}
@@ -212,11 +212,11 @@ public class Viaje implements Serializable{
 	//metodos de frecuencia
 	
 	public void aumentarFrecuencia(int frecuencia){	
-		this.frecuencia += frecuencia;	
+		this.setFrecuencia(this.getFrecuencia() + frecuencia);	
 		}
 
 	public void disminuirFrecuencia(int frecuencia) {	
-		this.frecuencia -= frecuencia;	}
+		this.setFrecuencia(this.getFrecuencia() - frecuencia);	}
 	
 	//metodos creados
 
@@ -258,6 +258,14 @@ public class Viaje implements Serializable{
 				" Destino=" + destino +
 				" FechaViaje=" + fecha +
 				" Precio= "+precio;
+	}
+
+	public int getFrecuencia() {
+		return frecuencia;
+	}
+
+	public void setFrecuencia(int frecuencia) {
+		this.frecuencia = frecuencia;
 	}
 
 }
