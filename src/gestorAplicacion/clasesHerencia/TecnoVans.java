@@ -1,16 +1,19 @@
-package gestorAplicacion.clasesPrincipales;
+package gestorAplicacion.clasesHerencia;
 
 import java.util.ArrayList;
 
-public class EuroVans extends Bus{
-	private final int precio=1000;
-	int codigo;//precio por km
+import gestorAplicacion.clasesPrincipales.Bus;
+import gestorAplicacion.clasesPrincipales.Conductor;
+
+public class TecnoVans extends Bus{
+	int codigo;
+	private final int precio=800;//precio por km
 	
 	//constructor
-		public EuroVans(String modelo, String placa, Conductor conductor, int capacidad, ArrayList<String> sillas) {
+		public TecnoVans(String modelo, String placa, Conductor conductor, int capacidad, ArrayList<String> sillas) {
 			super(modelo,placa,conductor,sillas);
 			this.capacidad=capacidad;
-			this.codigo=250;
+			this.codigo=200;
 		}
 	//get&set capacidad
 		public int getCapacidad() {
