@@ -34,9 +34,9 @@ public class Optimizacion {
 		for(Viaje viaje : Viaje.getViajes()){
 			if(viaje.getDestino().equalsIgnoreCase(destino) & viaje.tiquetesDisponibles().size()!=0 
 					& viaje.getEnViaje()) {
-				int capacidadcal=(viaje.getBus().getCapacidad()*10)/100;
+				int capacidadcal=(viaje.getBus().getCapacidad()*10)/100;//utilizar funcion camilo
 				if(viaje.tiquetesDisponibles().size()<=capacidadcal) {//cambiar 10 por capacidad
-					System.out.println("Ingrese hora a la que quiere salir");
+					System.out.println("Ingrese hora a la que quiere salir");//el viaje que deseas comprar tiene pocos tiquetes, tenemos la opcion de promo
 					String HoraCliente=sc.next();
 					String HoraViaje=viaje.getHora_inicio();
 					String[] partesCli = HoraCliente.split(":");
@@ -79,7 +79,7 @@ public class Optimizacion {
 		System.out.println("Ingrese el destino");
 		String destino=sc.next().toUpperCase();
 		int promEjecutivo=0; //si se pone como final
-		int promEuro=0;
+		int promEuro=0;//se puede usar el codigo para acceder a la instancia
 		int promTecno=0;
 		int iterador_1=0;
 		int iterador_2=0;
@@ -136,5 +136,8 @@ public class Optimizacion {
 				}
 			}
 		}
+	}
+	public static void OptimizarBuses() {
+		
 	}
 }

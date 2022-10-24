@@ -56,10 +56,10 @@ public class Empresa {
 	}
 
 	//Metodo_crearViaje
-	public static Viaje crearViaje(int id,String hora_inicio, String hora_llegada, LocalDate fecha, int precio, 
-			String origen, String destino,Bus bus, Boolean enViaje){
+	public static Viaje crearViaje(int id,String hora_inicio, String hora_llegada, LocalDate fecha,
+			Ruta ruta,Bus bus, Boolean enViaje, int frecuencia, int costoViaje){
 
-		return new Viaje(id, hora_inicio, hora_llegada, fecha, precio, origen, destino, bus, enViaje);
+		return new Viaje(id, hora_inicio, hora_llegada, fecha, ruta, bus, enViaje, frecuencia, costoViaje);
 		}
 	//Metodo_CancelarViaje
 	public void CancelarViaje(Viaje viaje) {

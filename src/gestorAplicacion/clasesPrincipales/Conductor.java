@@ -19,7 +19,7 @@ public class Conductor implements Serializable {
 		this.cedula = cedula;
 		this.celular = celular;
 		this.sueldo = sueldo;
-		disponible=true;
+		setDisponible(true);
         Conductor.conductores.add(this);
 	}
 
@@ -63,6 +63,14 @@ public class Conductor implements Serializable {
 
 	public static void setConductores(ArrayList<Conductor> conductores) {
 		Conductor.conductores = conductores;
+	}
+
+	public boolean isDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
 	}
 
 	//Metodos

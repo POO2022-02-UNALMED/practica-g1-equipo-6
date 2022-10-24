@@ -82,9 +82,9 @@ public class Main {
         Conductor cond3 = new Conductor("Dona Marta",1021123856,3004589696l, 4200);
         
         //////BUS
-        Bus B1 = new Ejecutivo("1998","AAA000",cond1,26, sillasv3); 
-        Bus B2 = new EuroVans("2000","ZZZ999",cond2,14,sillasv2);
-        Bus B3 = new TecnoVans("1999","ABC123",cond3,22, sillasv1);
+        Bus B1 = new Ejecutivo("AAA000",cond1,sillasv3); 
+        Bus B2 = new EuroVans("ZZZ999",cond2,sillasv2);
+        Bus B3 = new TecnoVans("ABC123",cond3, sillasv1);
 
         //VIAJES
         Viaje viaje2 = new Viaje(1,"8:00","12:00",intermedio,uno, B3, true,7,40000);

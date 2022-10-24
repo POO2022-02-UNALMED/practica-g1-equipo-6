@@ -9,7 +9,7 @@ public class Viaje implements Serializable{
 	private static final long serialVersionUID= 8L;
 	
 	private int id;
-	private int costo;
+	private int costoViaje;
 	private String hora_inicio;
 	private String hora_llegada;
 	private String origen;
@@ -28,7 +28,7 @@ public class Viaje implements Serializable{
 	//contructor
 
 	public Viaje(int id,String hora_inicio, String hora_llegada, LocalDate fecha,
-		Ruta ruta,Bus bus, Boolean enViaje, int frecuencia, int costo ) {
+		Ruta ruta,Bus bus, Boolean enViaje, int frecuencia, int costoViaje ) {
 		this.hora_inicio= hora_inicio;
 		this.id=id; 
 		this.hora_llegada= hora_llegada;
@@ -36,10 +36,10 @@ public class Viaje implements Serializable{
 		this.origen= ruta.getOrigen();
 		this.destino=ruta.getDestino();
 		this.frecuencia= frecuencia;
-		this.costo= costo;
+		this.costoViaje= costoViaje;
 		this.enViaje=enViaje;
 		this.bus= bus;
-		this.precio= (ruta.getKm()*bus.getPrecio());
+		this.precio= (ruta.getKm()*bus.getPrecioKm());
 		this.tiquetesTodos= new ArrayList<>();
 		this.fechasViaje.add(fecha); 
 		
@@ -201,12 +201,12 @@ public class Viaje implements Serializable{
 	
 	
 	public int getCosto() {
-		return costo;
+		return costoViaje;
 	}
 
 	
 	public void setCosto(int costo) {
-		this.costo = costo;
+		this.costoViaje = costo;
 	}
 	
 	//metodos de frecuencia
