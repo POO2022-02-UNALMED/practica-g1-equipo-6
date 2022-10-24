@@ -78,25 +78,53 @@ public class Optimizacion {
 		String origen=sc.next().toUpperCase();
 		System.out.println("Ingrese el destino");
 		String destino=sc.next().toUpperCase();
-		int precioProm=0;
-		int iterador=0;
+		int promEjecutivo=0; //si se pone como final
+		int promEuro=0;
+		int promTecno=0;
+		int iterador_1=0;
+		int iterador_2=0;
+		int iterador_3=0;
 		for(Viaje viaje : Viaje.getViajes()){
 			if(viaje.getOrigen().equalsIgnoreCase(origen) & viaje.tiquetesDisponibles().size()!=0 &
 					viaje.getEnViaje()) {
 				if(viaje.getDestino().equalsIgnoreCase(destino)){
-					iterador+=1;
-					precioProm+=precioProm;
-					System.out.println("id : ["+viaje.getId()+"] = " +viaje.toString());
+					if(viaje.getBus()instanceof Ejecutivo) {
+						iterador_1+=1;
+						promEjecutivo+=promEjecutivo;
+						System.out.println("id : ["+viaje.getId()+"] = " +viaje.toString());
+					}
+					else if(viaje.getBus()instanceof EuroVans) {
+						iterador_2+=1;
+						promEuro+=promEuro;
+						System.out.println("id : ["+viaje.getId()+"] = " +viaje.toString());
+					}
+					if(viaje.getBus()instanceof TecnoVans) {
+						iterador_3+=1;
+						promTecno+=promTecno;
+						System.out.println("id : ["+viaje.getId()+"] = " +viaje.toString());
+					}
 					
 				}
 				
 				else if(viaje.getParada().contains(destino)) {
-					if(iterador>0) {
-						iterador=0;
-						precioProm=(int)(precioProm/iterador);
-						viaje.setPrecio(precioProm);
+					if(iterador_1>0) {
+						promEjecutivo=(int)(promEjecutivo/iterador_1);
+						viaje.setPrecio(promEjecutivo);
 						System.out.println("id : ["+viaje.getId()+"] = " +viaje.toString());
+						iterador_1=0;
 						}
+					else if(iterador_2>0) {
+						promEuro=(int)(promEuro/iterador_2);
+						viaje.setPrecio(promEuro);
+						System.out.println("id : ["+viaje.getId()+"] = " +viaje.toString());
+						iterador_2=0;
+					}
+					else if(iterador_3>0) {
+						promTecno=(int)(promTecno/iterador_3);
+						viaje.setPrecio(promTecno);
+						System.out.println("id : ["+viaje.getId()+"] = " +viaje.toString());
+						iterador_3=0;
+					}
 					else {
 						float beta;
 						beta=1/(viaje.getParada().size()+2);
