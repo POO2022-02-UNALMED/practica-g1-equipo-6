@@ -11,19 +11,25 @@ public class AdministrarViaje {
         System.out.println("¿Que operacion desea realizar?");
         System.out.println("[1] Agregar un nuevo viaje");
         System.out.println("[2] Modificar un viaje");
-        System.out.println("[3] Eiminar un viaje");
         int opcion = sc.nextInt();
         switch (opcion) {
         case 1:
-        	AdministrarViaje.;
+        	AdministrarViaje.agregarViaje();
             break;
         case 2:
-        	AdministrarViaje.;   
-        	break;
-        case 3:
-        	AdministrarViaje.;
+        	AdministrarViaje.modificarViaje();   
         	break;
         }
         
     }
+    
+    public static void agregarViaje() {
+    	
+    }
+    
+    public static void modificarViaje() {
+    	
+    }
+    
+    
 }
