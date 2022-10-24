@@ -1,6 +1,9 @@
-package gestorAplicacion.clasesPrincipales;
+package gestorAplicacion.clasesHerencia;
 
 import java.util.ArrayList;
+
+import gestorAplicacion.clasesPrincipales.Bus;
+import gestorAplicacion.clasesPrincipales.Conductor;
 
 public class EuroVans extends Bus{
 	private final int precio=1000;

@@ -1,5 +1,7 @@
-package gestorAplicacion.clasesPrincipales;
+package gestorAplicacion.clasesHerencia;
 import java.util.ArrayList;
+
+import gestorAplicacion.clasesPrincipales.*;
 
 public class Ejecutivo extends Bus {
 	private final int precio=500;//precio por km

@@ -1,6 +1,9 @@
-package gestorAplicacion.clasesPrincipales;
+package gestorAplicacion.clasesHerencia;
 
 import java.util.ArrayList;
+
+import gestorAplicacion.clasesPrincipales.Bus;
+import gestorAplicacion.clasesPrincipales.Conductor;
 
 public class TecnoVans extends Bus{
 	int codigo;
