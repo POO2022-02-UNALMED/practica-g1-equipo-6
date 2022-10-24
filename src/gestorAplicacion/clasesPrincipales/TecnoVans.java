@@ -32,7 +32,7 @@ public class TecnoVans extends Bus{
 		}
 		@Override
 		public void sillasDisponibles() {
-			for(Tiquete tiquete : Viaje.gettiquetesTodos()){
+			for(Tiquete tiquete : Viaje.getTiquetesTodos()){
 				if(tiquete.getEstado() == false){
 					System.out.println("la silla: "+tiquete.getSillaTiquete()+"esta disponible");
 					}

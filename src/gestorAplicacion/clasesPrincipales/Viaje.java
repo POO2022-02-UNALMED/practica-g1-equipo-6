@@ -22,7 +22,7 @@ public class Viaje implements Serializable{
 	private static ArrayList<LocalDate> fechasViaje = new ArrayList<LocalDate>(); //agregue esto
 	private static ArrayList<Viaje> viajes= new ArrayList<Viaje>();
 	private static ArrayList<String> lugares= new ArrayList<String>();
-	private ArrayList<Tiquete> tiquetesTodos;
+	private static ArrayList<Tiquete> tiquetesTodos;
 	private int frecuencia;
 
 	//contructor
@@ -143,13 +143,13 @@ public class Viaje implements Serializable{
 	}
 
 
-	public ArrayList<Tiquete> getTiquetesTodos() { 
+	public static ArrayList<Tiquete> getTiquetesTodos() { 
 		return tiquetesTodos;
 	}
 
 
-	public void setTiquetesTodos(ArrayList<Tiquete> tiquetesTodos) { 
-		this.tiquetesTodos = tiquetesTodos;
+	public static void setTiquetesTodos(ArrayList<Tiquete> tiquetesTodos) { 
+		Viaje.tiquetesTodos = tiquetesTodos;
 	}
 
 
