@@ -19,6 +19,11 @@ public class TecnoVans extends Bus{
 			this.codigo=200;
 			TecnoVans.tecnosV.add(this);
 		}
+		
+		public TecnoVans() {
+
+		}
+		
 	//get&set capacidad
 		public int getCapacidad() {
 			return capacidad;

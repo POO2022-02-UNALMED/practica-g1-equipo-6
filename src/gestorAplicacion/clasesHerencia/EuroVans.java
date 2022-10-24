@@ -19,6 +19,11 @@ public class EuroVans extends Bus{
 			this.codigo=250;
 			EuroVans.eurosV.add(this);
 		}
+		
+		public EuroVans() {
+			
+		}
+		
 	//get&set capacidad
 		public int getCapacidad() {
 			return capacidad;

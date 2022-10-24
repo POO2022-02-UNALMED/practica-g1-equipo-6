@@ -17,6 +17,10 @@ public class Ejecutivo extends Bus {
 		Ejecutivo.ejecutivos.add(this);
 	}
 	
+	public Ejecutivo() {
+		
+	}
+	
 	//get_precio
 	public int getPrecioKm() {
 		return precioKm;

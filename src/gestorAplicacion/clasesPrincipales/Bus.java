@@ -25,6 +25,7 @@ public abstract class Bus  implements Serializable {
 	}
 
 	public Bus() {
+		// TODO Auto-generated constructor stub
 	}
 
 	//get&set buses
