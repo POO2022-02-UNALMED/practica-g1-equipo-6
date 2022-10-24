@@ -7,6 +7,11 @@ import gestorAplicacion.clasesPrincipales.Bus;
 import gestorAplicacion.clasesPrincipales.Conductor;
 
 public class EuroVans extends Bus{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private final int precioKm=1000;
 	int codigo;//precio por km
 	private final int capacidad=14;

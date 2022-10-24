@@ -1,6 +1,5 @@
 package gestorAplicacion.clasesPrincipales;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public abstract class Bus  implements Serializable {

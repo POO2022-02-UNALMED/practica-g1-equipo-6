@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import gestorAplicacion.clasesPrincipales.*;
 
 public class Ejecutivo extends Bus {
+	
+	private static final long serialVersionUID = 1L;
+
+	
 	private final int precioKm=500;//precio por km
 	int codigo;
 	private final int capacidad=26;
@@ -19,6 +23,11 @@ public class Ejecutivo extends Bus {
 	
 	public Ejecutivo() {
 		
+	}
+	
+	//get&set capacidad
+	public int getCapacidad() {
+		return capacidad;
 	}
 	
 	//get_precio

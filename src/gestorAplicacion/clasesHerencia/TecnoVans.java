@@ -7,6 +7,9 @@ import gestorAplicacion.clasesPrincipales.Bus;
 import gestorAplicacion.clasesPrincipales.Conductor;
 
 public class TecnoVans extends Bus{
+	
+	private static final long serialVersionUID = 1L;
+	
 	int codigo;
 	private final int precioKm=800;//precio por km
 	private final int capacidad=22;
