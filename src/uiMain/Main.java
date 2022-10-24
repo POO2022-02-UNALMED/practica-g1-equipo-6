@@ -152,6 +152,14 @@ public class Main {
                 break;
             case 5:
             	comprarTiquete.showMenuTiquete();
+            	System.out.println("");
+            	System.out.println("¿Desea realiza una operación mas(Si-No)?");
+            	String opc = in.next().toUpperCase();
+            	while(opc.equals("SI")) {
+            		AdminViaje.showMenuTiquete();
+            		System.out.println("¿Desea realiza una operación mas (Si-No)?");
+	            	opc = in.next().toUpperCase();
+            	}
                 break;
             	
             case 6:
