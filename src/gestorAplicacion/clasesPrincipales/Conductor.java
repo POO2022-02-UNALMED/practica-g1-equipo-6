@@ -19,6 +19,7 @@ public class Conductor implements Serializable {
 		this.cedula = cedula;
 		this.celular = celular;
 		this.sueldo = sueldo;
+		disponible=true;
         Conductor.conductores.add(this);
 	}
 
