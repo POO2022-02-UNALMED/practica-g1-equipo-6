@@ -8,14 +8,14 @@ import gestorAplicacion.clasesPrincipales.Conductor;
 
 public class TecnoVans extends Bus{
 	int codigo;
-	private final int precio=800;//precio por km
+	private final int precioKm=800;//precio por km
+	private final int capacidad=22;
 	public static ArrayList<TecnoVans> tecnosV = new ArrayList<TecnoVans>();
 
 	
 	//constructor
-		public TecnoVans(String modelo, String placa, Conductor conductor, int capacidad, ArrayList<String> sillas) {
-			super(modelo,placa,conductor,sillas);
-			this.capacidad=capacidad;
+		public TecnoVans(String placa, Conductor conductor, ArrayList<String> sillas) {
+			super(placa,conductor,sillas);
 			this.codigo=200;
 			TecnoVans.tecnosV.add(this);
 		}
@@ -23,11 +23,9 @@ public class TecnoVans extends Bus{
 		public int getCapacidad() {
 			return capacidad;
 		}
-		public void setCapacidad(int capacidad) {
-			this.capacidad=capacidad;
-		}
-		public int getPrecio() {
-			return precio;
+
+		public int getPrecioKm() {
+			return precioKm;
 		}
 		//get&set codigo
 		public int getCodigo() { //desde aqui agregue 
