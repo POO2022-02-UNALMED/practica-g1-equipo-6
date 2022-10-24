@@ -39,15 +39,16 @@ public class Main {
 
         ////RUTAS
          
-        Ruta Amazonas = new Ruta(1,"RUTA1","MEDELLIN", "AMAZONAS",1792);
-        Ruta Bello = new Ruta(12,"RUTA2","MEDELLIN", "BELLO",12);
-        Ruta Popayan = new Ruta(7,"RUTA3","MEDELLIN", "POPAYAN",437);
-        Ruta Cali = new Ruta(8,"RUTA4","MEDELLIN", "CALI",331);
-        Ruta Monteria = new Ruta(5,"RUTA5","MEDELLIN", "MONTERIA",404);
-        Ruta Cartagena = new Ruta(4,"RUTA6","MEDELLIN", "CARTAGENA",461);
-        Ruta Pasto = new Ruta(6,"RUTA7","MEDELLIN", "PASTO",814);
-        Ruta Barranquilla = new Ruta(9,"RUTA8","MEDELLIN", "BARRANQUILLA",701);
-        Ruta Manizales = new Ruta(3,"RUTA9","MEDELLIN", "MANIZALES",192);
+        Ruta uno = new Ruta("MONTERIA", "PASTO", 120);
+        Ruta dos = new Ruta("MEDELLIN", "MANIZALES",100);
+        Ruta tres = new Ruta("POPAYAN", "CALI",80);
+        Ruta cuatro = new Ruta("MEDELLIN", "CARTAGENA",150);
+        Ruta cinco = new Ruta("PASTO", "MONTERIA",120);
+        Ruta seis = new Ruta("MANIZALES", "MEDELLIN",100);
+        Ruta siete = new Ruta("CALI","POPAYAN",80);
+        Ruta ocho = new Ruta("CALI", "CARTAGENA",170);
+        Ruta nueve = new Ruta("CARTAGENA", "MEDELLIN",150);
+        Ruta diez = new Ruta("CARTAGENA","CALI",170);
         
       ///SILLAS
         ArrayList<String> sillasv1 = new ArrayList<String>();
@@ -85,16 +86,16 @@ public class Main {
         TecnoVans B3 = new TecnoVans("1999","ABC123",cond3,120, sillasv1);
 
         //VIAJES
-        Viaje viaje2 = new Viaje(1,"8:00","12:00",intermedio, Medellin, B3, true,7,40000);
-        Viaje viaje3 = new Viaje(2,"8:00","11:00",fin,Bello, B3, true,7, 40000);
-        Viaje viaje1 = new Viaje(3,"8:00","13:00",intermedio, Popayan, B3, true,7,35000);
-        Viaje viaje4 = new Viaje(4,"8:00","20:00", fin,Cali, B3, true, 7, 37000);
-        Viaje viaje5 = new Viaje(5,"8:00","14:00",intermedio, Monteria, B3, true, 7, 40000);
-        Viaje viaje6 = new Viaje(6,"8:00","15:00",intermedio, Cartagena, B3, true,7, 30000);
-        Viaje viaje7 = new Viaje(7,"8:00","16:00", intermedio, Pasto, B3, true,7,30000);
-        Viaje viaje9 = new Viaje(8,"8:00","16:00", intermedio, Barranquilla, B3, true,7, 35000);
-        Viaje viaje10 = new Viaje(9,"8:00","16:00", intermedio, Manizales, B3, false,7,37000);
-        Viaje viaje8 = new Viaje(10,"8:00","17:00",intermedio,Popayan, B3, true,7, 35000);
+        Viaje viaje2 = new Viaje(1,"8:00","12:00",intermedio,uno, B3, true,7,40000);
+        Viaje viaje3 = new Viaje(2,"8:00","11:00",fin,dos, B3, true,7, 40000);
+        Viaje viaje1 = new Viaje(3,"8:00","13:00",intermedio, tres, B3, true,7,35000);
+        Viaje viaje4 = new Viaje(4,"8:00","20:00", fin,cuatro, B3, true, 7, 37000);
+        Viaje viaje5 = new Viaje(5,"8:00","14:00",intermedio, cinco, B3, true, 7, 40000);
+        Viaje viaje6 = new Viaje(6,"8:00","15:00",intermedio, seis, B3, true,7, 30000);
+        Viaje viaje7 = new Viaje(7,"8:00","16:00", intermedio, siete, B3, true,7,30000);
+        Viaje viaje9 = new Viaje(8,"8:00","16:00", intermedio, ocho, B3, true,7, 35000);
+        Viaje viaje10 = new Viaje(9,"8:00","16:00", intermedio, nueve, B3, false,7,37000);
+        Viaje viaje8 = new Viaje(10,"8:00","17:00",intermedio,uno, B3, true,7, 35000);
 
         
         while(running) {
