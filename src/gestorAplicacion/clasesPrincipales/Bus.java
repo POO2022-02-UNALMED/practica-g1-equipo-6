@@ -23,20 +23,10 @@ public abstract class Bus  implements Serializable {
 		this.sillas=sillas;
 		Bus.buses.add(this);
 	}
-<<<<<<< Updated upstream
-	public Bus(String modelo, String placa, Conductor conductor, ArrayList<String> sillas,int capacidad){
-		this.modelo=modelo;
-		this.placa=placa;
-		this.conductor=conductor;
-		this.sillas=sillas;
-		this.capacidad=capacidad;
-		Bus.buses.add(this);
-	}
+
 	public Bus() {
 	}
-=======
 
->>>>>>> Stashed changes
 	//get&set buses
 	public static ArrayList<Bus> getBuses() {
 		return buses;
