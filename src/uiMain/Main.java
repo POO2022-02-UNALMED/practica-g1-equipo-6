@@ -156,7 +156,7 @@ public class Main {
             	System.out.println("¿Desea realiza una operación mas(Si-No)?");
             	String opc = in.next().toUpperCase();
             	while(opc.equals("SI")) {
-            		AdminViaje.showMenuTiquete();
+            		comprarTiquete.showMenuTiquete();
             		System.out.println("¿Desea realiza una operación mas (Si-No)?");
 	            	opc = in.next().toUpperCase();
             	}
