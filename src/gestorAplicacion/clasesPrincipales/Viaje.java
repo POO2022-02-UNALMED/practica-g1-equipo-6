@@ -39,7 +39,7 @@ public class Viaje implements Serializable{
 		this.costoViaje= costoViaje;
 		this.enViaje=enViaje;
 		this.bus= bus;
-		this.precio= (ruta.getKm()*bus.getPrecio());
+		this.precio= (ruta.getKm()*bus.getPrecioKm());
 		this.tiquetesTodos= new ArrayList<>();
 		this.fechasViaje.add(fecha); 
 		

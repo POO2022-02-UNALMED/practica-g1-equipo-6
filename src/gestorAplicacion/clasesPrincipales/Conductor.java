@@ -11,6 +11,7 @@ public class Conductor implements Serializable {
 	private int cedula;
 	private long celular;
 	private int sueldo;
+	private boolean disponible;
 	private static ArrayList<Conductor> conductores = new ArrayList<>();
 	
 	public Conductor(String nombre, int cedula, long celular, int sueldo) {
@@ -18,6 +19,7 @@ public class Conductor implements Serializable {
 		this.cedula = cedula;
 		this.celular = celular;
 		this.sueldo = sueldo;
+		disponible=true;
         Conductor.conductores.add(this);
 	}
 

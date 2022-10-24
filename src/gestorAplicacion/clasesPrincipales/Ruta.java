@@ -2,14 +2,16 @@ package gestorAplicacion.clasesPrincipales;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-public class Ruta {
+public class Ruta implements Serializable {
+	
+	private static final long serialVersionUID = 5L;
+	
 	private int idRuta;
     private String nombre; 
     private String origen;
     private String destino;
     private int km;
     private static  ArrayList<Ruta> rutas;
-    private int numVisitantes;
 	static {
 		rutas = new ArrayList<Ruta>();
 	}
@@ -39,47 +41,6 @@ public class Ruta {
 		}
 	}
     
-    // hV es la ruta con su respectivo historico de viajes
-
-    public static String historicoViajes(String nomRutas) {
-    	String hV = "";
-    	
-    	if (!rutas.isEmpty()) {
-    		for(Ruta c: rutas) {
-    			if (c.nombre.equals(nomRutas)) {
-    				hV = "La Ruta " + c.nombre + "a tenido " + c.numVisitantes; //Numero de visitantes es de tipo String mirar que compile
-    			}else {
-    				hV = "La ruta " +  nomRutas + " no existe dentro de nuestra base de datos";
-    			}
-    		}
-    		
-    	}else {
-    		hV = "La ruta " + nomRutas + "no existe";	
-    	}
-		return hV;
-    } 
-    
-    public String historicoViajes() {  
-    	
-    	String hV = "";
-    	if (!rutas.isEmpty()) {
-    		for(Ruta c: rutas) {
-    			if (c.nombre.equals(this.nombre)) {
-    				hV = "La ruta " + c.nombre + "a tenido " + c.numVisitantes;
-    			}else {
-    				hV = "La ruta " +  this.nombre + " no existe dentro de nuestra base de datos";
-    			}
-    		}
-    		
-    	}else {
-    		hV = "La ciudad " + this.nombre + "no existe";	
-    	}
-		return hV;
-    }
-    
-	public void anadirVisitantes(int numVisitantes) {
-		this.numVisitantes += numVisitantes;
-	}
 	
 	public void setIdRuta(int idRuta) {	
 		this.idRuta = idRuta;}
@@ -94,10 +55,6 @@ public class Ruta {
 		this.nombre = nombre;
 	}
     
-	public int getNumVisitantes() {
-		return numVisitantes;
-	}
-	
 	public static ArrayList<Ruta> getRutas(){ 
 		return rutas;	
 	}

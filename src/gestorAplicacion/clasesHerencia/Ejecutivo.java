@@ -5,21 +5,25 @@ import java.util.ArrayList;
 import gestorAplicacion.clasesPrincipales.*;
 
 public class Ejecutivo extends Bus {
-	private final int precio=500;//precio por km
+	private final int precioKm=500;//precio por km
 	int codigo;
+	private final int capacidad=26;
 	public static ArrayList<Ejecutivo> ejecutivos = new ArrayList<Ejecutivo>();
 	
 	//constructor
-	public Ejecutivo(String modelo, String placa, Conductor conductor,int capacidad,ArrayList<String> sillas) {
-		super(modelo,placa,conductor,sillas);
-		this.capacidad=capacidad;
+	public Ejecutivo(String placa, Conductor conductor,ArrayList<String> sillas) {
+		super(placa,conductor,sillas);
 		this.codigo=150;
 		Ejecutivo.ejecutivos.add(this);
 	}
 	
+	public Ejecutivo() {
+		
+	}
+	
 	//get_precio
-	public int getPrecio() {
-		return precio;
+	public int getPrecioKm() {
+		return precioKm;
 	}
 	//get&set codigo
 	public int getCodigo() { //desde aqui agregue 
