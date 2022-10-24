@@ -30,6 +30,8 @@ public abstract class Bus {
 		this.capacidad=capacidad;
 		Bus.buses.add(this);
 	}
+	public Bus() {
+	}
 	//get&set buses
 	public static ArrayList<Bus> getBuses() {
 		return buses;
