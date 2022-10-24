@@ -44,19 +44,19 @@ public class comprarTiquete {
 		int bus= sc.nextInt();
 		if(bus==1) {
 			for(Viaje viajes: Viaje.getViajes()) { //Recorre todos los viajes 
-				if(viajes.getBus().codigo==150) {//Valida que el codigo del bus sea igual al dado
+				if(viajes.getBus().getCodigo()==150) {//Valida que el codigo del bus sea igual al dado
 					System.out.println(viajes); //imprime los viajes que coinciden con la coondicion(Ejecutivo)
 				}
 			}
 		}else if(bus==2) {
 			for(Viaje viajes: Viaje.getViajes()) {
-				if(viajes.getBus().codigo==200) {
+				if(viajes.getBus().getCodigo()==200) {
 					System.out.println(viajes);
 				}
 			}
 		}else {
 			for(Viaje viajes: Viaje.getViajes()) {
-				if(viajes.getBus().codigo==250) {
+				if(viajes.getBus().getCodigo()==250) {
 					System.out.println(viajes);
 				}
 			}

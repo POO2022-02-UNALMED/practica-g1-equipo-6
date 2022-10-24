@@ -7,6 +7,7 @@ public abstract class Bus {
 	protected int km;
 	protected int precio;
 	protected int capacidad;
+	private int codigo; 
 	private static ArrayList<String> sillaNoDisponibles=new ArrayList<String>();
 	protected String modelo;
 	protected String placa;
@@ -98,6 +99,16 @@ public abstract class Bus {
 	}
 	
 	
+	
+	public int getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	public static void setSillaNoDisponibles(ArrayList<String> sillaNoDisponibles) {
+		Bus.sillaNoDisponibles = sillaNoDisponibles;
+	}
 	//metodos abstractos
 	protected abstract void sillasDisponibles();//params Viaje viaje
 	protected abstract String sillaTiquete(Tiquete tiquete);
