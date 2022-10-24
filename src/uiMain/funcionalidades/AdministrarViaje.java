@@ -8,7 +8,7 @@ public class AdministrarViaje {
         System.out.println(" ");
         System.out.println("----- SISTEMA DE ADMINISTRACION DE VIAJES -----");
         
-        System.out.println("¿Que operacion desea realizar?");
+        System.out.println("ï¿½Que operacion desea realizar?");
         System.out.println("[1] Agregar un nuevo viaje");
         System.out.println("[2] Modificar un viaje");
         System.out.println("[3] Eiminar un viaje");
