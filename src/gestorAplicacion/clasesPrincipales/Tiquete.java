@@ -4,7 +4,10 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Tiquete{
+public class Tiquete implements Serializable {
+	
+		private static final long serialVersionUID = 6L;
+
 		
 		private int codigo;
 		protected Pasajero pasajero; //porque es protected?

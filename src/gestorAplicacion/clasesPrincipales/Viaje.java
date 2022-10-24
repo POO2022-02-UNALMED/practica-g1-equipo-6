@@ -6,7 +6,7 @@ import gestorAplicacion.clasesPrincipales.Ruta;
 
 public class Viaje implements Serializable{
 	
-	private static final long serialVersionUID= 8L;
+	private static final long serialVersionUID= 7L;
 	
 	private int id;
 	private int costoViaje;
@@ -40,13 +40,13 @@ public class Viaje implements Serializable{
 		this.enViaje=enViaje;
 		this.bus= bus;
 		this.precio= (ruta.getKm()*bus.getPrecioKm());
-		this.tiquetesTodos= new ArrayList<>();
-		this.fechasViaje.add(fecha); 
+		Viaje.tiquetesTodos= new ArrayList<>();
+		Viaje.fechasViaje.add(fecha); 
 		
 		
 		for (String sillaEnVehiculo: this.bus.getSillas()) {
 			int genId = id;
-			this.tiquetesTodos.add(new Tiquete(genId, null, sillaEnVehiculo, this,precio, fecha));
+			Viaje.tiquetesTodos.add(new Tiquete(genId, null, sillaEnVehiculo, this,precio, fecha));
 		}
 		viajes.add(this);
 	}
