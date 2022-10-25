@@ -135,7 +135,15 @@ public class Main {
     public static void executeFunctionality(int election, Scanner in) {
         switch (election) {
             case 1:
-                //AdminViaje.visualizarEstadisticas();
+                Admin.showMenuRentabilidad();
+                System.out.println("");
+            	System.out.println("¿Desea realiza una operación mas(Si-No)?");
+            	String opcion1 = in.next().toUpperCase();
+            	while(opcion1.equals("SI")) {
+            		Admin.showMenuRentabilidad();
+            		System.out.println("¿Desea realiza una operación mas (Si-No)?");
+	            	opcion1 = in.next().toUpperCase();
+            	}
                 break;
             case 2:
                 System.out.println("GESTIONAR CONDUCTORES");
