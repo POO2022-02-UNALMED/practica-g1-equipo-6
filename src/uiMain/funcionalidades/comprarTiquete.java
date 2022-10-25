@@ -117,7 +117,7 @@ public class comprarTiquete {
 			}
 		}
 	public static Tiquete comprarTiqueteTerminal(){
-        Pasajero compradorBase = new Pasajero("Juan","Ardila",1002819665,21, "FLOTAAPPCOMPRADOR"); //creo una instancia de pasajero
+        Pasajero compradorBase = new Pasajero("Juan","Ardila",1002819665,21, "JuanArdila@gmail.com"); //creo una instancia de pasajero
         Tiquete finalTiquete = new Tiquete(); //creo unainstancia de tiqquete vacio
         System.out.println("Quieres buscar un bus por: ");
 		System.out.println("0. Origen");
