@@ -281,7 +281,9 @@ public class Viaje implements Serializable{
 		this.frecuencia = frecuencia;
 	}
 
+
 	public static void listadoViajes() {
+		// TODO Auto-generated method stub
 		for(int i=0; i<Viaje.getViajes().size();i++) {
 			System.out.println("["+i+"] "+Viaje.getViajes().get(i));
 		}

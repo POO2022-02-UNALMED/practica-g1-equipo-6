@@ -1,8 +1,12 @@
 package gestorAplicacion.clasesPrincipales;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Empresa {
+public class Empresa   implements Serializable  {
+	
+	private static final long serialVersionUID = 4L;
+	
 	private ArrayList<Conductor> conductores = new ArrayList<Conductor>();//atributo conductores contendra una lista con los conductores de la empresa cardinalidad[0..*]
 	private ArrayList<Viaje> viajes = new ArrayList<Viaje>();//atributo viajes contendra una lista con los viajes de la empresa cardinalidad[0..*]
 	private ArrayList<Bus> buses = new ArrayList<Bus>();//atributo buses contendra una lista con los buses de la empresa cardinalidad[0..*]
@@ -63,10 +67,10 @@ public class Empresa {
 		}
 	
 	//Metodo_crearViaje
-	public static void crearViaje(int id,String hora_inicio, String hora_llegada, Ruta ruta,Bus bus,int frecuencia, int costoViaje){
+	public static void crearViaje(int id,String hora_inicio, String hora_llegada, Ruta rut,Bus bus,int frequency, int costoViaje){
 
-		 new Viaje(id, hora_inicio, hora_llegada, ruta, bus, frecuencia, costoViaje);
-		}
+		 new Viaje(id, hora_inicio, hora_llegada, rut, bus, frequency, costoViaje);
+	}
 	//Metodo_CancelarViaje
 	public void CancelarViaje(Viaje viaje) {
 		viaje=null;

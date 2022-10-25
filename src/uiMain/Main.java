@@ -114,14 +114,14 @@ public class Main {
             while(election < 0 || election > 6) {
                 try {
                     election = in.nextInt();
-                    if (election < 0 || election > 7) {
+                    if (election < 0 || election > 6) {
                         System.out.println("Opcion invalida..., probemos otra vez");
-                        System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5] [6]");
+                        System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5]");
                     }
                 } catch (Exception InputMismatchException) {
                     // TODO: handle exception
                     System.out.println("No te entiendo..., probemos otra vez");
-                    System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5] [6]");
+                    System.out.println("Recuerda, elije una de las opciones [1] [2] [3] [4] [5]");
                 }
             }
             System.out.println("");
