@@ -22,12 +22,14 @@ public class administrarVehiculos {
 			        System.out.println("Porfavor ingresa una opcion valida");
 			        opcionelegida = sc.nextInt();
 		        }
-	        	System.out.println("Los tipos de buses con los que contamos son: ");
-	        	System.out.println("0.  Ejecutivo de maximo 26 pasajeros");
-		        System.out.println("1.  TecnoVans de maximo 22 pasajeros");
-		        System.out.println("2.  EuroVans de maximo 14 pasajeros");
+
 		     
 		        if(opcionelegida==0) {
+		        	System.out.println("Los tipos de buses con los que contamos son: ");
+		        	System.out.println("0.  Ejecutivo de maximo 26 pasajeros");
+			        System.out.println("1.  TecnoVans de maximo 22 pasajeros");
+			        System.out.println("2.  EuroVans de maximo 14 pasajeros");
+			        
 		        	System.out.println("Que tipo de bus vas a crear: ");
 		        	int tipobus= sc.nextInt();
 		        	while (tipobus!=0 & tipobus!=1 & tipobus!=2) {
@@ -39,8 +41,8 @@ public class administrarVehiculos {
 		        	System.out.println("Ingresa el numero de la placa");
 		        	String pla = sc.next();	        	
 		        	
-					for(Conductor c: Conductor.getConductores()) { //Recorre todos los viajes 
-						if(c.isDisponible() == false) {
+					for(Conductor c: Conductor.getConductores()) { //Recorre todos los conductores 
+						if(c.isDisponible() == false) { //Verifica si un conductor disponoble (no esta asginado a ningun bus)
 							cond =c;
 							break;
 						}
@@ -55,10 +57,10 @@ public class administrarVehiculos {
 			        	String nomb = sc.next();	  
 			        	
 			        	System.out.println("Cedula");
-			        	int ced = sc.nextInt();
+			        	long ced = sc.nextLong();
 			        	
 			        	System.out.println("Celular");
-			        	int cel = sc.nextInt();
+			        	long cel = sc.nextLong();
 			        	
 			        	System.out.println("Salario");
 			        	int suel = sc.nextInt();
@@ -92,26 +94,32 @@ public class administrarVehiculos {
 		        else if(opcionelegida==1) {
 		        	
 		        	System.out.println("Ingrese la placa del bus que va ha eliminar: ");
-		        	String plac = sc.next();	   
+		        	String plac = sc.next();	 
+		        	int check=0;
 		        	
 					for(Bus b: Bus.getBuses()) { //Recorre todos los viajes 
 						if(b.getPlaca() == plac) {
 							Bus.getBuses().remove(b);
+							check=1;
 							break;
 							}
 						}
+					if(check==0) {
+						System.out.println("no existe un bus con esa placa ");	
+					}
 		        }
 		        
 		        else if(opcionelegida==2) {
+		        	int check2=0;
 		        	System.out.println("Ingrese nombre de Conductor a Cambiar");
 		        	String cond1 = sc.next();	
 		        	
 		        	System.out.println("Ingrese nombre de nuevo conductor");
 		        	String cond2 = sc.next();	 
 		        	
-					for(Conductor c: Conductor.getConductores()) { //Recorre todos los viajes 
+					for(Conductor c: Conductor.getConductores()) { //Recorre todos los conductores
 						if(c.getNombre() == cond1) {
-							
+							check2=1;
 							c.setNombre(cond2);
 				        	
 				        	System.out.println("Cedula del nuevo conductor");
@@ -130,6 +138,9 @@ public class administrarVehiculos {
 						}
 		        	
 
+					}
+					if(check2==0) {
+						System.out.println("no existe un conductor con ese nombre ");	
 					}
 		        }
 		        
