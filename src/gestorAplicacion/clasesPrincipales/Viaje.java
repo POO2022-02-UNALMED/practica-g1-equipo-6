@@ -157,21 +157,10 @@ public class Viaje implements Serializable{
 	}
 
 
-	public void setOrigen(String origen) {
-		this.origen = origen;
-	}
-
-
 	public String getDestino() {
 		return destino;
 	}
 
-
-	public void setDestino(String destino) {
-		this.destino = destino;
-	}
-
-	
 
 	public static ArrayList<LocalDate> getFechasViaje() { 
 		return fechasViaje;
