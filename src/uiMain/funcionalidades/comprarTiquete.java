@@ -236,6 +236,10 @@ public class comprarTiquete {
 			     }
 		      }
 	 }else if(opcionCompra==3) {
+		 System.out.println("Las fechas disponibles son: ");//agregue esto
+			for(Viaje viajes: Viaje.getViajes()) {
+				System.out.println(viajes.getFecha());
+			}
 		 System.out.println("Ingresa la fecha del viaje (aaaa-mm-dd) : ");
 		 String opcionFecha = sc.next();
 		 LocalDate localDate = LocalDate.parse(opcionFecha);//lo mismo pero con getfecha

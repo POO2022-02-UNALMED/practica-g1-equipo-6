@@ -105,7 +105,7 @@ public class Main {
         Viaje viaje6 = new Viaje(6,"8:00","15:00",intermedio, seis, B3, true,7, 30000);
         Viaje viaje7 = new Viaje(7,"8:00","16:00", intermedio, siete, B1, true,7,30000);
         Viaje viaje9 = new Viaje(8,"8:00","16:00", intermedio, ocho, B2, true,7, 35000);
-        Viaje viaje10 = new Viaje(9,"8:00","16:00", intermedio, nueve, B3, false,7,37000);
+        Viaje viaje10 = new Viaje(9,"8:00","16:00", intermedio, nueve, B3, true,7,37000);
         Viaje viaje8 = new Viaje(10,"8:00","17:00",intermedio,diez, B2, true,7, 40000);
 
         
