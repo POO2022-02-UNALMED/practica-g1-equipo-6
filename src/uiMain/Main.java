@@ -24,7 +24,7 @@ public class Main {
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-       // Deserializador.deserializarTodo();
+    	Deserializador.deserializarTodo();
         
         Pasajero u1 = new Pasajero("Andres","Lema",1039458020,30, "example@email.com");
         Pasajero u2 = new Pasajero("Daniel","Estrada",1020486909,24, "example2@email.com");
