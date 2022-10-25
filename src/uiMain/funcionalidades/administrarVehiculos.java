@@ -99,6 +99,7 @@ public class administrarVehiculos {
 		        	System.out.println("Ingrese la placa del bus que va ha eliminar: ");
 		        	String plac = sc.next();	 
 		        	int check=0;
+
 					for(Bus b: Bus.getBuses()) { //Recorre todos los viajes 
 						if(b.getPlaca() == plac) {
 							Bus.getBuses().remove(b);

@@ -175,6 +175,8 @@ public class Main {
             	System.out.println("¿Desea realiza una operación mas (Si-No)?");
             	String opcion3 = in.next().toUpperCase();
             	while(opcion3.equals("SI")) {
+                	Optimizacion.showMenuTiquete();                                                                    	
+            		System.out.println("¿Desea realiza una operación mas (Si-No)?");                                  	
             		opcion3 = in.next().toUpperCase();
             	}
             	break;
@@ -184,6 +186,8 @@ public class Main {
             	System.out.println("¿Desea realiza una operación mas (Si-No)?");
             	String opcion4 = in.next().toUpperCase();
             	while(opcion4.equals("SI")) {
+                	AdministrarViaje.showMenuViaje();                                                                    	
+            		System.out.println("¿Desea realiza una operación mas (Si-No)?");                                  	
             		opcion4 = in.next().toUpperCase();
             	}
                 break;
