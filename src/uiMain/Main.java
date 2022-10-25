@@ -161,9 +161,16 @@ public class Main {
                 //Gestionar.gestionarConductores();
                 break;
             case 3:
-                System.out.println("Optimizacion ruta");
-                //Gestionar.gestionarEspecialistas();
-                break;
+                Optimizacion.showMenuTiquete();
+                System.out.println("");
+            	System.out.println("¿Desea realiza una operación mas (Si-No)?");
+            	String opcion3 = in.next().toUpperCase();
+            	while(opcion3.equals("SI")) {
+                	Optimizacion.showMenuTiquete();                                                                    	//SOLO UN OPC
+            		System.out.println("¿Desea realiza una operación mas (Si-No)?");                                  	//AGREGAR VALIDACION DE SI Y NO
+            		opcion3 = in.next().toUpperCase();
+            	}
+            	break;
             case 4:
             	AdministrarViaje.showMenuViaje();
             	System.out.println("");
