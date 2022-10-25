@@ -1,5 +1,6 @@
 package uiMain.funcionalidades;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 import gestorAplicacion.clasesPrincipales.*;
@@ -13,6 +14,7 @@ public class AdministrarViaje {
         System.out.println("¿Que operación desea realizar?");
         System.out.println("[1] Agregar un nuevo viaje");
         System.out.println("[2] Modificar un viaje");
+        System.out.println("[2] Cancelar un viaje");
         int opcion = sc.nextInt();
         switch (opcion) {
         case 1:
@@ -20,6 +22,9 @@ public class AdministrarViaje {
             break;
         case 2:
         	AdministrarViaje.modificarViaje();   
+        	break;
+        case 3:
+        	AdministrarViaje.cancelarViaje();   
         	break;
         }
         
@@ -33,7 +38,7 @@ public class AdministrarViaje {
 		String hora_llegada=sc.next();
 		System.out.println("Seleccione una de las siguientes rutas");
 		System.out.println("En caso de que no se encuentre la ruta necesitada, ingrese -1, para ingresar una nueva");
-		Ruta.listadoRutas();
+		Ruta.listadoRutas(); //imprime las rutas 
 		int rutaSeleccionada=sc.nextInt();
 		Ruta ruta;
 		if(rutaSeleccionada==-1) {
@@ -71,7 +76,44 @@ public class AdministrarViaje {
     }
     
     public static void modificarViaje() {
+		System.out.println("Seleccione uno de los siguientes viajes");
+    	Viaje.listadoViajes(); //imprime los viajes 
+		int viajeSeleccionado=sc.nextInt();
+		Viaje.getViajes().get(viajeSeleccionado);
+		while(true) {
+	        System.out.println("¿Que le desea modificar al viaje?");
+	        System.out.println("[1] Fecha");
+	        System.out.println("[2] Precio");
+	        int opcion = sc.nextInt();
+	        switch (opcion) {
+	        case 1:
+	    		System.out.println("Digite la nueva fecha del viaje (YYYY-MM-DD)");
+	    		LocalDate fechaNueva=LocalDate.parse(sc.next());
+	    		Viaje.getViajes().get(viajeSeleccionado).setFecha(fechaNueva);
+	        	break;
+	        case 2:
+	    		System.out.println("Digite el nuevo precio del viaje");
+	    		int precioViaje=sc.nextInt();
+	    		Viaje.getViajes().get(viajeSeleccionado).setPrecio(precioViaje);
+	        	break;
+	        }
+			Viaje.getViajes().get(viajeSeleccionado);
+			
+	        System.out.println("¿Desea modificar algo mas (Si-No)?");
+    		if(sc.next().toUpperCase().equals("NO")) {
+    			break;
+    		}
+		}
+
     	
+    	
+    }
+    
+    public static void cancelarViaje() {
+		System.out.println("Seleccione uno de los siguientes viajes");
+    	Viaje.listadoViajes(); //imprime los viajes 
+		int viajeSeleccionado=sc.nextInt();
+		Viaje.getViajes().get(viajeSeleccionado).eliminarViaje();
     }
     
     

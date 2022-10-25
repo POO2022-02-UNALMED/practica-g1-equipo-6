@@ -281,6 +281,12 @@ public class Viaje implements Serializable{
 		this.frecuencia = frecuencia;
 	}
 
+	public static void listadoViajes() {
+		for(int i=0; i<Viaje.getViajes().size();i++) {
+			System.out.println("["+i+"] "+Viaje.getViajes().get(i));
+		}
+	}
+	
 }
 
 	
