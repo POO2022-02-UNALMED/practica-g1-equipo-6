@@ -14,9 +14,6 @@ public class Deserializador {
     public static <E> void deserializador(List<E> list, String className) {
     	
         try {
-            String path = System.getProperty("user.dir") + "/src/baseDatos/temp/" + className + ".txt"; // Ruta del archivo que se va a cargar
-            File archivo = new File(path);  // Ruta donde crear este archivo, si aun no existe
-            archivo.createNewFile(); // Crear un nuevo archivo, si no existe
             FileInputStream fileIn = new FileInputStream(path); // de donde cargar el archivo
 
             // Si el archivo esta vacio se lanza un throw EOFException y se muestra como un
