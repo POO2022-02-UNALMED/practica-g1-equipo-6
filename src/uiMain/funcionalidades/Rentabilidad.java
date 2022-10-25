@@ -18,7 +18,7 @@ public class Rentabilidad {
         switch (opcion) {
         
         case 1:
-            Rentabilidad.visualizarEstadisticas();
+            Rentabilidad.visualizarOcupacion();
             break;
         
         case 2:
@@ -28,7 +28,7 @@ public class Rentabilidad {
     }
 
     
-	public static void visualizarEstadisticas(){
+	public static void visualizarOcupacion(){
         System.out.println("----- V I S U A L I Z A R   O C U P A C I O N  D E  V I A J E S  -----");
         for(Viaje viajes: Viaje.getViajes()) {
         	System.out.println("Viaje: "+viajes.getId()+"\r\n"+"Origen: "+viajes.getOrigen()+
