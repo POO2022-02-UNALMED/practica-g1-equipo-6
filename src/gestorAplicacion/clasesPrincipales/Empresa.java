@@ -63,9 +63,9 @@ public class Empresa {
 		}
 	
 	//Metodo_crearViaje
-	public static void crearViaje(String hora_inicio, String hora_llegada, Ruta ruta,Bus bus,int frecuencia, int costoViaje){
+	public static void crearViaje(int id,String hora_inicio, String hora_llegada, Ruta ruta,Bus bus,int frecuencia, int costoViaje){
 
-		 new Viaje(hora_inicio, hora_llegada, ruta, bus, frecuencia, costoViaje);
+		 new Viaje(id, hora_inicio, hora_llegada, ruta, bus, frecuencia, costoViaje);
 		}
 	//Metodo_CancelarViaje
 	public void CancelarViaje(Viaje viaje) {

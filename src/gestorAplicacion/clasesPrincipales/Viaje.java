@@ -50,9 +50,9 @@ public class Viaje implements Serializable{
 		viajes.add(this);
 	}
 	
-	public Viaje(String hora_inicio, String hora_llegada,Ruta ruta,Bus bus, int frecuencia, int costoViaje ) {
+	public Viaje(int id,String hora_inicio, String hora_llegada,Ruta ruta,Bus bus, int frecuencia, int costoViaje ) {
 			this.hora_inicio= hora_inicio;
-			this.id=Viaje.viajes.get(Viaje.viajes.size()-1).getId()+1; 
+			this.id=id; 
 			this.hora_llegada= hora_llegada;
 			this.fecha= LocalDate.now().plusDays(12);
 			this.origen= ruta.getOrigen();

@@ -32,7 +32,9 @@ public class AdministrarViaje {
     
     public static void agregarViaje() {
     	//public Viaje(String hora_inicio, String hora_llegada,Ruta ruta,Bus bus, int frecuencia, int costoViaje) 
-		System.out.println("Digite la hora de inicio del viaje (HH:MM)");
+		System.out.println("Digite id del viaje");
+		int id=sc.nextInt();
+	    	System.out.println("Digite la hora de inicio del viaje (HH:MM)");
 		String hora_inicio=sc.next();
 		System.out.println("Digite la hora de llegada al destino del viaje (HH:MM)");
 		String hora_llegada=sc.next();
@@ -72,7 +74,7 @@ public class AdministrarViaje {
 		int frecuencia=sc.nextInt();
 		System.out.println("Digite el costo del viaje");
 		int costoViaje=sc.nextInt();
-    	Empresa.crearViaje(hora_inicio, hora_llegada, ruta, bus, frecuencia, costoViaje);
+    	Empresa.crearViaje(id, hora_inicio, hora_llegada, ruta, bus, frecuencia, costoViaje);
     }
     
     public static void modificarViaje() {
