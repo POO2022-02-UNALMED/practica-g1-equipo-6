@@ -65,7 +65,7 @@ public class AdministrarViaje {
 		}else {
 			ruta=Ruta.getRutas().get(rutaSeleccionada);
 		}
-		Bus bus;
+		Bus bus=null;
 		
 		
 		System.out.println("Digite la frecuencia del viaje");
