@@ -102,9 +102,9 @@ public abstract class Bus  implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Ruta: "+placa +
-				" Conductor: "+ conductor+
-				" Sillas"+sillas;
+		return "La placa del bus es : "+placa +
+				" Conductor: "+ conductor.getNombre()+
+				" Sillas vendidas :"+sillas;
 	}
 	
 	//metodos abstractos
