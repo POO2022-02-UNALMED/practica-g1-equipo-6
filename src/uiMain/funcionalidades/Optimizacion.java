@@ -24,7 +24,7 @@ public class Optimizacion {
 	//el viaje que deseas comprar tiene pocos tiquetes, tenemos la opcion de promo
 	public static void ObtenerPromocion() {
 		System.out.println("Ingrese su documento");
-		String numDocumento=sc.next().toUpperCase();
+		int numDocumento=sc.nextInt();
 		for(Tiquete tiquetes: Tiquete.getTiquetesComprados()){
 			if(tiquetes.getPasajero().getCedula().equals(numDocumento)){
 				int capacidadcal=(tiquetes.getViaje().getBus().getCapacidad()*90)/100;//cambiar
@@ -56,7 +56,7 @@ public class Optimizacion {
 						    	System.out.println("id : ["+viaje.getId()+"] = " +viaje.toString()+"Precio con descuento"+(viaje.getPrecio()-((viaje.getPrecio()*20)/100)));
 						    	//viaje.setPrecio(viaje.getPrecio()-((viaje.getPrecio()*20)/100));
 						    }
-						    else if(horasDcto>=120 && horasDcto<180){
+						    else if(horasDcto>=120){
 						    	System.out.println(viaje.getPrecio()-((viaje.getPrecio()*30)/100));
 						    	System.out.println("id : ["+viaje.getId()+"] = " +viaje.toString()+"Precio con descuento"+(viaje.getPrecio()-((viaje.getPrecio()*30)/100)));
 						    	//viaje.setPrecio(viaje.getPrecio()-((viaje.getPrecio()*30)/100));
