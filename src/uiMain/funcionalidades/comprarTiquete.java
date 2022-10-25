@@ -40,6 +40,10 @@ public class comprarTiquete {
 		System.out.println("2. Tecnovans");
 		System.out.println("3. Eurovans");
 		int bus= sc.nextInt();
+		while(bus !=1  & bus!=2 & bus!=3){
+			System.out.println("Ingrese una opcion valida");
+			bus= sc.nextInt();
+		}
 		if(bus==1) {
 			for(Viaje viajes: Viaje.getViajes()) { //Recorre todos los viajes 
 				if(viajes.getBus().getCodigo()==150) {//Valida que el codigo del bus sea igual al dado
@@ -52,7 +56,7 @@ public class comprarTiquete {
 					System.out.println(viajes);
 				}
 			}
-		}else {
+		}else if(bus==3) {
 			for(Viaje viajes: Viaje.getViajes()) {
 				if(viajes.getBus().getCodigo()==250) {
 					System.out.println(viajes);
@@ -92,7 +96,7 @@ public class comprarTiquete {
 		}
 	public static void adquirirServicio(){
 		System.out.println("SERVICIOS");
-		System.out.println("Digite un servicio:\r\n\" MALETAS_EXTRA(5000),\r\n"
+		System.out.println("Digite un servicio:"+" MALETAS_EXTRA(5000),\r\n"
 				+ "		ALMOHADA(2500),\r\n"
 				+ "		AURICULARES(3000),\r\n"
 				+ "		VIAJAR_CON_MASCOTA(10000);");
@@ -201,10 +205,12 @@ public class comprarTiquete {
 		 String opcionOrigen= sc.next().toUpperCase(); //lo mismo pero con destino y origen
 		 System.out.println("Ingresa tu destino");
 		 String opcionDestino = sc.next().toUpperCase();
-		 if(!Viaje.getLugares().contains(opcionOrigen) || !Viaje.getLugares().contains(opcionDestino) ) {
-				System.out.println("Opcion no disponible");
-				return finalTiquete;
-			}
+		 for(Viaje viajes: Viaje.getViajes()) {
+			 if(viajes.getOrigen().equalsIgnoreCase(opcionOrigen) || viajes.getDestino().equalsIgnoreCase(opcionDestino)) {
+				 System.out.println("Viaje no disponible");
+				 return finalTiquete;
+			 }
+		 }
 		 System.out.println("Tus opciones de viaje disponibles son: ");
 		 for(Viaje viaje : Viaje.getViajes()){
 				if(viaje.getOrigen().equalsIgnoreCase(opcionOrigen) & viaje.getDestino().equalsIgnoreCase(opcionDestino) 
