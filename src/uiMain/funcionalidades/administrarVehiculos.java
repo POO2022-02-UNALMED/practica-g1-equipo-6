@@ -73,6 +73,7 @@ public class administrarVehiculos {
 						Bus B1 = new Ejecutivo();
 						B1.setConductor(cond);
 						B1.setPlaca(pla);
+						System.out.println("Bus creado");
 					}
 		        	
 					if(tipobus==1) {
@@ -80,6 +81,7 @@ public class administrarVehiculos {
 						Bus B2 = new TecnoVans();
 						B2.setConductor(cond);
 						B2.setPlaca(pla);
+						System.out.println("Bus creado");
 					}
 					
 					if(tipobus==2) {
@@ -87,6 +89,7 @@ public class administrarVehiculos {
 						Bus B3 = new EuroVans();
 						B3.setConductor(cond);
 						B3.setPlaca(pla);
+						System.out.println("Bus creado");
 					}
 		        	
 		        }
@@ -101,6 +104,7 @@ public class administrarVehiculos {
 						if(b.getPlaca() == plac) {
 							Bus.getBuses().remove(b);
 							check=1;
+							System.out.println("Bus eliminado");
 							break;
 							}
 						}
@@ -133,7 +137,7 @@ public class administrarVehiculos {
 				        	System.out.println("Salario del nuevo conductor");
 				        	int sueld = sc.nextInt();
 							c.setSueldo(sueld);
-												
+							System.out.println("Conductor cambiado");					
 							break;
 						}
 		        	
