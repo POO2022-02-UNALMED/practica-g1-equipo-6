@@ -99,7 +99,7 @@ public class Optimizacion {
 				if(viaje.getDestino().equalsIgnoreCase(destino)){ //se realiza el calculo en caso de que exista un viaje directo
 					if(viaje.getBus()instanceof Ejecutivo) {//calculo viaje directo Ejecutivo
 						iterador_1+=1;
-						promEjecutivo+=promEjecutivo;
+						promEjecutivo+=promEjecutivo;/**es mejor solo asignar el precio y no hacer calculos intermedios **/
 						System.out.println("id : ["+viaje.getId()+"] = " +viaje.toString());
 					}
 					else if(viaje.getBus()instanceof EuroVans) {//calculo viaje directo EuroVan
