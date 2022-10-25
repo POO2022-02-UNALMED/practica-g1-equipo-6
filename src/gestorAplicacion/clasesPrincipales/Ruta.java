@@ -84,12 +84,26 @@ public class Ruta implements Serializable {
 	@Override
 	public String toString() {
 		return "Ruta: "+nombre +
-				" idRuta: "+ idRuta;
+				" idRuta: "+ idRuta +
+				" origen: "+origen +
+				" destino: "+destino;
 	}
 	public ArrayList<String> getParadas() {
 		return paradas;
 	}
 	public void setParadas(ArrayList<String> paradas) {
 		this.paradas = paradas;
+	}
+	
+	//Metodo_crearRuta
+	public static Ruta crearRuta(String origen, String destino, int km, ArrayList<String> paradas){
+
+		 return new Ruta(origen, destino, km, paradas);
+		}
+	
+	public static void listadoRutas() {
+		for(int i=0; i<Ruta.getRutas().size();i++) {
+			System.out.println("["+i+"] "+Ruta.getRutas().get(i));
+		}
 	}
 }

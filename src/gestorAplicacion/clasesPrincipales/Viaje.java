@@ -50,10 +50,35 @@ public class Viaje implements Serializable{
 		viajes.add(this);
 	}
 	
+	public Viaje(String hora_inicio, String hora_llegada,Ruta ruta,Bus bus, int frecuencia, int costoViaje ) {
+			this.hora_inicio= hora_inicio;
+			this.id=Viaje.viajes.get(Viaje.viajes.size()-1).getId()+1; 
+			this.hora_llegada= hora_llegada;
+			this.fecha= LocalDate.now().plusDays(12);
+			this.origen= ruta.getOrigen();
+			this.destino=ruta.getDestino();
+			this.setFrecuencia(frecuencia);
+			this.costoViaje= costoViaje;
+			this.enViaje=true;
+			this.bus= bus;
+			this.precio= (ruta.getKm()*bus.getPrecioKm());
+			Viaje.tiquetesTodos= new ArrayList<>();
+			Viaje.fechasViaje.add(fecha); 
+			
+			
+			for (String sillaEnVehiculo: this.bus.getSillas()) {
+				int genId = id;
+				Viaje.tiquetesTodos.add(new Tiquete(genId, null, sillaEnVehiculo, this,precio, fecha));
+			}
+			viajes.add(this);
+		}
+	
 	//constructor vacio 
 		
 	public Viaje(){
+		viajes.add(this);
 		}
+	
 
 		
 	//gett y setter  
