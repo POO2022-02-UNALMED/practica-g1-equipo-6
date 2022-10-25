@@ -2,11 +2,6 @@ package uiMain.funcionalidades;
 
 import gestorAplicacion.clasesPrincipales.*;
 import gestorAplicacion.clasesHerencia.*;
-
-import gestorAplicacion.*;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class administrarVehiculos {

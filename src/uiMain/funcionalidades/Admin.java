@@ -12,8 +12,8 @@ public class Admin {
         System.out.println(" ");
         System.out.println("----- RENTABILIDAD -----");
 
-        System.out.println("[1] Visualizar estadisticas");
-        System.out.println("[2] Rentabilidad");
+        System.out.println("[1] Visualizar Ocupacion de Viajes");
+        System.out.println("[2] Rentabilidad De Viajes");
         int opcion= sc.nextInt();
         switch (opcion) {
         case 1:
@@ -25,42 +25,30 @@ public class Admin {
            }
     }
 
-    public static void visualizarEstadisticas(){
-        System.out.println("----- V I S U A L I Z A R   E S T A D I S T I C A S -----");
-        for(Viaje viajes: Viaje.getViajes()){
-            System.out.println(" ");
-            System.out.println("Lugares: "+viajes.getDestino());
-            int i=0;
-            for(Tiquete tiquetes: viajes.tiquetesDisponibles()){
-            	if(tiquetes.getViaje().getDestino().equals(viajes.getDestino())){
-            		i++;
-            }
-            System.out.println("Numero de Visitante: "+ i);
-            for(Viaje viaje : Viaje.getViajes()) {
-                if (viaje.getDestino() != null){
-                    System.out.println(" ");
-                    System.out.println("    Viaje: "+ viaje.getId() + "\n   Origen: " + viaje.getOrigen() + "\n   Destino: " + viaje.getDestino() );
-                }
-            }
+    
+
+	
+	public static void visualizarEstadisticas(){
+        System.out.println("----- V I S U A L I Z A R   O C U P A C I O N  D E  V I A J E S  -----");
+        for(Viaje viajes: Viaje.getViajes()) {
+        	System.out.println("Viaje: "+viajes.getId()+"\r\n"+"Origen: "+viajes.getOrigen()+
+        			"\r\n"+"Destino: "+viajes.getDestino());
         }
-        System.out.println("Dime el ID del viaje que deseas gestionar :  ");
-        Scanner viajeIdS = new Scanner(System.in);
-        int viajeID = viajeIdS.nextInt();
+        System.out.println("Ingrese el numero del viaje que desea gestionar: ");
+        int idViaje = sc.nextInt();
         Viaje viajeFinal = new Viaje();
-        for(Viaje viaje1 : Viaje.getViajes()){
-            if(viaje1.getId() == viajeID){
-                viajeFinal = viaje1;
-            }
+        for(Viaje viajes2: Viaje.getViajes()) {
+        	if(viajes2.getId()==idViaje) {
+        		viajeFinal= viajes2;
+        	}
         }
-        if(viajeFinal.getBus() == null){
+        if(viajeFinal.getEnViaje() == false){
             System.out.println("VIAJE NO REGISTRADO");
-        }
-        else{
-            float porcentaje = ((viajeFinal.getBus().getSillas().size() - viajeFinal.tiquetesDisponibles().size())*100)/viajeFinal.getBus().getSillas().size();
+        }else{
+        	float porcentaje = ((viajeFinal.getBus().getSillas().size() - viajeFinal.tiquetesDisponibles().size())*100)/viajeFinal.getBus().getSillas().size();
             System.out.println("    Promedio de ocupacion: " + porcentaje + " %");
             evaluarPorcentajeOcupacion(viajeFinal, porcentaje);
         }
-    }
 }
 
     public static Viaje evaluarPorcentajeOcupacion(Viaje viaje, float porcentaje){
@@ -69,14 +57,21 @@ public class Admin {
             return viaje;
         }else if(porcentaje >= 40 && porcentaje < 60){
             viaje.disminuirFrecuencia(2);
-            //APLICAR LO DEL BONO
             return viaje;
-        }else if(porcentaje < 10){
-            System.out.println("[1] Eliminar Viaje\n[2] No eliminar, Tener Fe ");
-            Scanner aux = new Scanner(System.in);
-            int propuesta = aux.nextInt();
-            if ( propuesta == 1) {
+        }else if(porcentaje >= 15 && porcentaje < 40){
+            viaje.disminuirFrecuencia(3);
+            return viaje;
+        }else if(porcentaje < 15){
+            System.out.println("[1] Eliminar Viaje\n[2] No eliminar ");
+            int eliminar = sc.nextInt();
+            if ( eliminar == 1) {
                 viaje.eliminarViaje();
+               for(Tiquete tiqueteEliminar: viaje.getTiquetesTodos()) {
+            	   if(tiqueteEliminar.getEstado()==true) {
+            		   System.out.println("Al siguiente tiquete hay que hacerle un reembolso: "+"\r\n"+tiqueteEliminar);
+            	   }
+               }
+
             }else{
                 System.out.println("Esperemos que no genere muchas Perdidas");
             }
@@ -86,18 +81,18 @@ public class Admin {
 	
 
     public static void rentabilidad(){
-        System.out.println("--------- R E N T A B I L I D A D ---------" + "\n");        
-        for (Viaje allViajes: Viaje.getViajes()) {
-        	System.out.println(allViajes.toString() + "\n");
+        System.out.println("--------- R E N T A B I L I D A D  D E  V I A J E S---------" + "\n");        
+        for (Viaje todosViajes: Viaje.getViajes()) {
+        	System.out.println(todosViajes.toString() + "\n");
         }
-        System.out.println("Dijite el id del viaje al cual le quiere calcular la rentabilidad");
+        System.out.println("Digite el id del viaje al cual le quiere calcular la rentabilidad");
         Scanner ciudadR = new Scanner(System.in);
         int entrada = ciudadR.nextInt();
         
 
-        for (Viaje allViaje: Viaje.getViajes()) {
-        	if (allViaje.getId() == entrada) {
-        		rentabilidadViaje(allViaje);
+        for (Viaje todosViajes: Viaje.getViajes()) {
+        	if (todosViajes.getId() == entrada) {
+        		rentabilidadViaje(todosViajes);
         	}else {
         		continue;
         	}
@@ -119,7 +114,7 @@ public class Admin {
 	  System.out.println(viaje.toString()+ "\n");
 	  System.out.println( "La ocupacion del vehiculo fue del : " + (100 / viaje.getTiquetesTodos().size() * sillasOcupadas) + "%" + "," + 
 	  " con " + viaje.getTiquetesTodos().size() + " sillas disponibles en total. \n");
-	  System.out.println("Para este viaje se genero por tiquetes $" + valorTiquetes + " y su costo de operaci�n fue de " + viaje.getCosto() + 
+	  System.out.println("Para este viaje se genero por tiquetes $" + valorTiquetes + " y su costo de operacion fue de " + viaje.getCosto() + 
 			  " con una uilidad del " + (valorTiquetes - viaje.getCosto())+ "\n");
 	  
 	  // promedio  por ruta 
