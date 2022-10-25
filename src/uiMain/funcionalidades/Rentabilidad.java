@@ -2,7 +2,7 @@ package uiMain.funcionalidades;
 import java.util.Scanner;
 import gestorAplicacion.clasesPrincipales.*;
 
-public class Admin {
+public class Rentabilidad {
 	Scanner viajeIdS = new Scanner(System.in);
 	static Scanner in =new Scanner(System.in);
 	static Scanner sc =new Scanner(System.in);
@@ -16,24 +16,25 @@ public class Admin {
         System.out.println("[2] Rentabilidad De Viajes");
         int opcion= sc.nextInt();
         switch (opcion) {
+        
         case 1:
-            Admin.visualizarEstadisticas();
+            Rentabilidad.visualizarEstadisticas();
             break;
+        
         case 2:
-            Admin.rentabilidad();
+            Rentabilidad.rentabilidad();
             break;
            }
     }
 
     
-
-	
 	public static void visualizarEstadisticas(){
         System.out.println("----- V I S U A L I Z A R   O C U P A C I O N  D E  V I A J E S  -----");
         for(Viaje viajes: Viaje.getViajes()) {
         	System.out.println("Viaje: "+viajes.getId()+"\r\n"+"Origen: "+viajes.getOrigen()+
         			"\r\n"+"Destino: "+viajes.getDestino());
         }
+        
         System.out.println("Ingrese el numero del viaje que desea gestionar: ");
         int idViaje = sc.nextInt();
         Viaje viajeFinal = new Viaje();
@@ -42,9 +43,12 @@ public class Admin {
         		viajeFinal= viajes2;
         	}
         }
+        
         if(viajeFinal.getEnViaje() == false){
             System.out.println("VIAJE NO REGISTRADO");
-        }else{
+        }
+        
+        else{
         	float porcentaje = ((viajeFinal.getBus().getSillas().size() - viajeFinal.tiquetesDisponibles().size())*100)/viajeFinal.getBus().getSillas().size();
             System.out.println("    Promedio de ocupacion: " + porcentaje + " %");
             evaluarPorcentajeOcupacion(viajeFinal, porcentaje);
@@ -55,13 +59,16 @@ public class Admin {
         if (porcentaje >= 85){
             viaje.aumentarFrecuencia(1);
             return viaje;
-        }else if(porcentaje >= 40 && porcentaje < 60){
+        }
+        else if(porcentaje >= 40 && porcentaje < 60){
             viaje.disminuirFrecuencia(2);
             return viaje;
-        }else if(porcentaje >= 15 && porcentaje < 40){
+        }
+        else if(porcentaje >= 15 && porcentaje < 40){
             viaje.disminuirFrecuencia(3);
             return viaje;
-        }else if(porcentaje < 15){
+        }
+        else if(porcentaje < 15){
             System.out.println("[1] Eliminar Viaje\n[2] No eliminar ");
             int eliminar = sc.nextInt();
             if ( eliminar == 1) {
@@ -72,7 +79,8 @@ public class Admin {
             	   }
                }
 
-            }else{
+            }
+            else{
                 System.out.println("Esperemos que no genere muchas Perdidas");
             }
         }
@@ -85,6 +93,7 @@ public class Admin {
         for (Viaje todosViajes: Viaje.getViajes()) {
         	System.out.println(todosViajes.toString() + "\n");
         }
+        
         System.out.println("Digite el id del viaje al cual le quiere calcular la rentabilidad");
         Scanner ciudadR = new Scanner(System.in);
         int entrada = ciudadR.nextInt();
@@ -130,16 +139,21 @@ public class Admin {
 				  if (tiqueteAux.getEstado()) {
 					  valorTaux +=  tiqueteAux.getValor();
 					  ocupadasAux++;
-				  }else {
+				  }
+				  else {
 					  continue;
 				  }				  			  
 			  }
 			  ocupacionT += 100/cadaViaje.getTiquetesTodos().size()*ocupadasAux;
+			  
 			  cantViajes++;
+			  
 			  costoTot += cadaViaje.getCosto();
+			  
 			  gananciaT += valorTaux;
 			  
-		  }else {
+		  }
+		  else {
 			  continue;
 		  }
 		  System.out.println("La ocupacion promedio para la ruta "+ viaje.getOrigen()+"-"+viaje.getDestino()+ " es del " + ocupacionT/cantViajes + "%"+

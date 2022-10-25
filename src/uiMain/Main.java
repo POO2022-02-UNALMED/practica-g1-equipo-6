@@ -106,7 +106,7 @@ public class Main {
         Viaje viaje7 = new Viaje(7,"8:00","16:00", intermedio, siete, B1, true,7,30000);
         Viaje viaje9 = new Viaje(8,"8:00","16:00", intermedio, ocho, B2, true,7, 35000);
         Viaje viaje10 = new Viaje(9,"8:00","16:00", intermedio, nueve, B3, false,7,37000);
-        Viaje viaje8 = new Viaje(10,"8:00","17:00",intermedio,uno, B2, true,7, 35000);
+        Viaje viaje8 = new Viaje(10,"8:00","17:00",intermedio,uno, B2, true,7, 40000);
 
         
         while(running) {
@@ -145,12 +145,12 @@ public class Main {
     public static void executeFunctionality(int election, Scanner in) {
         switch (election) {
             case 1:
-                Admin.showMenuRentabilidad();
+                Rentabilidad.showMenuRentabilidad();
                 System.out.println("");
             	System.out.println("¿Desea realiza una operación mas(Si-No)?");
             	String opcion1 = in.next().toUpperCase();
             	while(opcion1.equals("SI")) {
-            		Admin.showMenuRentabilidad();
+            		Rentabilidad.showMenuRentabilidad();
             		System.out.println("¿Desea realiza una operación mas (Si-No)?");
 	            	opcion1 = in.next().toUpperCase();
             	}
