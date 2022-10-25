@@ -3,6 +3,8 @@ package uiMain.funcionalidades;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import gestorAplicacion.clasesHerencia.EuroVans;
 import gestorAplicacion.clasesPrincipales.*;
 
 public class AdministrarViaje {
@@ -67,7 +69,17 @@ public class AdministrarViaje {
 		}else {
 			ruta=Ruta.getRutas().get(rutaSeleccionada);
 		}
-		Bus bus=null;
+		Conductor cond2 = new Conductor("Don Hernan",1021123855,3007569696l, 4100);
+		ArrayList<String> sillasv2 = new ArrayList<String>();
+        sillasv2.add("B1");
+        sillasv2.add("B2");
+        sillasv2.add("B3");
+        sillasv2.add("B4");
+        sillasv2.add("B5");
+        sillasv2.add("B6");
+        sillasv2.add("B7");
+        sillasv2.add("B8");
+		Bus bus = new EuroVans("Ztr999",cond2,sillasv2);
 		
 		
 		System.out.println("Digite la frecuencia del viaje");
