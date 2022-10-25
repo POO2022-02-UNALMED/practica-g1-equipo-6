@@ -28,6 +28,7 @@ public class Optimizacion {
 		System.out.println("Ingrese su documento");
 		int numDocumento=sc.nextInt();
 		for(Tiquete tiquetes: Tiquete.getTiquetesComprados()){
+			System.out.println(tiquetes);
 			if(tiquetes.getPasajero().getCedula().equals(numDocumento)){//filtrar los tiquetes del cliente por documento
 				int capacidadcal=(tiquetes.getViaje().getBus().getCapacidad()*90)/100;//cambiar
 				if(tiquetes.getViaje().tiquetesDisponibles().size()>=capacidadcal);//calcular el 90% de disponibilidad del bus
