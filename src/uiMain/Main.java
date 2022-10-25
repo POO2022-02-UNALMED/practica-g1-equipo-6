@@ -24,7 +24,7 @@ public class Main {
     static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-       // Deserializador.deserializarTodo();
+    	Deserializador.deserializarTodo();
         
         Pasajero u1 = new Pasajero("Andres","Lema",1039458020,30, "example@email.com");
         Pasajero u2 = new Pasajero("Daniel","Estrada",1020486909,24, "example2@email.com");
@@ -134,20 +134,21 @@ public class Main {
         System.out.println("----- M E N U -----");
 
         System.out.println("[1] Rentabilidad");
-        System.out.println("[2] Optimiazcion ruta");
-        System.out.println("[3] Gestionar Tiquete");
-        System.out.println("[4] Gestionar Viaje - (cc) ");
+        System.out.println("[2] Gestionar vehiculos");
+        System.out.println("[3] Optimizacion ruta");
+        System.out.println("[4] Gestionar Viaje");
         System.out.println("[5] Compra de Tiquete");
         System.out.println("[6] Salir\n");
 
     }
 
     public static void executeFunctionality(int election, Scanner in) {
+
         switch (election) {
             case 1:
                 Rentabilidad.showMenuRentabilidad();
                 System.out.println("");
-            	System.out.println("¿Desea realiza una operación mas(Si-No)?");
+            	System.out.println("¿Desea realiza una operación mas (Si-No)?");
             	String opcion1 = in.next().toUpperCase();
             	while(opcion1.equals("SI")) {
             		Rentabilidad.showMenuRentabilidad();
@@ -160,18 +161,24 @@ public class Main {
                 //Gestionar.gestionarConductores();
                 break;
             case 3:
+                System.out.println("Optimizacion ruta");
                 //Gestionar.gestionarEspecialistas();
                 break;
             case 4:
-                System.out.println("Gestionar Viaje - CC: ");
-                Scanner ccGV = new Scanner(System.in);
-                int ccCG = ccGV.nextInt();
-                //Gestionar.gestionarViajes(ccCG);
+            	AdministrarViaje.showMenuViaje();
+            	System.out.println("");
+            	System.out.println("¿Desea realiza una operación mas (Si-No)?");
+            	String opcion4 = in.next().toUpperCase();
+            	while(opcion4.equals("SI")) {
+                	AdministrarViaje.showMenuViaje();                                                                    	//SOLO UN OPC
+            		System.out.println("¿Desea realiza una operación mas (Si-No)?");                                  	//AGREGAR VALIDACION DE SI Y NO
+            		opcion4 = in.next().toUpperCase();
+            	}
                 break;
             case 5:
             	comprarTiquete.showMenuTiquete();
             	System.out.println("");
-            	System.out.println("¿Desea realiza una operación mas(Si-No)?");
+            	System.out.println("¿Desea realiza una operación mas (Si-No)?");
             	String opc = in.next().toUpperCase();
             	while(opc.equals("SI")) {
             		comprarTiquete.showMenuTiquete();

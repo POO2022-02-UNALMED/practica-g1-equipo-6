@@ -18,7 +18,7 @@ public class Rentabilidad {
         switch (opcion) {
         
         case 1:
-            Rentabilidad.visualizarEstadisticas();
+            Rentabilidad.visualizarOcupacion();
             break;
         
         case 2:
@@ -28,7 +28,7 @@ public class Rentabilidad {
     }
 
     
-	public static void visualizarEstadisticas(){
+	public static void visualizarOcupacion(){
         System.out.println("----- V I S U A L I Z A R   O C U P A C I O N  D E  V I A J E S  -----");
         for(Viaje viajes: Viaje.getViajes()) {
         	System.out.println("Viaje: "+viajes.getId()+"\r\n"+"Origen: "+viajes.getOrigen()+
@@ -73,7 +73,7 @@ public class Rentabilidad {
             int eliminar = sc.nextInt();
             if ( eliminar == 1) {
                 viaje.eliminarViaje();
-               for(Tiquete tiqueteEliminar: viaje.getTiquetesTodos()) {
+               for(Tiquete tiqueteEliminar: Viaje.getTiquetesTodos()) {
             	   if(tiqueteEliminar.getEstado()==true) {
             		   System.out.println("Al siguiente tiquete hay que hacerle un reembolso: "+"\r\n"+tiqueteEliminar);
             	   }
@@ -97,7 +97,7 @@ public class Rentabilidad {
         System.out.println("Digite el id del viaje al cual le quiere calcular la rentabilidad");
         Scanner ciudadR = new Scanner(System.in);
         int entrada = ciudadR.nextInt();
-        
+        ciudadR.close();
 
         for (Viaje todosViajes: Viaje.getViajes()) {
         	if (todosViajes.getId() == entrada) {
@@ -112,7 +112,7 @@ public class Rentabilidad {
   public static void rentabilidadViaje(Viaje viaje) {
 	  int valorTiquetes = 0;
 	  int sillasOcupadas = 0;
-	  for (Tiquete tiqueteViaje: viaje.getTiquetesTodos()) {
+	  for (Tiquete tiqueteViaje: Viaje.getTiquetesTodos()) {
 		  if (tiqueteViaje.getEstado()) {
 			  valorTiquetes += tiqueteViaje.getValor();
 			  sillasOcupadas++;
@@ -121,8 +121,8 @@ public class Rentabilidad {
 		  }
 	  }
 	  System.out.println(viaje.toString()+ "\n");
-	  System.out.println( "La ocupacion del vehiculo fue del : " + (100 / viaje.getTiquetesTodos().size() * sillasOcupadas) + "%" + "," + 
-	  " con " + viaje.getTiquetesTodos().size() + " sillas disponibles en total. \n");
+	  System.out.println( "La ocupacion del vehiculo fue del : " + (100 / Viaje.getTiquetesTodos().size() * sillasOcupadas) + "%" + "," + 
+	  " con " + Viaje.getTiquetesTodos().size() + " sillas disponibles en total. \n");
 	  System.out.println("Para este viaje se genero por tiquetes $" + valorTiquetes + " y su costo de operacion fue de " + viaje.getCosto() + 
 			  " con una uilidad del " + (valorTiquetes - viaje.getCosto())+ "\n");
 	  
@@ -135,7 +135,7 @@ public class Rentabilidad {
 		  if(cadaViaje.getOrigen().equals(viaje.getOrigen()) && cadaViaje.getDestino().equals(viaje.getDestino())) {
 			  int valorTaux = 0;
 			  int ocupadasAux = 0;
-			  for (Tiquete tiqueteAux: cadaViaje.getTiquetesTodos()) {
+			  for (Tiquete tiqueteAux: Viaje.getTiquetesTodos()) {
 				  if (tiqueteAux.getEstado()) {
 					  valorTaux +=  tiqueteAux.getValor();
 					  ocupadasAux++;
@@ -144,7 +144,7 @@ public class Rentabilidad {
 					  continue;
 				  }				  			  
 			  }
-			  ocupacionT += 100/cadaViaje.getTiquetesTodos().size()*ocupadasAux;
+			  ocupacionT += 100/Viaje.getTiquetesTodos().size()*ocupadasAux;
 			  
 			  cantViajes++;
 			  
