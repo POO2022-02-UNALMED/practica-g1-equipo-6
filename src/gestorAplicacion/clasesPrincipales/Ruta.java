@@ -11,6 +11,7 @@ public class Ruta implements Serializable {
     private String origen;
     private String destino;
     private int km;
+    private ArrayList<String> paradas;
     private static  ArrayList<Ruta> rutas;
 	static {
 		rutas = new ArrayList<Ruta>();
@@ -25,10 +26,12 @@ public class Ruta implements Serializable {
     	this.nombre = nombre;
     	rutas.add(this); 
     }
-    public Ruta(String origen, String destino, int km) {
+    public Ruta(String origen, String destino, int km, ArrayList<String> paradas) {
     	this.origen=origen;
     	this.destino=destino;
     	this.km=km;
+    	this.paradas=paradas;
+    	
     }
 
     public static void quitarRuta(String ruta) {
@@ -82,5 +85,11 @@ public class Ruta implements Serializable {
 	public String toString() {
 		return "Ruta: "+nombre +
 				" idRuta: "+ idRuta;
+	}
+	public ArrayList<String> getParadas() {
+		return paradas;
+	}
+	public void setParadas(ArrayList<String> paradas) {
+		this.paradas = paradas;
 	}
 }

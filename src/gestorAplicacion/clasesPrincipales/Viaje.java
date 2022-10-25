@@ -2,7 +2,6 @@ package gestorAplicacion.clasesPrincipales;
 import java.util.ArrayList;
 import java.time.LocalDate;
 import java.io.Serializable;
-import gestorAplicacion.clasesPrincipales.Ruta;
 
 public class Viaje implements Serializable{
 	

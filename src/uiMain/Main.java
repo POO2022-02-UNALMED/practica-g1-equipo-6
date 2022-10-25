@@ -37,19 +37,29 @@ public class Main {
         LocalDate fin = LocalDate.now().plusDays(15);
         LocalDate inicio = LocalDate.now().plusDays(2);
         LocalDate intermedio = LocalDate.now().plusDays(12);
+        
+        ////PARADAS
+        ArrayList<String> paradas_1=new ArrayList<String>();
+        paradas_1.add("Medellin");
+        paradas_1.add("Manizales");
+        paradas_1.add("Popayan");
+        ArrayList<String> paradas_2=new ArrayList<String>();
+        ArrayList<String> paradas_3=new ArrayList<String>();
+        ArrayList<String> paradas_4=new ArrayList<String>();
+        ArrayList<String> paradas_5=new ArrayList<String>();
 
         ////RUTAS
          
-        Ruta uno = new Ruta("MONTERIA", "PASTO", 120);
-        Ruta dos = new Ruta("MEDELLIN", "MANIZALES",100);
-        Ruta tres = new Ruta("POPAYAN", "CALI",80);
-        Ruta cuatro = new Ruta("MEDELLIN", "CARTAGENA",150);
-        Ruta cinco = new Ruta("PASTO", "MONTERIA",120);
-        Ruta seis = new Ruta("MANIZALES", "MEDELLIN",100);
-        Ruta siete = new Ruta("CALI","POPAYAN",80);
-        Ruta ocho = new Ruta("CALI", "CARTAGENA",170);
-        Ruta nueve = new Ruta("CARTAGENA", "MEDELLIN",150);
-        Ruta diez = new Ruta("CARTAGENA","CALI",170);
+        Ruta uno = new Ruta("MONTERIA", "PASTO", 120,paradas_1);
+        Ruta dos = new Ruta("MEDELLIN", "MANIZALES",100,paradas_2);
+        Ruta tres = new Ruta("POPAYAN", "CALI",80,paradas_3);
+        Ruta cuatro = new Ruta("MEDELLIN", "CARTAGENA",150,paradas_4);
+        Ruta cinco = new Ruta("PASTO", "MONTERIA",120,paradas_5);
+        Ruta seis = new Ruta("MANIZALES", "MEDELLIN",100,paradas_1);
+        Ruta siete = new Ruta("CALI","POPAYAN",80,paradas_2);
+        Ruta ocho = new Ruta("CALI", "CARTAGENA",170,paradas_3);
+        Ruta nueve = new Ruta("CARTAGENA", "MEDELLIN",150,paradas_4);
+        Ruta diez = new Ruta("CARTAGENA","CALI",170,paradas_5);
         
       ///SILLAS
         ArrayList<String> sillasv1 = new ArrayList<String>();
