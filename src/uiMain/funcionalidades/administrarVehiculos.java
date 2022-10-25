@@ -30,7 +30,7 @@ public class administrarVehiculos {
 		        if(opcionelegida==0) {
 		        	System.out.println("Que tipo de bus vas a crear: ");
 		        	int tipobus= sc.nextInt();
-		        	while (opcionelegida!=0 & opcionelegida!=1 & opcionelegida!=2) {
+		        	while (tipobus!=0 & tipobus!=1 & tipobus!=2) {
 		        		System.out.println("Porfavor ingresa una opcion valida");
 		        		tipobus = sc.nextInt();
 		        	}

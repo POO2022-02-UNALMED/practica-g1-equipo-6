@@ -157,8 +157,15 @@ public class Main {
             	}
                 break;
             case 2:
-                System.out.println("GESTIONAR CONDUCTORES");
-                //Gestionar.gestionarConductores();
+                administrarVehiculos.adminVehiculo();
+                System.out.println("");
+            	System.out.println("¿Desea realiza una operación mas (Si-No)?");
+            	String opcion2 = in.next().toUpperCase();
+            	while(opcion2.equals("SI")) {
+                	administrarVehiculos.adminVehiculo();                                                                   	
+            		System.out.println("¿Desea realiza una operación mas (Si-No)?");                                  	
+            		opcion2 = in.next().toUpperCase();
+            	}
                 break;
             case 3:
                 Optimizacion.showMenuTiquete();
