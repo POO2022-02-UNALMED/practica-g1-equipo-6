@@ -2,10 +2,6 @@
 
     #Constructor
     def __init__(self,placa,conductor,sillas,km=0,precioKm=0,capacidad=0,codigo=0):
-        self.km = 0
-        self.precioKm = 0
-        self.capacidad = 0
-        self._codigo = 0
         self.placa = placa
         self.conductor = conductor
         self._sillas = sillas
