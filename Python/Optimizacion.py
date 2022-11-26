@@ -1,15 +1,7 @@
-﻿//====================================================================================================
-//The Free Edition of Java to Python Converter limits conversion output to 100 lines per file.
-
-//To purchase the Premium Edition, visit our website:
-//https://www.tangiblesoftwaresolutions.com/order/order-java-to-python.html
-//====================================================================================================
-
+﻿
 import math
 
 class Optimizacion:
-    sc = java.util.Scanner(System.in)
-    in_ = java.util.Scanner(System.in)
     @staticmethod
     def showMenuOptimizacion():
         print(" ") #Menu funcionalidad optimizacion
@@ -18,40 +10,41 @@ class Optimizacion:
         print("[1] Optimizar precio:Obtener promoción")
         print("[2] Optimizar viajes: viajes con paradas")
 
-        opcion = Optimizacion.sc.nextInt()
+        sc = input()
+        ind = input()
+
+        opcion = int(Optimizacion.sc.nextInt())
         if opcion == 1:
             Optimizacion.ObtenerPromocion()
         elif opcion == 2:
             Optimizacion.ViajesParadas()
+
     #el viaje que deseas comprar tiene pocos tiquetes, tenemos la opcion de promo
     @staticmethod
     def ObtenerPromocion():
         print("Ingrese su documento")
         numDocumento =Optimizacion.sc.nextInt()
         for tiquetes in Tiquete.getTiquetesComprados():
-            print(tiquetes)
             if tiquetes.getPasajero().getCedula() == numDocumento:
-                capacidadcal =math.trunc((tiquetes.getViaje().getBus().getCapacidad()*90) / float(100)) #cambiar
-                if len(tiquetes.getViaje().tiquetesDisponibles())>=capacidadcal:
-                    for viaje in Viaje.getViajes():
-                        if viaje.getOrigen().equalsIgnoreCase(tiquetes.getViaje().getOrigen()) & viaje.getDestino().equalsIgnoreCase(tiquetes.getViaje().getDestino()) & len(viaje.tiquetesDisponibles()) != 0 & viaje.getEnViaje() & len(viaje.tiquetesDisponibles())<=len(tiquetes.getViaje().tiquetesDisponibles()):
-                            HoraCliente =tiquetes.getViaje().getHora_inicio() #hora de inicio del tiquete
-                            HoraViaje =viaje.getHora_inicio() #hora de inicio del viaje
-                            partesCli = HoraCliente.split(":")
-                            partesVia = HoraViaje.split(":")
-                            hora_1 =partesCli[0] #separar por hora/minuto y convertir a entero
-                            hora_min1 = int(hora_1)
-                            min_1 =partesCli[1]
-                            min_hora1 = int(min_1)
-                            hora_2 =partesVia[0]
-                            hora_min2 = int(hora_2)
-                            min_2 =partesVia[1]
-                            min_hora2 = int(min_2)
-                            if hora_min2>=hora_min1:
+                    capacidadcal =math.trunc((tiquetes.getViaje().getBus().getCapacidad()*90) / float(100)) #cambiar
+                    if len(tiquetes.getViaje().tiquetesDisponibles())>=capacidadcal:
+                        for viaje in Viaje.getViajes():
+                            if viaje.getOrigen().casefold() == tiquetes.getViaje().getOrigen().casefold() and viaje.getDestino().casefold() == tiquetes.getViaje().getDestino().casefold() and len(viaje.tiquetesDisponibles()) != 0 and viaje.getEnViaje()==True and len(viaje.tiquetesDisponibles())<=len(tiquetes.getViaje().tiquetesDisponibles()):
+                                HoraCliente =tiquetes.getViaje().getHora_inicio() #hora de inicio del tiquete
+                                HoraViaje =viaje.getHora_inicio() #hora de inicio del viaje
+                                partesCli = []
+                                partesVia = [] 
+                                partesCli = HoraCliente.split(":")
+                                partesVia = HoraViaje.split(":")
+                                hora_1 =int(partesCli[0]) #separar por hora/minuto y convertir a entero
+                                min_1 =int(partesCli[1])
+                                hora_2 =int(partesVia[0])
+                                min_2 =int(partesVia[1])
+                            if hora_2>=hora_1:
                                 horasDcto = None
-                                hora_min2-=hora_min1
-                                min_hora2-=min_hora1
-                                horasDcto=(hora_min2*60+min_hora2)
+                                hora_2-=hora_1
+                                min_2-=min_1
+                                horasDcto=(hora_2*60+min_2)
                                 if horasDcto>=60 and horasDcto<120:
                                     print(viaje.getPrecio()-(math.trunc((viaje.getPrecio()*20) / float(100))))
                                     print("id : ["+str(viaje.getId())+"] = " +viaje.toString()+"Precio con descuento"+(viaje.getPrecio()-(math.trunc((viaje.getPrecio()*20) / float(100)))))
@@ -76,15 +69,15 @@ class Optimizacion:
         origen =Optimizacion.sc.next().toUpperCase()
         print("Ingrese el destino")
         destino =Optimizacion.sc.next().toUpperCase()
-        promEjecutivo =0 #variable para calcular el precio de bus Ejecutivo
-        promEuro =0 #variable para calcular el precio de bus EuroVan
-        promTecno =0 #variable para calcular el precio de bus TecnoVan
-        iterador_1 =0
-        iterador_2 =0
-        iterador_3 =0
+        promEjecutivo = 0 #variable para calcular el precio de bus Ejecutivo
+        promEuro = 0 #variable para calcular el precio de bus EuroVan
+        promTecno = 0 #variable para calcular el precio de bus TecnoVan
+        iterador_1 = 0
+        iterador_2 = 0
+        iterador_3 = 0
         for viaje in Viaje.getViajes():
-            if viaje.getOrigen().equalsIgnoreCase(origen) & len(viaje.tiquetesDisponibles()) != 0 & viaje.getEnViaje():
-                if viaje.getDestino().equalsIgnoreCase(destino):
+            if viaje.getOrigen().casefold() == origen.casefold() and len(viaje.tiquetesDisponibles()) != 0 and viaje.getEnViaje():
+                if viaje.getDestino().casefold() == destino:
                     if isinstance(viaje.getBus(), Ejecutivo):
                         iterador_1+=1
                         promEjecutivo+=promEjecutivo #*es mejor solo asignar el precio y no hacer calculos intermedios *
