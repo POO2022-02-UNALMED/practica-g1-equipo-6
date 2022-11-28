@@ -204,7 +204,8 @@ class MenuTiquete(tk.Frame):
 
 
         lblMensajeInicio = ttk.Label(self.main, text="Adquirir Servicio", font=("Segoe UI", 20))
-        lblDocumento = ttk.Label(self.main, text = "Ingrese el numéro de documento con el cual realizo la\ncompra del tiquete")
+        lblDocumento = ttk.Label(self.main, text = "Ingrese el numéro de documento con el cual realizo la\ncompra del tiquete",
+              justify= tk.CENTER, padding= 8)
         entryDocumento = ttk.Entry(self.main, textvariable= numDocumentoVar )
         lblEscogerServicio = ttk.Label(self.main, text= "Escoja el servicio que desea adquirir")
 
@@ -266,14 +267,19 @@ class MenuTiquete(tk.Frame):
     def viajePorBus(self):
         self.master.limpiarFrame(self.main)
         lblMensajeInicio = ttk.Label(self.main, text="Viaje por bus", font=("Segoe UI", 20))
-        lblEjecutivo = ttk.Label(self.main, text = "Ejecutivo es un un servicio con recorridos cortos que le ofrece\nal ususario "
-            +"viajes rapidos y seguros, cuenta con 24 sillas,\nWifi, Baño, tomaccorientes y aire acondicionado. ", anchor= "center")
-        lblEuroVans = ttk.Label(self.main, text = "EuroVans es un vehiculo diseñado para recorridos intermedios,\nconfortables con , "
-            +"un sistema de entretenimiento\nambiental adecuado para que su viaje tenga los mejores estrenos\nde cine a bordo, "
-            +"cuenta con 16 sillas, Wifi, Baño,\ntomaccorientes y aire acondicionado. ", anchor= "center")
-        lblTecnoVans = ttk.Label(self.main, text = "TecnoVans es un servicio con recorridos de distancia media,\n"
-            +"viaja directo a donde quieras ir con todos los servicios\nque necesitas para sentirte seguro y comodo,"
-            +"cuenta con 20 sillas,\nWifi, Baño, tomaccorientes y aire acondicionado. ", anchor= "center")
+        
+        textEjecutivo = """Ejecutivo es un un servicio con recorridos cortos que\nle ofrece al ususario
+            viajes rapidos y seguros, cuenta con 24 sillas,\nWifi, Baño, tomaccorientes y aire acondicionado."""
+        lblEjecutivo = ttk.Label(self.main, text = textEjecutivo, justify= tk.CENTER)
+
+        textEuroVans = """EuroVans es un vehiculo diseñado para recorridos intermedios,\nconfortables con un sistema de entretenimiento ambiental adecuado 
+        para que su viaje tenga los mejores estrenos de cine a bordo,\ncuenta con 16 sillas, Wifi, baño, tomaccorientes\ny aire acondicionado. """
+        lblEuroVans = ttk.Label(self.main, text = textEuroVans, justify= tk.CENTER)
+
+        textTecnoVans = """TecnoVans es un servicio con recorridos de distancia media,\nviaja directo a donde quieras ir con todos los servicios que 
+        necesitas para sentirte seguro y comodo, cuenta con 20 sillas,\nWifi, Baño, tomaccorientes y aire acondicionado. """
+        lblTecnoVans = ttk.Label(self.main, text = textTecnoVans, justify= tk.CENTER)
+
         btnEjecutivo = ttk.Button(self.main, text = "Ejecutivo", command= lambda: self.ejecutivo())
         btnEuroVans = ttk.Button(self.main, text = "EuroVans", command= lambda: self.euroVans())
         btnTecnovans = ttk.Button(self.main, text = "TecnoVans", command= lambda: self.tecnoVans())
@@ -317,19 +323,19 @@ class MenuTiquete(tk.Frame):
                             if sillaNueva in tiquetesTodos.getSillaTiquete():
                                 tiquetesTodos.setSillaTiquete(str(tiquetes.getSillaTiquete()))
 
-        lbDocumento = ttk.Label(self.main, text = "Digite el numero del documento con el cualn\nse realizo la compra del tiquete")
+        lbDocumento = ttk.Label(self.main, text = "Digite el numero del documento con el cual\nse realizo la compra del tiquete", justify= tk.CENTER)
         entryDocumento = ttk.Entry(self.main, textvariable= entryDocumentoVar)
         lbSillaNueva = ttk.Label(self.main, text = "Digite la nueva silla deseada")
         entrySillaNueva= ttk.Entry(self.main, textvariable= entrySillaNuevaVar)
 
-        lbDocumento.pack()
+        lbDocumento.pack(padx="5", pady=(25, 5))
         entryDocumento.pack()
-        lbSillaNueva.pack()
+        lbSillaNueva.pack(padx="5", pady=(25, 5))
         entrySillaNueva.pack()
         btnSubmit = ttk.Button(
                 self.main, 
                 text="Submit", 
                 command=submit
         )
-        btnSubmit.pack()
+        btnSubmit.pack(padx="5", pady=(25, 10))
     
