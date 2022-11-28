@@ -170,7 +170,7 @@ class Viaje:
 
     # ToString
     def __str__(self) -> str:
-        return "Viajes - Origen: {} Destino: {} FechaViaje: {} Precio: {}".format(
+        return "Origen: {}\nDestino: {}\nFechaViaje: {}\nPrecio: {}".format(
             self._origen, self._destino, self._fecha, self._precio
         )
 
