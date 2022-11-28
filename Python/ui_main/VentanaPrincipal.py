@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from funcionalidades.compraTiquete import comprarTiquete
+from ui_main.MenuRentabilidad import MenuRentabilidad
 from ui_main.PaginaPrincipal import PaginaPrincipal
 from ui_main.MenuTiquete import MenuTiquete
 import os
@@ -34,18 +35,18 @@ class VentanaPrincipal(tk.Tk):
         self.menubar.add_command(label="Vehiculo")
         self.menubar.add_command(
             label="Tiquete", command=lambda: self.cambiarFrame(MenuTiquete))
-        self.menubar.add_command(label="Rentabilidad")
+        self.menubar.add_command(label="Rentabilidad", command=lambda: self.cambiarFrame(MenuRentabilidad))
         self.menubar.add_command(label="Optimizacion")
 
         self.frames = {}
 
-        for F in (PaginaPrincipal, MenuTiquete):
+        for F in (PaginaPrincipal, MenuTiquete, MenuRentabilidad):
             frame = F(master=self, contenedor=container)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
 
         # Poner pagina principal al iniciar la app
-        self.cambiarFrame(PaginaPrincipal)
+        self.cambiarFrame(MenuRentabilidad)
 
     def cambiarFrame(self, claseFrame):
         frame = self.frames[claseFrame]
