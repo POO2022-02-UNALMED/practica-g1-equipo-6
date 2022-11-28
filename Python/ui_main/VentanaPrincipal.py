@@ -46,7 +46,7 @@ class VentanaPrincipal(tk.Tk):
             frame.grid(row=0, column=0, sticky="nsew")
 
         # Poner pagina principal al iniciar la app
-        self.cambiarFrame(MenuRentabilidad)
+        self.cambiarFrame(PaginaPrincipal)
 
     def cambiarFrame(self, claseFrame):
         frame = self.frames[claseFrame]
