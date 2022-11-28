@@ -1,7 +1,7 @@
 from datetime import datetime
-from gestorAplicacion.clasesPrincipales.Bus import Bus
-from gestorAplicacion.clasesPrincipales.Ruta import Ruta
-from gestorAplicacion.clasesPrincipales.Tiquete import Tiquete
+from gestor_aplicacion.clasesPrincipales.Bus import Bus
+from gestor_aplicacion.clasesPrincipales.Ruta import Ruta
+from gestor_aplicacion.clasesPrincipales.Tiquete import Tiquete
 
 class Viaje:
 
@@ -23,8 +23,8 @@ class Viaje:
         _frecuencia: int,
 
     ):
-        from gestorAplicacion.clasesPrincipales.Ruta import Ruta
-        from gestorAplicacion.clasesPrincipales.Bus import Bus
+        from gestor_aplicacion.clasesPrincipales.Ruta import Ruta
+        from gestor_aplicacion.clasesPrincipales.Bus import Bus
         self._id = _id
         self._costoViaje = _costoViaje
         self._horaInicio = _horaInicio
