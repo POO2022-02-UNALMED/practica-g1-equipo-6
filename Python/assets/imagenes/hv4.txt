@@ -1,8 +1,5 @@
-Andres Felipe Lema Garcia
-aflemag@unal.edu.co
-Envigado, Antioquia, Colombia
+Nicolás Pérez Vásquez
+niperezv@unal.edu.co
+Medellín
 
-Soy estudiante de pregrado en Ciencias de la Computación de la Universidad Nacional de Colombia enfocando mi 
-conocimiento en el lado del Backend, Machine Learning y Data Science. Apasionado por el conocimiento, formándome 
-como persona integral, flexible, con capacidad de adaptacion al cambio y trabajo en equipo. Jugador de video 
-juegos de alto rendimiento y amante al cine.
+Soy estudiante de 8va matricula en la carrera de ingeneria de sistemas e informática. Padre de 3 gatos y un perro, aficionado por el deporte (tenis, volleyball, ultimate) en el área de sistema mi mayor interés es el campo de la inteligencia artificial

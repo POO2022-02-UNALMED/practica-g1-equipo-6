@@ -1,5 +1,8 @@
-Miguel Angel Fonseca Aldana
-mifonsecaa@unal.edu.co
+Daniel Estrada Maldonado
+daestradam@unal.edu.co
 Medellin, Antioquia, Colombia
 
-Soy estudiante de pregrado en Ciencias de la Computación de la Universidad Nacional de Colombia - Sede Medellín.Con grandes aspiraciones en aprender cada dia mas enfocado en la Ciencias de Datos.Me gusta practicar deportes y los video juegos. 
+Soy estudiante de pregrado en Ingenieria de sistemas de la Universidad Nacional de Colombia enfocando mi 
+conocimiento en el lado del desarrollo web. Apasionado por el conocimiento, formándome como persona 
+integral, flexible, con capacidad de adaptacion al cambio y trabajo en equipo. Jugador de video 
+juegos y amante al cine.
