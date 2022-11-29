@@ -6,6 +6,7 @@ from ui_main.PaginaPrincipal import PaginaPrincipal
 from ui_main.MenuTiquete import MenuTiquete
 from ui_main.MenuVehiculo import MenuVehiculo
 from ui_main.MenuViaje import MenuViaje
+from ui_main.MenuRentabilidad import MenuRentabilidad
 import os
 import pathlib
 
@@ -34,12 +35,12 @@ class VentanaPrincipal(tk.Tk):
         self.menubar.add_command(label="Viaje", command=lambda: self.cambiarFrame(MenuViaje))
         self.menubar.add_command(label="Vehiculo", command=lambda: self.cambiarFrame(MenuVehiculo))
         self.menubar.add_command(label="Tiquete", command=lambda: self.cambiarFrame(MenuTiquete))
-        self.menubar.add_command(label="Rentabilidad")
-        self.menubar.add_command(label="Optimizacion", command=lambda: self.cambiarFrame(MenuOptimizacion))
+        self.menubar.add_command(label="Rentabilidad", command=lambda: self.cambiarFrame(MenuRentabilidad) )
+        self.menubar.add_command(label="Optimizacion")
 
         self.frames = {}
 
-        for F in (PaginaPrincipal, MenuTiquete, MenuVehiculo, MenuViaje, MenuOptimizacion):
+        for F in (PaginaPrincipal, MenuTiquete, MenuVehiculo, MenuViaje, MenuRentabilidad):
             frame = F(master=self, contenedor=container)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
