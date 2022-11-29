@@ -9,9 +9,19 @@ class TecnoVans(Bus):
         # instance fields found by Java to Python Converter:
         self._precioKm = 800
         self._capacidad = 20
+        self.name = "TecnoVans"
+        self.placa = placa
+        self.conductor = conductor
         super().__init__(placa, conductor, sillas)
         self.codigo = 200
         TecnoVans._tecnosv.append(self)
+
+    
+    def getPlaca(self):
+        return self.placa
+
+    def getConductor(self):
+        return self.conductor
 
     # get&set capacidad
     def getCapacidad(self):

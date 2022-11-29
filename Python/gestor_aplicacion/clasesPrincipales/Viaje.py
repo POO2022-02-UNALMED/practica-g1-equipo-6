@@ -1,7 +1,7 @@
 from datetime import datetime
+from gestor_aplicacion.clasesPrincipales.Tiquete import Tiquete
 from gestor_aplicacion.clasesPrincipales.Bus import Bus
 from gestor_aplicacion.clasesPrincipales.Ruta import Ruta
-from gestor_aplicacion.clasesPrincipales.Tiquete import Tiquete
 
 class Viaje:
 

@@ -56,9 +56,6 @@ class Tiquete:
     def getValor(self):
         return self._valor
 
-    def getPasajero(self):
-        return self._pasajero
-
     def setFechaCompra(self, fechaCompra):
         self._fechaCompra = fechaCompra
 

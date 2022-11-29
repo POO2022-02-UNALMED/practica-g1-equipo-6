@@ -19,6 +19,8 @@ class Bus:
     #		this.empresa = empresa
     #	}
 
+        Bus._buses.append(self)
+
     @classmethod
     def getSillas(self):
         return Bus._sillas
@@ -36,6 +38,12 @@ class Bus:
 
     def getCodigo(self):
         return self.codigo
+
+    def getPlaca(self):
+        return self._placa
+
+    def getConductor(self):
+        return self._conductor
 
     def setCodigo(self, codigo):
         self.codigo = codigo
@@ -59,3 +67,7 @@ class Bus:
 
     def setPrecio(self, precio):
         self._preciokm = precio
+
+    @classmethod
+    def getBuses(self):
+        return self._buses
