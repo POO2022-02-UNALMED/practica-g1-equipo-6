@@ -35,11 +35,11 @@ class VentanaPrincipal(tk.Tk):
         self.menubar.add_command(label="Vehiculo", command=lambda: self.cambiarFrame(MenuVehiculo))
         self.menubar.add_command(label="Tiquete", command=lambda: self.cambiarFrame(MenuTiquete))
         self.menubar.add_command(label="Rentabilidad")
-        self.menubar.add_command(label="Optimizacion")
+        self.menubar.add_command(label="Optimizacion", command=lambda: self.cambiarFrame(MenuOptimizacion))
 
         self.frames = {}
 
-        for F in (PaginaPrincipal, MenuTiquete, MenuVehiculo, MenuViaje):
+        for F in (PaginaPrincipal, MenuTiquete, MenuVehiculo, MenuViaje, MenuOptimizacion):
             frame = F(master=self, contenedor=container)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
