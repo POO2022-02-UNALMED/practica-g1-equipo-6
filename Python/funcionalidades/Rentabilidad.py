@@ -1,4 +1,4 @@
-from gestorAplicacion.clasesPrincipales.Viaje import Viaje
+from gestor_aplicacion.clasesPrincipales.Viaje import Viaje
 
 
 class Rentabilidad:
@@ -37,7 +37,7 @@ class Rentabilidad:
             print("VIAJE NO REGISTRADO")
             return
         tiquetesViaje =[]
-        from gestorAplicacion.clasesPrincipales.Tiquete import Tiquete
+        from gestor_aplicacion.clasesPrincipales.Tiquete import Tiquete
         for tiquete in viajeFinal.getTiquetesTodos():
             if ((tiquete.getId() == idViaje) and (tiquete.getEstado() == False)):
                 tiquetesViaje.append(tiquete)

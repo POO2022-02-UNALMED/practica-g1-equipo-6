@@ -82,14 +82,14 @@ class Validador():
         except DocumentNotExistException as e:
             ExceptionPopUp(e)
             
-    def validarCapacidad(self, capacidad, tiquete):
-        capacidadcal =math.trunc((capacidad*90) / float(100))
-        try:
-            if len(tiquete.getViaje().tiquetesDisponibles())<=capacidadcal:
-                self._esValido = False
-                raise EqualityNotComplyException
-        except EqualityNotComplyException as e:
-            ExceptionPopUp(e)
+    # def validarCapacidad(self, capacidad, tiquete):
+    #     capacidadcal =math.trunc((capacidad*90) / float(100))
+    #     try:
+    #         if len(tiquete.getViaje().tiquetesDisponibles())<=capacidadcal:
+    #             self._esValido = False
+    #             raise EqualityNotComplyException
+    #     except EqualityNotComplyException as e:
+    #         ExceptionPopUp(e)
    
     def getValidacion(self):
         return self._esValido
