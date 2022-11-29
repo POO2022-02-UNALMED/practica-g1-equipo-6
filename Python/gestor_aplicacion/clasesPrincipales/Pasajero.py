@@ -32,6 +32,9 @@ class Pasajero:
     @classmethod
     def getPasajeros(cls):
         return Pasajero._pasajeros
+    @classmethod
+    def setPasajeros(cls,pasajeros):
+        Pasajero._pasajeros = pasajeros
 
     def __str__(self) -> str:
         return "Nombre del pasajero: {}\nNo Documento: {} ".format(

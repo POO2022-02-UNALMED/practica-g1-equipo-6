@@ -62,6 +62,9 @@ class Tiquete:
     @classmethod
     def getTiquetes(cls):
         return cls._tiquetes
+    @classmethod
+    def setTiquetes(cls,tiquetes):
+        Tiquete._tiquetes = tiquetes
 
 
 
