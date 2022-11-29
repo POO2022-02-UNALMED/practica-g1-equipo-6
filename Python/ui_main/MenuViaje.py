@@ -24,7 +24,6 @@ class MenuViaje(tk.Frame):
 
         # Creacion de sidebar
         self.crearSideBar()
-        #self.crearComprador()
 
     def crearSideBar(self):
         lblImage = ttk.Label(self.sidebar, image=self.logo)

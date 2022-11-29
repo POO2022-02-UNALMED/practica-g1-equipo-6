@@ -34,6 +34,9 @@ class Ruta:
     @classmethod
     def getRutas(cls):
         return Ruta._rutas
+    @classmethod
+    def setRutas(cls,rutas):
+        Ruta._rutas = rutas
 
 
     def getOrigen(self):

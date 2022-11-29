@@ -10,9 +10,13 @@ from gestor_aplicacion.clasesHerencia.TecnoVans import TecnoVans
 from gestor_aplicacion.clasesPrincipales.Servicio import Servicio
 from datetime import datetime
 from datetime import timedelta
+from baseDatos.deserializador import Deserializador
+from baseDatos.serializador import Serializador
+
 
 
 def main():
+    '''
     u1 = Pasajero("Andres","Lema",1039458020,30, "example@email.com")
     u2 = Pasajero("Daniel","Estrada",1020486909,24, "example2@email.com")
     u3 = Pasajero("Nicolas","Perez",1036214594,21, "example3@email.com")
@@ -95,11 +99,14 @@ def main():
     viaje10 = Viaje(9,40000,"8:00","16:00", nueve, intermedio,B3, True,7)
     viaje8 = Viaje(10,40000,"8:00","17:00",diez,intermedio, B2,True,7)
     viaje11 = Viaje(9,40000,"9:10","17:00", nueve,intermedio,B3, True,7)
+    '''
     
     mainWindow = VentanaPrincipal()
     mainWindow.mainloop()
 
 
 if __name__ == '__main__':
+    Deserializador.DeserializarTodo()
     main()
+    Serializador.SerializarTodo()
 ''

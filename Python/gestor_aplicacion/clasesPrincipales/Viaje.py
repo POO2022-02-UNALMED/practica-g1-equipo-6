@@ -90,7 +90,9 @@ class Viaje:
     @classmethod
     def getViajes (self):
         return self.__viajes
-        
+    @classmethod
+    def setViajes(cls,viajes):
+        Viaje.__viajes = viajes    
 
     @classmethod
     def getLugares(self):
