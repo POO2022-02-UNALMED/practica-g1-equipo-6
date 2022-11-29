@@ -5,6 +5,7 @@ from funcionalidades.compraTiquete import comprarTiquete
 from ui_main.PaginaPrincipal import PaginaPrincipal
 from ui_main.MenuTiquete import MenuTiquete
 from ui_main.MenuVehiculo import MenuVehiculo
+from ui_main.MenuViaje import MenuViaje
 import os
 import pathlib
 
@@ -30,7 +31,7 @@ class VentanaPrincipal(tk.Tk):
 
         # Agregar comandos en el menu principal
         self.menubar.add_command(label="Inicio", command=lambda: self.cambiarFrame(PaginaPrincipal))
-        self.menubar.add_command(label="Viaje")
+        self.menubar.add_command(label="Viaje", command=lambda: self.cambiarFrame(MenuViaje))
         self.menubar.add_command(label="Vehiculo", command=lambda: self.cambiarFrame(MenuVehiculo))
         self.menubar.add_command(label="Tiquete", command=lambda: self.cambiarFrame(MenuTiquete))
         self.menubar.add_command(label="Rentabilidad")
@@ -38,7 +39,7 @@ class VentanaPrincipal(tk.Tk):
 
         self.frames = {}
 
-        for F in (PaginaPrincipal, MenuTiquete, MenuVehiculo):
+        for F in (PaginaPrincipal, MenuTiquete, MenuVehiculo, MenuViaje):
             frame = F(master=self, contenedor=container)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
