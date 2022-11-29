@@ -9,9 +9,20 @@ class Ejecutivo(Bus):
         # instance fields found by Java to Python Converter:
         self._precioKm = 500
         self._capacidad = 24
+        self.name = "Ejecutivo"
+        self.placa = placa
+        self.conductor = conductor
         super().__init__(placa, conductor, sillas)
         self.codigo = 150
         Ejecutivo._ejecutivos.append(self)
+
+
+    def getPlaca(self):
+        return self.placa
+
+    def getConductor(self):
+        return self.conductor
+
     # get&set capacidad
 
     def getCapacidad(self):

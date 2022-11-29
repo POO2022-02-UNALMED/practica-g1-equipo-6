@@ -91,7 +91,7 @@ class Rentabilidad:
     def rentabilidadViaje(cls, viaje, entrada):
         valorTiquetes = 0
         sillasOcupadas = 0
-        for tiqueteViaje in viaje.getTiquetesTodos():
+        for tiqueteViaje in Viaje.getTiquetesTodos():
             if tiqueteViaje.getEstado() and tiqueteViaje.getId() == entrada:
                 valorTiquetes += tiqueteViaje.getValor()
                 sillasOcupadas += 1
