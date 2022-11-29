@@ -12,17 +12,17 @@ class administrarVehiculo:
         
 
         if typo == "Ejecutivo":
+<<<<<<< Updated upstream
             Ejecutivo(placa,conductor,[])
+=======
+            busE = Ejecutivo(placa,conductor,[])
+>>>>>>> Stashed changes
 
         elif typo == "TecnoVans":
-            bus = TecnoVans()
-            bus._placa = placa
-            bus._conductor = conductor
+            busT = Ejecutivo(placa,conductor,[])
 
         elif typo == "EuroVans":
-            bus = EuroVans()
-            bus._placa = placa
-            bus._conductor = conductor
+            busEu = Ejecutivo(placa,conductor,[])
 
         return 1
 
