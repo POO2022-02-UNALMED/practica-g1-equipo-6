@@ -41,3 +41,8 @@ class NotExistChairException (Exception):
     def __init__(self, message = "Error: La silla que desea no existe"):
         self.message = message
         super().__init__(self.message)
+    
+class EqualityNotComplyException(Exception):
+    def __init__(self, message = "Error: El viaje que posee actualmente es la mejor opcion"):
+        self.message = message
+        super().__init__(self.message)
