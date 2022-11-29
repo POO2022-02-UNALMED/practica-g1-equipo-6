@@ -31,22 +31,22 @@ class MenuVehiculo(tk.Frame):
     def crearSideBar(self):
         lblImage = ttk.Label(self.sidebar, image=self.logo)
         lblBrand = ttk.Label(
-            self.sidebar, text="Administrar vehiculos", font=("Segoe UI", 15))
+            self.sidebar, text="TransPOOrte", font=("Segoe UI", 15))
         btnCrearVehiculo = ttk.Button(
             self.sidebar, text="Agregar vehiculo", command=self.agregarVehiculo)
         btnEliminarVehiculo  = ttk.Button(
             self.sidebar, text="Eliminar vehiculo")
         btnCambiarConductor = ttk.Button(
-            self.sidebar, text="Cambiar conductor del vehiculo", command = self.modificarConductor)
+            self.sidebar, text="Cambiar conductor\n del vehiculo", command = self.modificarConductor)
         btnMostrarVehiculos = ttk.Button(
-            self.sidebar, text= "Mostrar vehiculos y sillas", command = self.mostrarVehiculos)
+            self.sidebar, text= "Mostrar vehiculos\n y sillas", command = self.mostrarVehiculos)
 
         # Pack widgets
         lblImage.pack()
         lblBrand.pack(padx="5", pady=(0, 25))
         btnCrearVehiculo.pack(fill="x", padx="5", pady="3")
         btnEliminarVehiculo.pack(fill="x", padx="5", pady="3")
-        btnCambiarConductor.pack(fill="x", padx="5", pady="3")
+        btnCambiarConductor.pack(fill="x", padx="5", pady="3") #justify= "center"
         btnMostrarVehiculos.pack(fill= "x", padx= "5", pady= "3")
 
     def agregarVehiculo(self):
@@ -74,9 +74,20 @@ class MenuVehiculo(tk.Frame):
 
             if validador.getValidacion():
                 conductor = Conductor(nombreConductor, cedulaConductor, celularConductor, saliarioConductor)
-                creado = administrarVehiculo.crearBus(tipoVeihiculo,placaVehiculo,conductor)
-                if creado==1:
-                    messagebox.showinfo(message="Vehiculo creado", title="Estado")
+                if tipoVeihiculo == "Ejecutivo":
+                    bus = Ejecutivo(placaVehiculo,conductor,[])
+
+                elif tipoVeihiculo == "TecnoVans":
+                    bus = TecnoVans(placaVehiculo,conductor,[])
+
+                elif tipoVeihiculo == "EuroVans":
+                    bus = EuroVans(placaVehiculo,conductor,[])
+
+                for i in Conductor.getConductores(): 
+                    print(i)
+                for i in Bus.getBuses(): 
+                    print(i)
+                messagebox.showinfo(message="Vehiculo creado", title="Estado")
 
 
         lblTitulo = ttk.Label(self.main, text="Formulario de registro", font=("Segoe UI", 20))
@@ -136,7 +147,7 @@ class MenuVehiculo(tk.Frame):
     def ejecutivo(self):
         self.master.limpiarFrame(self.main)
         ttk.Label(self.main, text = "{:<20} {:<25}".
-                    format('Origen','Destino','Fecha','Precio'), justify= "center").pack(pady = (0,15))
+                    format('Placa','Conductor'), justify= "center").pack(pady = (0,15))
         for buses in Bus.getBuses():
             if buses.getCodigo() == 150:
                 ttk.Label(self.main, text = "{:<20} {:<25}".
@@ -146,7 +157,7 @@ class MenuVehiculo(tk.Frame):
     def euroVans(self):
         self.master.limpiarFrame(self.main)
         ttk.Label(self.main, text = "{:<20} {:<25} ".
-                    format('Origen','Destino','Fecha','Precio'), justify= "center").pack(pady = (0,15))
+                    format('Placa','Conductor'), justify= "center").pack(pady = (0,15))
         for buses in Bus.getBuses():
             if buses.getCodigo() == 250:
                 ttk.Label(self.main, text = "{:<20} {:<25}".

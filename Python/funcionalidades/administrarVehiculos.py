@@ -12,9 +12,7 @@ class administrarVehiculo:
         
 
         if typo == "Ejecutivo":
-            bus = Ejecutivo()
-            bus._placa = placa
-            bus._conductor = conductor
+            Ejecutivo(placa,conductor,[])
 
         elif typo == "TecnoVans":
             bus = TecnoVans()
@@ -30,15 +28,6 @@ class administrarVehiculo:
 
     @classmethod
     def eliminarBus(self,placa):
-        vali = 0
-        for  buses in Bus.placa:
-            if placa == Bus.placa:
-                del Bus.placa
-                vali=1
-        return vali
-
-    @classmethod
-    def mostrarBuses(self,typo):
         vali = 0
         for  buses in Bus.placa:
             if placa == Bus.placa:

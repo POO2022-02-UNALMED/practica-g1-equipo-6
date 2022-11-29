@@ -19,8 +19,6 @@ class Bus:
     #		this.empresa = empresa
     #	}
 
-        Bus._buses.append(self)
-
     @classmethod
     def getSillas(self):
         return Bus._sillas
