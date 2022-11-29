@@ -12,6 +12,7 @@ class Bus:
         self._placa = placa
         Bus._sillas = sillas
         Bus._buses.append(self)
+
     #	public ArrayList<Empresa> getEmpresa() {
     #		return empresa
     #	}
@@ -26,6 +27,8 @@ class Bus:
     @classmethod
     def setSillas(self, sillas):
         self._sillas = sillas
+
+
     @classmethod
     def getBuses(cls):
         return Bus._buses
