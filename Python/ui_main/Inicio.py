@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import INSERT, scrolledtext, DISABLED
+
 
 
 class Inicio(tk.Frame):
@@ -47,5 +48,8 @@ el costo operativo del viaje y resta el valor del tiquete para mostrar así
 la utilidad del viaje. También nos muestra el porcentaje de ocupación del 
 vehículo, la ocupación promedio de la ruta  y su utilidad promedio."""
 
-        label = tk.Label(self, text=textUsuario, font=('Times', '20'))
-        label.pack(pady=0, padx=0)
+        self.instru = scrolledtext.ScrolledText(self)
+        self.instru.tag_configure("center", justify= "center")
+        self.instru.insert(INSERT, textUsuario)
+        self.instru.config(state= DISABLED)
+        self.instru.pack()

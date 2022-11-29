@@ -60,11 +60,10 @@ class MenuTiquete(tk.Frame):
 
             if validador.getValidacion():
                 tiqueteFinal = None
-                for viaje in viajes: 
-                    for tiquete in viaje.tiquetesDisponibles():
-                        if  tiquete.getId() == int(viajeVar):
-                            tiqueteFinal = tiquete 
-                            break
+                for tiquete in Tiquete.getTiquetes():
+                    if  tiquete.getId() == int(viajeVar):
+                        tiqueteFinal = tiquete 
+                        break
                 Tiquete.asignarTiquete(pasajero, tiqueteFinal)
                 Bus.setSillaNoDisponibles(tiqueteFinal.getSillaTiquete())
                 messagebox.showinfo(title= "Tiquete realizado con exito", message= tiqueteFinal)

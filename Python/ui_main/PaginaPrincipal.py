@@ -17,7 +17,7 @@ class PaginaPrincipal(tk.Tk):
         super().__init__()
 
         self.wm_title("TransPOOrte")
-        self.geometry("800x800")
+        self.geometry("700x500")
         self.resizable(False, False)
 
         # Creacion de Frame principal

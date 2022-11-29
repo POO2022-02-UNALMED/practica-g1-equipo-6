@@ -8,6 +8,7 @@ from gestor_aplicacion.clasesHerencia.Ejecutivo import Ejecutivo
 from gestor_aplicacion.clasesHerencia.EuroVans import EuroVans
 from gestor_aplicacion.clasesHerencia.TecnoVans import TecnoVans
 from gestor_aplicacion.clasesPrincipales.Servicio import Servicio
+from gestor_aplicacion.clasesPrincipales.Tiquete import Tiquete
 from datetime import datetime
 from datetime import timedelta
 from baseDatos.deserializador import Deserializador
@@ -100,7 +101,6 @@ def main():
     viaje8 = Viaje(10,40000,"8:00","17:00",diez,intermedio, B2,True,7)
     viaje11 = Viaje(9,40000,"9:10","17:00", nueve,intermedio,B3, True,7)
     '''
-    
     mainWindow = VentanaPrincipal()
     mainWindow.mainloop()
 
