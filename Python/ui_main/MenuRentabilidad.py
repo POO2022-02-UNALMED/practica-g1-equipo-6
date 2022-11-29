@@ -116,7 +116,7 @@ class MenuRentabilidad(tk.Frame):
 
                 if accion == "VISUALIZAR OCUPACION":
                     tiquetesViaje = []
-                    for tiquete in viajeFinal.getTiquetesTodos():
+                    for tiquete in Tiquete.getTiquetes():
                         if ((tiquete.getId() == int(viajeVar)) and (tiquete.getEstado() == False)):
                             tiquetesViaje.append(tiquete)
                     porcentaje = ((((viajeFinal.getBus().getCapacidad()) - len(tiquetesViaje))*100))/viajeFinal.getBus().getCapacidad()
@@ -125,7 +125,7 @@ class MenuRentabilidad(tk.Frame):
                 elif accion == "CALCULAR RENTABILIDAD":
                     valorTiquetes = 0
                     sillasOcupadas = 0
-                    for tiqueteViaje in viajeFinal.getTiquetesTodos():
+                    for tiqueteViaje in Tiquete.getTiquetes():
                         if tiqueteViaje.getEstado() and tiqueteViaje.getId() == int(viajeVar):
                             valorTiquetes += tiqueteViaje.getValor()
                             sillasOcupadas += 1
