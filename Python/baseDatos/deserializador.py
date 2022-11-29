@@ -9,6 +9,7 @@ import pathlib
 import os
 
 class Deserializador:
+    
     @classmethod
     def deserializar(cls, tipo):
         if tipo == "Bus":

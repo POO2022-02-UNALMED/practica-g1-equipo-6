@@ -206,7 +206,7 @@ class MenuVehiculo(tk.Frame):
             if validador.getValidacion():
                 for buses in Bus.getBuses():
                     if buses.getPlaca() == placaVehiculo:
-                        Bus.getBuses().remove(buses) # NO BORRA EL BUS PERDIR AYUDA-  SOLO FALTA ESTA LINEA
+                        Bus.getBuses().remove(buses) 
                 messagebox.showinfo(message="Vehiculo eliminado", title="Estado")
 
         lblPlaca = ttk.Label(self.main, text="Placa del vehiculo")
