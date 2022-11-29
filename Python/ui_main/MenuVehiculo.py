@@ -143,13 +143,8 @@ class MenuVehiculo(tk.Frame):
     def ejecutivo(self):
         self.master.limpiarFrame(self.main)
         ttk.Label(self.main, text = "{:<20} {:<25}".
-<<<<<<< Updated upstream
-                    format('Placa','Conductor'), justify= "center").pack(pady = (0,15))
-        for buses in Bus.getBuses():
-=======
                     format('Origen','Destino','Fecha','Precio'), justify= "center").pack(pady = (0,15))
         for buses in Ejecutivo.getBuses():
->>>>>>> Stashed changes
             if buses.getCodigo() == 150:
                 ttk.Label(self.main, text = "{:<20} {:<25}".
                     format(str(buses._placa), str(buses.getConductor().getNombre()))).pack(pady = (0,15))
@@ -158,13 +153,8 @@ class MenuVehiculo(tk.Frame):
     def euroVans(self):
         self.master.limpiarFrame(self.main)
         ttk.Label(self.main, text = "{:<20} {:<25} ".
-<<<<<<< Updated upstream
                     format('Placa','Conductor'), justify= "center").pack(pady = (0,15))
         for buses in Bus.getBuses():
-=======
-                    format('Origen','Destino','Fecha','Precio'), justify= "center").pack(pady = (0,15))
-        for buses in EuroVans.getBuses():
->>>>>>> Stashed changes
             if buses.getCodigo() == 250:
                 ttk.Label(self.main, text = "{:<20} {:<25}".
                     format(str(buses._placa), str(buses.getConductor().getNombre()))).pack(pady = (0,15))

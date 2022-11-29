@@ -76,7 +76,6 @@ class Validador():
             else:
                if numDocumento not in str(tiquete.getTiquetesComprados()):
                    self._esValido = False
-                   #print(self._esValido)
                    print(tiquete.getTiquetesComprados())
                    raise DocumentNotExistException
             self._esValido = True
