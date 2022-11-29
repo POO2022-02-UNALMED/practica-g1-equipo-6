@@ -1,5 +1,5 @@
 from ui_main.MenuRentabilidad import MenuRentabilidad
-from ui_main.VentanaPrincipal import VentanaPrincipal
+from ui_main.VentanaInicio.VentanaPrincipal import VentanaPrincipal
 from gestor_aplicacion.clasesPrincipales.Pasajero import Pasajero
 from gestor_aplicacion.clasesPrincipales.Conductor import Conductor
 from gestor_aplicacion.clasesPrincipales.Ruta import Ruta

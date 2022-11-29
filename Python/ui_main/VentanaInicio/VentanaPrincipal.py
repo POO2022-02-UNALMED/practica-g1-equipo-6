@@ -1,12 +1,10 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
-from funcionalidades.compraTiquete import comprarTiquete
+from ui_main.VentanaInicio.Descripcion import Descripcion
+from ui_main.VentanaInicio.Salir import Salir
 from ui_main.PaginaPrincipal import PaginaPrincipal
-from ui_main.MenuTiquete import MenuTiquete
-from ui_main.MenuVehiculo import MenuVehiculo
-from ui_main.MenuViaje import MenuViaje
-from ui_main.MenuRentabilidad import MenuRentabilidad
+from ui_main.VentanaInicio.HojaVida import HojaVida
 import os
 import pathlib
 
@@ -17,9 +15,7 @@ class VentanaPrincipal(tk.Tk):
 
         # Configuracion de la ventana
         self.wm_title("TransPOOrte")
-        self.geometry("500x450")
-        self.resizable(False, False)
-
+        
         # Creacion de Frame principal
         container = ttk.Frame(self)
         container.pack(side="top", fill="both", expand=True)
@@ -31,22 +27,28 @@ class VentanaPrincipal(tk.Tk):
         self.config(menu=self.menubar)
 
         # Agregar comandos en el menu principal
-        self.menubar.add_command(label="Inicio", command=lambda: self.cambiarFrame(PaginaPrincipal))
-        self.menubar.add_command(label="Viaje", command=lambda: self.cambiarFrame(MenuViaje))
-        self.menubar.add_command(label="Vehiculo", command=lambda: self.cambiarFrame(MenuVehiculo))
-        self.menubar.add_command(label="Tiquete", command=lambda: self.cambiarFrame(MenuTiquete))
-        self.menubar.add_command(label="Rentabilidad", command=lambda: self.cambiarFrame(MenuRentabilidad) )
-        self.menubar.add_command(label="Optimizacion")
+        self.menuInicio =tk.Menu(self.menubar)
+        self.menubar.add_cascade(
+            label="Inicio", menu = self.menuInicio)
+        
+        self.menuInicio.add_command(label = "Descripcion", command= lambda: self.cambiarFrame(Descripcion))
+        self.menuInicio.add_command(label = "Salir", command= lambda: self.cambiarFrame(Salir))
 
         self.frames = {}
 
-        for F in (PaginaPrincipal, MenuTiquete, MenuVehiculo, MenuViaje, MenuRentabilidad):
+        for F in (Descripcion, Salir):
             frame = F(master=self, contenedor=container)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
 
-        # Poner pagina principal al iniciar la app
-        self.cambiarFrame(PaginaPrincipal)
+        
+
+        bntPAginaPrincipal = ttk.Button(self, text = "Ventana de usuario", command= self.abrir_ventana_principal)
+        bntPAginaPrincipal.pack(side="bottom")
+
+        
+        self.hoja_vida = HojaVida(self)
+        self.hoja_vida.pack(side="top")
 
     def cambiarFrame(self, claseFrame):
         frame = self.frames[claseFrame]
@@ -64,3 +66,8 @@ class VentanaPrincipal(tk.Tk):
         for widget in frame.winfo_children():
             widget.destroy()
 
+    def abrir_ventana_principal(self):
+        self.destroy()
+        PaginaPrincipal()
+
+    
