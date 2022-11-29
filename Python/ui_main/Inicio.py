@@ -31,7 +31,7 @@ viajes asignados, entre otras.
 
 - Gestionar viaje: Con la ayuda del numero de cedula se accede
 a los tiquetes ya comprados y se puede realizar cambios especificos
-como modificarr un tiquete, tambien permite crear y eliminar viajes .
+como cancelar un tiquete, tambien permite crear nuevos viajes o eliminarlos.
 
 
 - Compra de tiquetes: El usuario puede comprar un tiquete segun

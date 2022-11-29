@@ -13,32 +13,38 @@ class Deserializador:
     @classmethod
     def deserializar(cls, tipo):
         if tipo == "Bus":
-            pickfile = open("baseDatos/temp/buses.txt", "rb")
+            path = os.path.join(pathlib.Path(__file__).parent.absolute())
+            pickfile = open(path+"/temp/buses.txt", "rb")
             Bus._buses = pickle.load(pickfile)
             pickfile.close
 
         elif tipo == "Conductor":
-            pickfile = open( "baseDatos/temp/conductores.txt", "rb")
+            path = os.path.join(pathlib.Path(__file__).parent.absolute())
+            pickfile = open( path+"/temp/conductores.txt", "rb")
             Conductor._conductores = pickle.load(pickfile)
             pickfile.close
 
         elif tipo == "Pasajero":
-            pickfile = open("baseDatos/temp/pasajeros.txt", "rb")
+            path = os.path.join(pathlib.Path(__file__).parent.absolute())
+            pickfile = open(path+"/temp/pasajeros.txt", "rb")
             Pasajero._pasajeros = pickle.load(pickfile)
             pickfile.close
 
         elif tipo == "Ruta":
-            pickfile = open("baseDatos/temp/rutas.txt", "rb")
+            path = os.path.join(pathlib.Path(__file__).parent.absolute())
+            pickfile = open(path+"/temp/rutas.txt", "rb")
             Ruta._rutas = pickle.load(pickfile)
             pickfile.close
 
         elif tipo == "Tiquete":
-            pickfile = open("baseDatos/temp/tiquetes.txt", "rb")
+            path = os.path.join(pathlib.Path(__file__).parent.absolute())
+            pickfile = open(path+"/temp/tiquetes.txt", "rb")
             Tiquete._tiquetes = pickle.load(pickfile)
             pickfile.close
 
         elif tipo == "Viaje":
-            pickfile = open("baseDatos/temp/viajes.txt","rb")
+            path = os.path.join(pathlib.Path(__file__).parent.absolute())
+            pickfile = open(path+"/temp/viajes.txt","rb")
             Viaje.setViajes(pickle.load(pickfile))
             pickfile.close
 
