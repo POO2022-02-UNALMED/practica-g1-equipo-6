@@ -61,7 +61,8 @@ class MenuOptimizacion(tk.Frame):
                         #capacidadcal =tiquete.getViaje().getBus().getCapacidad()
                         #validador.validarCapacidad(capacidadcal,tiquete)
                         nuevoPrecio = (tiquete.getValor()-(math.trunc((tiquete.getValor()*20) / float(100))))
-                        tiquete.setValor(nuevoPrecio)
+                        tiquete.getViaje().setPrecio(nuevoPrecio)
+                        #tiquete.setValorServicio(nuevoPrecio)
                         messagebox.showinfo(title= "Los viajes con promocion son los siguientes:", message= tiquete)
         
         lblMensajeInicio = ttk.Label(self.main, text="Adquirir promocion", font=("Segoe UI", 20))
@@ -134,9 +135,7 @@ class MenuOptimizacion(tk.Frame):
         ttk.Label(self.main, text = "{:<20} {:<25} {:<20} {:<20} {:}".
                     format('Origen','Destino','Fecha','Precio','Paradas'), justify= "center").pack(pady = (0,15))
         for viajes in viajesfiltrados:
-                parada = str(viajes.getRuta().getParadas())
                 fecha = str(viajes.getFecha()).split(" ")
                 ttk.Label(self.main, text = "{:<20} {:<25} {:<20} {:<20} {:<20}".
-                    format(viajes.getOrigen(), viajes.getDestino(), fecha[0], viajes.getPrecio(), parada[0])).pack(pady = (0,15))
+                    format(viajes.getOrigen(), viajes.getDestino(), fecha[0], viajes.getPrecio(), viajes.getEnViaje())).pack(pady = (0,15))
         btnVolver = ttk.Button(self.main, text = "Volver", command= lambda: self.volverViajeBus()).pack()
-    
